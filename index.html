@@ -130,10 +130,78 @@ header#main::before {
 @media screen and (min-width: 1200px) {
   .hero-content h1 {
     font-size: calc(48px + 1vw); /* Ajustez la taille de la police pour les grands écrans */
+
   }
 
   .hero-content p {
     font-size: calc(24px + 0.5vw); /* Ajustez la taille de la police pour les grands écrans */
+
+  }
+}
+.hero-content h1 {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideInTitle 1s ease-in-out 0.5s forwards;
+}
+
+.hero-content p {
+  opacity: 0;
+  transform: translateX(50px);
+  animation: slideInText 1s ease-in-out 1s forwards;
+}
+
+@keyframes slideInTitle {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInText {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.w3-sidebar {
+  position: fixed;
+  z-index: 1;
+  top: -200px; /* On positionne la sidebar au-dessus de la page au départ */
+  left: 0;
+  overflow-x: hidden;
+  transition: top 0.5s ease-in-out;
+}
+
+.w3-sidebar.visible {
+  top: 0; /* On fait descendre la sidebar avec l'animation */
+}
+
+/* Animation d'arrivée pour la top bar */
+.w3-top.animated {
+  opacity: 0;
+  animation-name: slideInDown;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-delay: 1.4s;
+}
+
+/* Définition de l'animation */
+@keyframes slideInDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
   }
 }
 </style>
@@ -377,6 +445,14 @@ header#main::before {
     target: fluffContainer
   };
   handleIntersection([initialEntry], observer);
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const sidebar = document.querySelector('.w3-sidebar');
+    sidebar.classList.add('visible');
+  });
+
+  // Ajout de la classe "animated" pour déclencher l'animation
+document.getElementById("myNavbar").classList.add("animated");
 </script>
 
 
@@ -385,3 +461,4 @@ header#main::before {
 <script src="lightbox-plus-jquery.js"></script>
 </body>
 </html>
+
