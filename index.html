@@ -115,23 +115,25 @@ header#main::before {
   z-index: 1;
 }
 
+/* Pour les petits écrans (téléphones) */
 @media screen and (max-width: 768px) {
   .hero-content h1 {
-    font-size: 32px; /* Ajustez la taille de la police pour les petits écrans */
+    font-size: calc(20px + 2vw); /* Ajustez la taille de la police pour les petits écrans */
   }
 
   .hero-content p {
-    font-size: 18px; /* Ajustez la taille de la police pour les petits écrans */
+    font-size: calc(14px + 1vw); /* Ajustez la taille de la police pour les petits écrans */
   }
 }
+
 /* Pour les grands écrans */
 @media screen and (min-width: 1200px) {
   .hero-content h1 {
-    font-size: 48px; /* Ajustez la taille de la police pour les grands écrans */
+    font-size: calc(48px + 1vw); /* Ajustez la taille de la police pour les grands écrans */
   }
 
   .hero-content p {
-    font-size: 24px; /* Ajustez la taille de la police pour les grands écrans */
+    font-size: calc(24px + 0.5vw); /* Ajustez la taille de la police pour les grands écrans */
   }
 }
 </style>
