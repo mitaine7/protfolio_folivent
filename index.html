@@ -171,18 +171,23 @@ header#main::before {
     transform: translateX(0);
   }
 }
-.w3-sidebar {
-  position: fixed;
-  z-index: 1;
-  top: -200px; /* On positionne la sidebar au-dessus de la page au départ */
-  left: 0;
-  overflow-x: hidden;
-  transition: top 0.5s ease-in-out;
-}
 
 .w3-sidebar.visible {
-  top: 0; /* On fait descendre la sidebar avec l'animation */
+  animation-name: slideInSidebar;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
 }
+@keyframes slideInSidebar {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
 
 /* Animation d'arrivée pour la top bar */
 .w3-top.animated {
