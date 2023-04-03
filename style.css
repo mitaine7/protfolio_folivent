@@ -44,6 +44,7 @@
     transform: translateX(-100px);
     animation: slide-in 2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
     animation-delay: 0.66s;
+    position: relative;
 }
 
 .hero-title span {
@@ -69,4 +70,21 @@
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+
+.hero-title::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px; /* ajuster l'épaisseur de la ligne en fonction de vos préférences */
+    background-color: #ffffff;
+    transition: all 1s;
+}
+
+.hero-title:hover::before {
+    width: 100%; /* étendre la largeur de la ligne sur toute la largeur du titre */
+    left: 0; /* déplace la ligne vers la gauche */
 }
