@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@600&display=swap');
+
+
+.hero-banner {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("image1.png");
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: url('images/logo.png'), auto;
+}
+
+.title-container {
+    max-width: 84%;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    font-family: 'Noto Serif Display', serif;
+    position: relative;
+    transition: 2s;
+}
+
+
+
+.title-container:hover {
+    color: #fff;
+    text-shadow: 0 0 5px #ffffff,
+                0 0 25px #ffffff,
+                0 0 50px #ffffff,
+                0 0 100px #ffffff;
+}
+
+
+
+
+.hero-title {
+    font-size: 7vw;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateX(-100px);
+    animation: slide-in 2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    animation-delay: 0.66s;
+}
+
+.hero-title span {
+    display: inline-block;
+    transition: transform 0.3s, text-shadow 0.3s;
+}
+
+.hero-title span:hover {
+    transform: scale(1.2);
+    text-shadow: 0 0 5px #ecf6c8,
+                0 0 25px #ecf6c8,
+                0 0 50px #ecf6c8,
+                0 0 100px #ecf6c8;
+    opacity: 1;
+}
+
+@keyframes slide-in {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

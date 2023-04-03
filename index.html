@@ -8,8 +8,13 @@
 <link rel="stylesheet" href="w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Sinhala:wght@500&display=swap" rel="stylesheet">
 <link href="lightbox.css" rel="stylesheet" />
 <link rel="stylesheet" href="fluff.css">
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 
 <style>
 body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
@@ -18,15 +23,87 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 #main {margin-left: 120px}
 @media only screen and (max-width: 600px) {#main {margin-left: 0}}
 
+
+.social-icon-container {
+  position: relative;
+  display: inline-block;
+  perspective: 1000px;
+}
+
 .social-icon {
-  margin-right: 10px;
   color: white;
   font-size: 24px;
+  padding: 20px;
   text-decoration: none;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20%;
 }
+
 .social-icon:hover {
   opacity: 0.7;
+  box-shadow: 0 0 10px rgba(252, 249, 249, 0.5);
 }
+
+
+.social-icon-hover {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform-origin: bottom center;
+  background-color: #333;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 -4px 8px rgba(255, 255, 255, 0.3), 0 8px 16px rgba(0, 0, 0, 0.2);
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.5s;
+  transform: translateY(40px) rotateX(90deg) rotateY(-45deg) translateX(-50%) scale(0);
+  width: 200px;
+  pointer-events: none;
+}
+
+.social-icon-hover img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+.social-icon-hover h4 {
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.social-icon-hover a {
+  text-decoration: none;
+  color: white;
+}
+
+.social-icon-container:hover .social-icon-hover {
+  opacity: 1;
+  transform: translateY(-20px) rotateX(0) rotateY(0) translateX(-50%) scale(1);
+  pointer-events: auto;
+}
+
+.social-icon-container::before {
+  content: "";
+  position: absolute;
+  top: -22px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+.social-icon-container:hover::before {
+  pointer-events: auto;
+}
+
 .w3-row-padding img {
   margin-bottom: 12px;
   transition: transform 0.2s ease-in-out;
@@ -80,109 +157,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   }
 }
 
-.bgimg {
-  background-position: center;
-  background-size: cover;
-  background-image: url("image1.png");
-  min-height: 100vh;
-}
-/* CSS */
-header#main {
-  background-size: cover;
-  background-position: center;
-  height: 80vh; /* Vous pouvez ajuster cette valeur en fonction de la hauteur souhaitée */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  text-align: center;
-  color: #fff;
-}
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 82%; /* Ajustez cette valeur pour définir la largeur maximale du contenu */
-  margin: 0 auto;
-}
-
-header#main::before {
-  content: "";
-  background-color: rgba(0, 0, 0, 0.4); /* Ajustez l'opacité pour modifier la transparence */
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-
-  .hero-content h1 {
-  font-size: 7vw;
-}
-
-.hero-content p {
-font-size: 4vw;
-}
-  
-/* Pour les petits écrans (téléphones) */
-@media screen and (max-width: 768px) {
-  .hero-content h1 {
-    font-size: calc(30px + 2vw); /* Ajustez la taille de la police pour les petits écrans */
-  }
-
-  .hero-content p {
-    font-size: calc(20px + 1vw); /* Ajustez la taille de la police pour les petits écrans */
-  }
-}
-
-/* Pour les grands écrans */
-@media screen and (min-width: 1200px) {
-  .hero-content h1 {
-    font-size: calc(48px + 2vw); /* Ajustez la taille de la police pour les grands écrans */
-
-  }
-
-  .hero-content p {
-    font-size: calc(24px + 1vw); /* Ajustez la taille de la police pour les grands écrans */
-
-  }
-}
-.hero-content h1 {
-  opacity: 0;
-  transform: translateX(-50px);
-  animation: slideInTitle 1s ease-in-out 0.5s forwards;
-}
-
-.hero-content p {
-  opacity: 0;
-  transform: translateX(50px);
-  animation: slideInText 1s ease-in-out 1s forwards;
-}
-
-.w3-xxlarge{font-size:32px!important}
-
-@keyframes slideInTitle {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInText {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
 
 .w3-sidebar.visible {
   animation-name: slideInSidebar;
@@ -265,12 +240,15 @@ font-size: 4vw;
   </div>
 </div>
 
-<header class="bgimg w3-display-container w3-grayscale-min" id="main">
-  <div class="w3-content w3-padding-large w3-padding-64 w3-center hero-content">
-  <h1><b>Hélène Girardin</b></h1>
-  <p>Bienvenue sur mes plottes je sais pas</p>
+<div class="hero-banner" id="main">
+  <div class="title-container">
+    <div class="hero-title">
+      <span>H</span><span>E</span><span>L</span><span>E</span><span>N</span><span>E</span>
+      <span>G</span><span>I</span><span>R</span><span>A</span><span>R</span><span>D</span><span>I</span><span>N</span>
+    </div>
+  </div>
 </div>
-</header>
+
 
 <div class="w3-padding-large" id ="main">
   <div class="w3-content w3-padding-64 w3-text-light-grey" id="about">
@@ -416,28 +394,79 @@ font-size: 4vw;
 </div>
 </div>
 <div>
-  <div class="w3-container w3-padding-16 w3-center">
-    <a href="mailto:contact@monemail.com" target="_blank" class="social-icon w3-hover-opacity">
-      <i class="fa fa-envelope"></i>
-    </a>
-    <a href="https://www.instagram.com/monprofil1/" target="_blank" class="social-icon w3-hover-opacity">
-      <i class="fa fa-instagram"></i>
-    </a>
-    <a href="https://www.instagram.com/monprofil2/" target="_blank" class="social-icon" title="Mon profil Instagram">
-      <i class="fa fa-instagram"></i>
-    </a>
-    <a href="https://www.facebook.com/monprofil/" target="_blank" class="social-icon">
-      <i class="fa fa-facebook"></i>
-    </a>
-    <a href="#" class="social-icon w3-hover-opacity">
-      <i class="fa fa-twitter"></i>
-    </a>
-    <a href="#" class="social-icon w3-hover-opacity">
-      <i class="fa fa-linkedin"></i>
-    </a>
+  <div class="w3-center" id="main">
+    <div class="social-icon-container">
+      <a href="mailto:contact@monemail.com" target="_blank" class="social-icon">
+        <i class="fa fa-envelope"></i>
+      </a>
+      <div class="social-icon-hover">
+        <a href="mailto:contact@monemail.com" target="_blank">
+          <h4>Contactez-nous par e-mail</h4>
+          <img src="https://source.unsplash.com/random/300x200" alt="Image Email">
+        </a>
+      </div>
+    </div>
+    <div class="social-icon-container">
+      <a href="https://www.instagram.com/monprofil1/" target="_blank" class="social-icon">
+        <i class="fa fa-instagram"></i>
+      </a>
+      <div class="social-icon-hover">
+        <a href="https://www.instagram.com/monprofil1/" target="_blank">
+          <h4>Instagram couture</h4>
+          <img src="https://source.unsplash.com/random/300x200" alt="Image Instagram">
+        </a>
+      </div>
+    </div>
+    <div class="social-icon-container">
+      <a href="https://www.instagram.com/monprofil2/" target="_blank" class="social-icon">
+        <i class="fa fa-instagram"></i>
+      </a>
+      <div class="social-icon-hover">
+        <a href="https://www.instagram.com/monprofil2/" target="_blank">
+          <h4>Mon profil Instagram</h4>
+          <img src="https://source.unsplash.com/random/300x200" alt="Image Instagram">
+        </a>
+      </div>
+    </div>
+    <div class="social-icon-container">
+      <a href="https://www.facebook.com/monprofil/" target="_blank" class="social-icon">
+        <i class="fa fa-facebook"></i>
+      </a>
+      <div class="social-icon-hover">
+        <a href="https://www.facebook.com/monprofil/" target="_blank">
+          <h4>Rejoignez-nous sur Facebook</h4>
+          <img src="https://source.unsplash.com/random/300x200" alt="Image Facebook">
+        </a>
+      </div>
+    </div>
+    <div class="social-icon-container">
+      <a href="#" class="social-icon">
+        <i class="fa fa-twitter"></i>
+      </a>
+      <div class="social-icon-hover">
+        <a href="#" target="_blank">
+          <h4>Suivez-nous sur Twitter</h4>
+          <img src="https://source.unsplash.com/random/300x200" alt="Image Twitter">
+        </a>
+      </div>
+    </div>
+    <div class="social-icon-container">
+      <a href="#" class="social-icon">
+        <i class="fa fa-linkedin"></i>
+      </a>
+      <div class="social-icon-hover">
+        <a href="#" target="_blank">
+          <h4>LinkedIn</h4>
+          <img src="https://source.unsplash.com/random/"  alt="Image LinkedIn">
+        </a>
+      </div>
+    </div>
   </div>
+
+  
+  
 </div>
-<footer class="w3-container w3-padding-32 w3-center">
+<footer class="w3-container w3-padding-32 w3-center" id="main">
   
   <p>Powered by mITAINE</p>
 </footer>
@@ -480,9 +509,25 @@ font-size: 4vw;
     sidebar.classList.add('visible');
   });
 
-  // Ajout de la classe "animated" pour déclencher l'animation
-document.getElementById("myNavbar").classList.add("animated");
+  document.addEventListener("DOMContentLoaded", function () {
+  const title = document.getElementById("title");
+
+  title.addEventListener("animationend", function () {
+    title.classList.add("animation-finished");
+
+    title.addEventListener("mouseover", function () {
+      title.classList.add("hovered");
+    });
+
+    title.addEventListener("mouseout", function () {
+      title.classList.remove("hovered");
+    });
+  });
+});
+
 </script>
+
+
 
 
 
