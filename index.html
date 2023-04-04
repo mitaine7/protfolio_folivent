@@ -196,6 +196,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     opacity: 1;
   }
 }
+.w3-content {background-color: black;}
 </style>
 </head>
 <body class="w3-black">
@@ -242,15 +243,18 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
 <div class="hero-banner" id="main">
   <div class="title-container">
-    <div class="hero-title">
-      <span>H</span><span>é</span><span>l</span><span>è</span><span>n</span><span>e</span>
-      <span>G</span><span>i</span><span>r</span><span>a</span><span>r</span><span>d</span><span>i</span><span>n</span>
+    <div class="hero-title-container">
+      <div class="hero-title">
+        <span>H</span><span>é</span><span>l</span><span>è</span><span>n</span><span>e</span>
+        <span>G</span><span>i</span><span>r</span><span>a</span><span>r</span><span>d</span><span>i</span><span>n</span>
+      </div>
     </div>
   </div>
 </div>
 
 
-<div class="w3-padding-large" id ="main">
+
+<div class="w3-padding-large w3-center" id ="main">
   <div class="w3-content w3-padding-64 w3-text-light-grey" id="about">
     <div class="w3-row">
       <div class="w3-col m4">
@@ -527,6 +531,45 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
 </script>
 
+<script>
+  // Sélectionnez les conteneurs de titre en utilisant la classe
+  const heroTitleContainers = document.getElementsByClassName("hero-title-container");
+
+  // Fonction pour animer le titre en fonction du scroll
+  const animateTitleOnScroll = () => {
+    const scrollTop = window.scrollY;
+    const screenHeight = window.innerHeight;
+    const scrollRatio = scrollTop / (screenHeight); // Pour 300vh, screenHeight * 2
+
+    // Appliquez l'animation à chaque élément avec la classe spécifiée
+    for (let i = 0; i < heroTitleContainers.length; i++) {
+      const heroTitleContainer = heroTitleContainers[i];
+
+      // Calculez la translation sur l'axe Y
+      let translateYValue = -scrollRatio * 222;
+
+      // Définir la valeur de décalage en pixels
+      var offset = -400;
+      var titleContainer = document.querySelector('.title-container');
+
+      // Vérifiez si le titre atteint le sommet de la fenêtre et limitez la translation sur l'axe Y
+      if (scrollTop + heroTitleContainer.getBoundingClientRect().height + offset>= screenHeight) {
+        translateYValue = -screenHeight + heroTitleContainer.getBoundingClientRect().height;
+        titleContainer.style.position = 'absolute';
+      }else {
+  // Réinitialiser la valeur de position de l'élément .title-container
+  titleContainer.style.position = 'fixed';
+}
+
+      // Appliquez la translation sur l'axe Y
+      heroTitleContainer.style.transform = `translateY(${translateYValue}px)`;
+      // Vous pouvez également ajuster la taille, l'opacité, etc.
+    }
+  };
+
+  // Ajoutez un écouteur d'événement pour détecter le scroll
+  window.addEventListener("scroll", animateTitleOnScroll);
+</script>
 
 
 

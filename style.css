@@ -3,30 +3,32 @@
 
 
 .hero-banner {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("image1.png");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(image1.png);
     background-position: center;
     background-size: cover;
-    min-height: 100vh;
+    height: 150vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    cursor: url('images/logo.png'), auto;
+    cursor: url(images/logo.png), auto;
+    background-attachment: fixed;
 }
+
 
 .title-container {
-    max-width: 84%;
-    margin: 0 auto;
-    text-align: center;
-    color: white;
-    font-family: 'Noto Serif Thai', serif;
-    position: relative;
-    transition: 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    transition: 1s;   
 }
 
 
 
-.title-container:hover {
+.hero-title-container:hover {
     color: #fff;
     text-shadow: 0 0 5px #ffffff,
                 0 0 25px #ffffff,
@@ -34,7 +36,11 @@
                 0 0 100px #ffffff;
 }
 
-
+.hero-title-container {
+    transition: transform 0.222s;  
+    font-family: 'Noto Serif Thai', serif;
+  }
+  
 
 
 .hero-title {
@@ -52,20 +58,21 @@
     font-size: 7vw;
     }
     }
-.hero-title span {
-    display: inline-block;
-    transition: transform 0.3s, text-shadow 0.3s;
-}
-
-.hero-title span:hover {
-    transform: scale(1.2);
-    text-shadow: 0 0 5px #ecf6c8,
-                0 0 25px #ecf6c8,
-                0 0 50px #ecf6c8,
-                0 0 100px #ecf6c8;
-    opacity: 1;
-}
-
+    .hero-title span {
+        display: inline-block;
+        transition: transform 0.22s, text-shadow 0.22s;
+        will-change: transform;
+    }
+    
+    .hero-title span:hover {
+        transform: scale(1.2);
+        text-shadow: 0 0 5px #ecf6c8,
+                    0 0 25px #ecf6c8,
+                    0 0 50px #ecf6c8,
+                    0 0 100px #ecf6c8;
+        opacity: 1;
+    }
+    
 
 
 @keyframes slide-in {
