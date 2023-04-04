@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@600&display=swap');
 
 
@@ -19,9 +19,9 @@
     margin: 0 auto;
     text-align: center;
     color: white;
-    font-family: 'Noto Serif Display', serif;
+    font-family: 'Noto Serif Thai', serif;
     position: relative;
-    transition: 2s;
+    transition: 1s;
 }
 
 
@@ -38,15 +38,20 @@
 
 
 .hero-title {
-    font-size: 7vw;
+    font-size: 4.6em;
     text-transform: uppercase;
     opacity: 0;
     transform: translateX(-100px);
     animation: slide-in 2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
     animation-delay: 0.66s;
     position: relative;
-}
-
+    }
+    
+    @media screen and (max-width: 1000px) {
+    .hero-title {
+    font-size: 7vw;
+    }
+    }
 .hero-title span {
     display: inline-block;
     transition: transform 0.3s, text-shadow 0.3s;
@@ -60,6 +65,8 @@
                 0 0 100px #ecf6c8;
     opacity: 1;
 }
+
+
 
 @keyframes slide-in {
     0% {
@@ -81,7 +88,7 @@
     width: 0;
     height: 2px; /* ajuster l'épaisseur de la ligne en fonction de vos préférences */
     background-color: #ffffff;
-    transition: all 1s;
+    transition: all 1.22s;
 }
 
 .hero-title:hover::before {
