@@ -103,12 +103,6 @@
     left: 0; /* déplace la ligne vers la gauche */
 }
 
-.mitenu:before {
-    content: "";
-    position: absolute;
-    top: 140vh;
-    left: 0;
-    right: 0;
-    height: 11vh;
-    background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+.mitenu {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #333 100%);
   }
