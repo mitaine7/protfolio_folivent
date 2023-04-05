@@ -30,10 +30,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
-    top: 0;
+    position: absolute;
+    top: -50vh;
     bottom: 0;
-    transition: 1s;   
+    
 }
 
 
@@ -47,7 +47,7 @@
 }
 
 .hero-title-container {
-    transition: transform 0.222s;  
+    transition: 1s;  
     font-family: 'Noto Serif Thai', serif;
   }
   
@@ -119,12 +119,3 @@
     position: relative;
     }
 
-.mitenu:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 10vh;
-    background: linear-gradient(to bottom, rgb(0, 0, 0) 22%, rgba(198, 108, 108, 0) 100%);
-  }

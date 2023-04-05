@@ -532,44 +532,35 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 </script>
 
 <script>
-  // Sélectionnez les conteneurs de titre en utilisant la classe
-  const heroTitleContainers = document.getElementsByClassName("hero-title-container");
+  // Select the title container using the class
+  const titleContainer = document.querySelector(".title-container");
 
-  // Fonction pour animer le titre en fonction du scroll
+  // Set the initial top value to -50vh
+  titleContainer.style.top = "-50vh";
+
+  // Function to animate the title based on the scroll
   const animateTitleOnScroll = () => {
     const scrollTop = window.scrollY;
     const screenHeight = window.innerHeight;
-    const scrollRatio = scrollTop / (screenHeight); // Pour 300vh, screenHeight * 2
 
-    // Appliquez l'animation à chaque élément avec la classe spécifiée
-    for (let i = 0; i < heroTitleContainers.length; i++) {
-      const heroTitleContainer = heroTitleContainers[i];
+    // Calculate the top value based on screen height and scrollTop
+    // You can adjust the scrolling speed of the title by changing the value '0.5' to another number (e.g., '0.3', '0.7')
+    let topValue = -50 + (scrollTop * 150 * 1) / screenHeight;
 
-      // Calculez la translation sur l'axe Y
-      let translateYValue = -scrollRatio * 222;
-
-      // Définir la valeur de décalage en pixels
-      var offset = -400;
-      var titleContainer = document.querySelector('.title-container');
-
-      // Vérifiez si le titre atteint le sommet de la fenêtre et limitez la translation sur l'axe Y
-      if (scrollTop + heroTitleContainer.getBoundingClientRect().height + offset>= screenHeight) {
-        translateYValue = -screenHeight + heroTitleContainer.getBoundingClientRect().height;
-        titleContainer.style.position = 'absolute';
-      }else {
-  // Réinitialiser la valeur de position de l'élément .title-container
-  titleContainer.style.position = 'fixed';
-}
-
-      // Appliquez la translation sur l'axe Y
-      heroTitleContainer.style.transform = `translateY(${translateYValue}px)`;
-      // Vous pouvez également ajuster la taille, l'opacité, etc.
+    if (topValue > 125) {
+      topValue = 125;
     }
+
+    // Apply the top value
+    titleContainer.style.top = `${topValue}vh`;
+    // You can also adjust size, opacity, etc.
   };
 
-  // Ajoutez un écouteur d'événement pour détecter le scroll
+  // Add an event listener to detect scroll
   window.addEventListener("scroll", animateTitleOnScroll);
+
 </script>
+
 
 
 
