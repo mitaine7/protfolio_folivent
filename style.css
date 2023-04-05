@@ -102,3 +102,13 @@
     width: 100%; /* étendre la largeur de la ligne sur toute la largeur du titre */
     left: 0; /* déplace la ligne vers la gauche */
 }
+
+.mitenu:before {
+    content: "";
+    position: absolute;
+    top: 140vh;
+    left: 0;
+    right: 0;
+    height: 10vh;
+    background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+  }
