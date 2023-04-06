@@ -24,23 +24,25 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
 
 
-.w3-row-padding img {
-  margin-bottom: 12px;
-  transition: transform 0.2s ease-in-out;
-}
-
-.w3-row-padding img:hover {
-  transform: scale(1.1);
-}
 .couture-img {
     width: 100%;
     height: auto;
     display: block;
     margin: auto;
+    margin-bottom: 12px;
+  transition: transform 0.2s ease-in-out;
   }
   .couture-img:hover {
   filter: drop-shadow(0 0 10px #ffffff);
      border-radius: 10px;
+     transform: scale(1.1);
+}
+
+.section-couture-img {
+  margin-top: 43px;
+}
+.section-couture-img:hover .couture-img:not(:hover) {
+  transform: scale(0.9);
 }
   .couture-grid {
     display: grid;
@@ -207,7 +209,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <div class="w3-content w3-padding-64 w3-justify"  id="couture">
       <h2 class="w3-text-white w3-center">Couture</h2>
       <hr style="width:100%" class="w3-opacity">
-      <div class="w3-row-padding">
+      <div class="w3-row-padding section-couture-img">
         <div class="w3-col m3">
           <a href="images/couture01.jpeg" data-lightbox="portfolioa">
             <img src="images/couture01.jpeg"Création 3" class="couture-img">         

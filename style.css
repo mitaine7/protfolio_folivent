@@ -132,8 +132,7 @@
         align-items: center;
         overflow: auto;
         background-color: #000000;
-        border-right: 1px solid #fff; /* ajouter une bordure blanche */
-        box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5); /* ajouter une ombre portée */
+        box-shadow: 2px -20px 10px rgba(255, 255, 255, 0.5); /* ajouter une ombre portée */
         z-index: 999;
         transform: translateY(-50%);
         opacity: 0;
