@@ -5,13 +5,13 @@
 <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Sinhala:wght@500&display=swap" rel="stylesheet">
 <link href="lightbox.css" rel="stylesheet" />
 <link rel="stylesheet" href="fluff.css">
-<link rel="stylesheet" href="style.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
@@ -19,90 +19,10 @@
 <style>
 body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 .w3-row-padding img {margin-bottom: 12px}
-.w3-sidebar {width: 120px;background: #222;}
 #main {margin-left: 120px}
 @media only screen and (max-width: 600px) {#main {margin-left: 0}}
 
 
-.social-icon-container {
-  position: relative;
-  display: inline-block;
-  perspective: 1000px;
-}
-
-.social-icon {
-  color: white;
-  font-size: 24px;
-  padding: 20px;
-  text-decoration: none;
-  width: 24px;
-  height: 24px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 20%;
-}
-
-.social-icon:hover {
-  opacity: 0.7;
-  box-shadow: 0 0 10px rgba(252, 249, 249, 0.5);
-}
-
-
-.social-icon-hover {
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform-origin: bottom center;
-  background-color: #333;
-  border-radius: 5px;
-  padding: 10px;
-  box-shadow: 0 -4px 8px rgba(255, 255, 255, 0.3), 0 8px 16px rgba(0, 0, 0, 0.2);
-  color: white;
-  opacity: 0;
-  transition: opacity 0.3s, transform 0.5s;
-  transform: translateY(40px) rotateX(90deg) rotateY(-45deg) translateX(-50%) scale(0);
-  width: 200px;
-  pointer-events: auto;
-}
-
-.social-icon-hover img {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin-bottom: 5px;
-  border-radius: 5px;
-}
-
-.social-icon-hover h4 {
-  margin: 0;
-  margin-bottom: 5px;
-}
-
-.social-icon-hover a {
-  text-decoration: none;
-  color: white;
-}
-
-.social-icon-container:hover .social-icon-hover {
-  opacity: 1;
-  transform: translateY(-20px) rotateX(0) rotateY(0) translateX(-50%) scale(1);
-  pointer-events: auto;
-}
-
-.social-icon-container::before {
-  content: "";
-  position: absolute;
-  top: -22px;
-  left: 0;
-  right: 0;
-  bottom: 40px;
-  z-index: 1;
-  pointer-events: none;
-}
-.social-icon-container:hover::before {
-  pointer-events: auto;
-}
 
 .w3-row-padding img {
   margin-bottom: 12px;
@@ -201,33 +121,49 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 </head>
 <body class="w3-black">
 
-  <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-    <!-- Avatar image in top left corner -->
-    <img src="images/tiportrait.jpg" style="width:100%">
-  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
-    <i class="fa fa-home w3-xxlarge"></i>
-  </a>
-  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-user w3-xxlarge"></i>
-    <p>A PROPOS</p>
-  </a>
-  <a href="#couture" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-scissors w3-xxlarge"></i>
-    <p>COUTURE</p>
-  </a>
-  <a href="#dessins" class="w3-bar-item w3-button w3-padding-large w3-hover-black w3-center">
-    <i class="fa fa-paint-brush w3-xxlarge"></i>
-    <p>DESSINS ET PEINTURES</p>
-  </a>
-  <a href="#arts_numeriques" class="w3-bar-item w3-button w3-padding-large w3-hover-black w3-center">
-    <i class="fa fa-desktop w3-xxlarge"></i>
-    <p>ART DIGITAL</p>
-  </a>
-  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-envelope w3-xxlarge"></i>
-    <p>CONTACT</p>
-  </a>
-</nav>
+  <nav class="nav-sidebar visible">
+    <div class="nav-avatar">
+      <img src="images/portrait.jpg" alt="Avatar">
+    </div>
+    <ul class="nav-items">
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="fa fa-home"></i>
+          <span>Accueil</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#about" class="nav-link">
+          <i class="fa fa-user"></i>
+          <span>A propos</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#couture" class="nav-link">
+          <i class="fa fa-scissors"></i>
+          <span>Couture</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#dessins" class="nav-link">
+          <i class="fa fa-paint-brush"></i>
+          <span>Dessins et Peintures</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#arts_numeriques" class="nav-link">
+          <i class="fa fa-desktop"></i>
+          <span>Art Digital</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#contact" class="nav-link">
+          <i class="fa fa-envelope"></i>
+          <span>Contact</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 
 <!-- Navbar on small screens (Hidden on medium and large screens) -->
 <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
@@ -273,18 +209,18 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
       <hr style="width:100%" class="w3-opacity">
       <div class="w3-row-padding">
         <div class="w3-col m3">
-          <a href="https://images.pixexid.com/happy-birthday-vwhzclfy.jpeg?h=700&q=70" data-lightbox="portfolioa">
-            <img src="https://images.pixexid.com/happy-birthday-vwhzclfy.jpeg?h=700&q=70"Création 3" class="couture-img">         
+          <a href="images/couture01.jpeg" data-lightbox="portfolioa">
+            <img src="images/couture01.jpeg"Création 3" class="couture-img">         
           </a>
         </div>
         <div class="w3-col m3">
-          <a href="https://images.pixexid.com/a-baby-boy-wearing-a-virtual-reality-headset-obhbus1z.jpeg?h=700&q=70" data-lightbox="portfolioa">
-            <img src="https://images.pixexid.com/a-baby-boy-wearing-a-virtual-reality-headset-obhbus1z.jpeg?h=700&q=70" alt="Création 3" class="couture-img"> 
+          <a href="images/couture02_open.jpeg" data-lightbox="portfolioa">
+            <img src="images/couture02.jpeg" alt="Création 3" class="couture-img"> 
           </a>        
         </div>
         <div class="w3-col m3">
-          <a href="https://images.gratisgraphics.com/the-flowers-of-hydrangea-adorn-a-womans-hair-oemt060u.jpeg?h=700&q=70" data-lightbox="portfolioa">
-            <img src="https://images.gratisgraphics.com/the-flowers-of-hydrangea-adorn-a-womans-hair-oemt060u.jpeg?h=700&q=70" alt="Création 3" class="couture-img"">
+          <a href="images/couture03.jpeg" data-lightbox="portfolioa">
+            <img src="images/couture03.jpeg" alt="Création 3" class="couture-img"">
           </a>
         </div>
         <div class="w3-col m3">
@@ -339,7 +275,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   </div>
 </section> 
   
-<section class="w3-content w3-padding-64 w3-text-light-grey w3-justify" id="contact">
+<section class="w3-content end-padding w3-text-light-grey w3-justify" id="contact">
   <h2 class="w3-text-white">Contactez-moi</h2>
   <hr style="width:200px" class="w3-opacity">
   <p>Si vous souhaitez me contacter pour discuter d'un projet ou pour toute autre demande, n'hésitez pas à utiliser les icônes ci-dessous.</p>
@@ -397,8 +333,8 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 </section>
 </div>
 </div>
-<div>
-  <div class="w3-center" id="main">
+<footer class="w3-center end" id="main">
+  <div class="socials">
     <div class="social-icon-container">
       <a href="mailto:contact@monemail.com" target="_blank" class="social-icon">
         <i class="fa fa-envelope"></i>
@@ -406,7 +342,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
       <div class="social-icon-hover">
         <a href="mailto:contact@monemail.com" target="_blank">
           <h4>Contactez-nous par e-mail</h4>
-          <img src="https://source.unsplash.com/random/300x200" alt="Image Email">
+          <img src="https://source.unsplash.com/random/340x200" alt="Image Email">
         </a>
       </div>
     </div>
@@ -417,7 +353,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
       <div class="social-icon-hover">
         <a href="https://www.instagram.com/monprofil1/" target="_blank">
           <h4>Instagram couture</h4>
-          <img src="https://source.unsplash.com/random/300x200" alt="Image Instagram">
+          <img src="https://source.unsplash.com/random/222x200" alt="Image Instagram">
         </a>
       </div>
     </div>
@@ -428,7 +364,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
       <div class="social-icon-hover">
         <a href="https://www.instagram.com/monprofil2/" target="_blank">
           <h4>Mon profil Instagram</h4>
-          <img src="https://source.unsplash.com/random/300x200" alt="Image Instagram">
+          <img src="https://source.unsplash.com/random/400x233" alt="Image Instagram">
         </a>
       </div>
     </div>
@@ -439,7 +375,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
       <div class="social-icon-hover">
         <a href="https://www.facebook.com/monprofil/" target="_blank">
           <h4>Rejoignez-nous sur Facebook</h4>
-          <img src="https://source.unsplash.com/random/300x200" alt="Image Facebook">
+          <img src="https://source.unsplash.com/random/300x500" alt="Image Facebook">
         </a>
       </div>
     </div>
@@ -450,7 +386,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
       <div class="social-icon-hover">
         <a href="#" target="_blank">
           <h4>Suivez-nous sur Twitter</h4>
-          <img src="https://source.unsplash.com/random/300x200" alt="Image Twitter">
+          <img src="https://source.unsplash.com/random/400x200" alt="Image Twitter">
         </a>
       </div>
     </div>
@@ -467,14 +403,9 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     </div>
   </div>
 
-  
-  
-</div>
-<footer class="w3-container w3-padding-32 w3-center" id="main">
-  
-  <p>Powered by mITAINE</p>
+  <p class="end-padding">Powered by mITAINE</p>
 </footer>
-</div>
+</body>
 <script>
   const fluffContainer = document.querySelector('.fluff-container');
   const fluffStyle = fluffContainer.style;
@@ -508,10 +439,6 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   };
   handleIntersection([initialEntry], observer);
 
-  document.addEventListener('DOMContentLoaded', function() {
-    const sidebar = document.querySelector('.w3-sidebar');
-    sidebar.classList.add('visible');
-  });
 
   document.addEventListener("DOMContentLoaded", function () {
   const title = document.getElementById("title");
