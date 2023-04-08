@@ -245,7 +245,9 @@
         }
       }
       
-      
+      .contact-padding {
+        padding-top: 64px;
+      }
 
       .end-padding {
         padding-top: 25px!important;
