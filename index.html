@@ -97,7 +97,9 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   }
 }
 
-
+.w3-top {
+  z-index: 22;
+}
 /* Animation d'arrivée pour la top bar */
 .w3-top.animated {
   opacity: 0;
@@ -607,18 +609,24 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   document.addEventListener("DOMContentLoaded", function () {
   const title = document.getElementById("title");
 
-  title.addEventListener("animationend", function () {
-    title.classList.add("animation-finished");
+  function handleTransitionEnd(event) {
+    if (event.propertyName === "opacity") {
+      title.classList.add("animation-finished");
 
-    title.addEventListener("mouseover", function () {
-      title.classList.add("hovered");
-    });
+      title.addEventListener("mouseover", function () {
+        title.classList.add("hovered");
+      });
 
-    title.addEventListener("mouseout", function () {
-      title.classList.remove("hovered");
-    });
-  });
+      title.addEventListener("mouseout", function () {
+        title.classList.remove("hovered");
+      });
+    }
+  }
+
+
 });
+
+
 
 </script>
 
