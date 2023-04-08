@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hélène Girardin</title>
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Sinhala:wght@500&display=swap" rel="stylesheet">
+<link href="lightbox.css" rel="stylesheet" />
+<link rel="stylesheet" href="fluff.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+
+<style>
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+#main {margin-left: 120px}
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+
+
+.couture-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 12px;
+    transition: transform 0.43s ease-in-out;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.couture-img:hover {
+    filter: drop-shadow(0 0 10px #ffffff);
+    border-radius: 10px;
+    transform: scale(1.1);
+}
+
+.section-img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    margin-top: 22px;
+}
+
+.section-img:hover .couture-img:not(:hover) {
+    transform: scale(0.9);
+}
+
+.col-4 {
+    flex-basis: calc(25% - 30px);
+}
+
+.col-6 {
+    flex-basis: calc(50% - 30px);
+}
+
+@media (max-width: 888px) {
+    .col-4 {
+        flex-basis: calc(50% - 30px);
+    }
+}
+
+@media (max-width: 600px) {
+    .col-4, .col-6 {
+        flex-basis: 100%;
+    }
+}
+
+  .fluff-container {
+  position: absolute;
+  width: 2vw;
+  height: 2vw;
+  left: 90%; /* position initiale à gauche de l'écran */
+  transform: translateX(-50%) scale(0.2);
+
+}
+
+
+.appear {
+  animation: appear 1s ease-in-out forwards;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateX(0%) scale(0.2);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-100%) scale(0.2);
+  }
+}
+
+
+
+.w3-sidebar.visible {
+  animation-name: slideInSidebar;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+@keyframes slideInSidebar {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+.w3-top {
+  z-index: 22;
+}
+/* Animation d'arrivée pour la top bar */
+.w3-top.animated {
+  opacity: 0;
+  animation-name: slideInDown;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-delay: 1.4s;
+}
+
+/* Définition de l'animation */
+@keyframes slideInDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+.w3-content {background-color: black;}
+
+.text-active {
+  display: block;
+}
+
+.text-hidden {
+  display: none;
+}
+#translation-container {
+  position: fixed;
+  z-index: 1000;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+#translation-button {
+  background-color: transparent;
+  font-weight: bold;
+  border: none;
+  width: 50px;
+  height: 50px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  padding: 0;
+  opacity: 0.5;
+  animation: float 1.5s ease-in-out infinite;
+}
+
+#translation-button:hover {
+  animation: float 1.5s ease-in-out infinite, hoverFloat 0.3s forwards;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  opacity: 1;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-3px) scale(1);
+  }
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+}
+
+@keyframes hoverFloat {
+  0% {
+    transform: translateY(0px) scale(1);
+  }
+  100% {
+    transform: translateY(-5px) scale(1.1);
+  }
+}
+
+#top-half,
+#bottom-half {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#top-half {
+  background-color: #ffffff;
+}
+
+#bottom-half {
+  background-color: #000000;
+}
+
+.text-fr-active #top-half {
+  background-color: #ffffff;
+}
+
+.text-fr-active #bottom-half {
+  background-color: #000000;
+}
+
+#translation-button:not(.text-fr-active) #top-half {
+  background-color: #000000;
+}
+
+#translation-button:not(.text-fr-active) #bottom-half {
+  background-color: #ffffff;
+}
+
+#fr-text {
+  color: #000000;
+}
+
+#en-text {
+  color: #ffffff;
+}
+
+.text-fr-active #fr-text {
+  color: #000000;
+}
+
+.text-fr-active #en-text {
+  color: #ffffff;
+}
+
+#translation-button:not(.text-fr-active) #fr-text {
+  color: #ffffff;
+}
+
+#translation-button:not(.text-fr-active) #en-text {
+  color: #000000;
+}
+
+.text-fr,
+.text-en {
+  transition: opacity 0.5s;
+}
+
+</style>
+</head>
+<body class="w3-black">
+
+  <nav class="nav-sidebar visible">
+    <div class="nav-avatar">
+      <img src="images/portrait.jpg" alt="Avatar">
+    </div>
+    <ul class="nav-items">
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="fa fa-home"></i>
+          <span>Accueil</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#about" class="nav-link">
+          <i class="fa fa-user"></i>
+          <span>A propos</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#couture" class="nav-link">
+          <i class="fa fa-scissors"></i>
+          <span>Couture</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#dessins" class="nav-link">
+          <i class="fa fa-paint-brush"></i>
+          <span>Dessins et Peintures</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#arts_numeriques" class="nav-link">
+          <i class="fa fa-desktop"></i>
+          <span>Art Digital</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="#contact" class="nav-link">
+          <i class="fa fa-envelope"></i>
+          <span>Contact</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="#" class="w3-bar-item w3-button" style="width:16.666% !important; font-size: 24px;"><i class="fa fa-home"></i></a>
+    <a href="#about" class="w3-bar-item w3-button" style="width:16.666% !important; font-size: 24px;"><i class="fa fa-user"></i></a>
+    <a href="#couture" class="w3-bar-item w3-button" style="width:16.666% !important; font-size: 24px;"><i class="fa fa-scissors"></i></a>
+    <a href="#dessins" class="w3-bar-item w3-button" style="width:16.666% !important; font-size: 24px;"><i class="fa fa-paint-brush"></i></a>
+    <a href="#arts_numeriques" class="w3-bar-item w3-button" style="width:16.666% !important; font-size: 24px;"><i class="fa fa-desktop"></i></a>
+    <a href="#contact" class="w3-bar-item w3-button" style="width:16.666% !important; font-size: 24px;"><i class="fa fa-envelope"></i></a>
+  </div>
+</div>
+
+<div class="hero-banner" id="main">
+  <div class="title-container">
+    <div class="hero-title-container">
+      <div class="hero-title">
+        <span>H</span><span>é</span><span>l</span><span>è</span><span>n</span><span>e</span>
+        <span>G</span><span>i</span><span>r</span><span>a</span><span>r</span><span>d</span><span>i</span><span>n</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="translation-container" style="opacity:0;">
+  <button id="translation-button" class="text-fr-active" onclick="toggleTranslation()">
+    <div id="top-half">
+      <span id="fr-text">FR</span>
+    </div>
+    <div id="bottom-half">
+      <span id="en-text">EN</span>
+    </div>
+  </button>
+  
+</div>
+
+
+
+<div class="w3-padding-large w3-center mitenu" id ="main">
+  <div class="w3-content w3-padding-64 w3-text-light-grey" id="about">
+    <div class="w3-row">
+      <div class="w3-col m4">
+        <img class="portrait" src="images/portrait.jpg" alt="Votre photo" style="width:100%">
+      </div>
+      <div class="w3-col m8 w3-justify">
+        <h2 class="w3-text-white text-fr text-active" data-translation="about-title">À propos de moi</h2>
+        <h2 class="w3-text-white text-en text-hidden" data-translation="about-title">About me</h2>
+        <hr style="width:200px" class="w3-opacity">
+        <div id="text-container">
+          <div class="text-fr text-active" data-translation="about-text">
+            <p>Je suis une couturière et artiste passionnée avec plusieurs années d'expérience dans la création de vêtements sur mesure et diverses œuvres d'art. Mon objectif est de créer des pièces uniques qui mettent en valeur la personnalité et le style de chaque client, ainsi que des œuvres d'art qui suscitent des émotions et des réflexions. J'attache une grande importance à la qualité et au souci du détail dans mon travail.</p>
+          </div>
+          <div class="text-en text-hidden" data-translation="about-text">
+            <p>I am a passionate seamstress and artist with several years of experience in creating custom-made clothing and various works of art. My goal is to create unique pieces that highlight the personality and style of each client, as well as artworks that evoke emotions and reflections. I place great importance on quality and attention to detail in my work.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+   
+    <div class="w3-content w3-padding-64 w3-justify"  id="couture">
+      <h2 class="w3-text-white w3-center text-fr text-active" data-translation="couture-title">Couture</h2>
+      <h2 class="w3-text-white w3-center text-en text-hidden" data-translation="couture-title">Sewing</h2>
+      <hr style="width:100%" class="w3-opacity">
+      <div class="section-img">
+        <div class="col-4">
+            <a href="images/couture01.jpeg" data-lightbox="portfolioa">
+                <img src="images/couture01.jpeg" alt="Création 1" class="couture-img">
+            </a>
+        </div>
+        <div class="col-4">
+            <a href="images/couture02_open.jpeg" data-lightbox="portfolioa">
+                <img src="images/couture02.jpeg" alt="Création 2" class="couture-img">
+            </a>
+        </div>
+        <div class="col-4">
+            <a href="images/couture03.jpeg" data-lightbox="portfolioa">
+                <img src="images/couture03.jpeg" alt="Création 3" class="couture-img">
+            </a>
+        </div>
+        <div class="col-4">
+            <a href="images/couture04.jpeg" data-lightbox="portfolioa">
+                <img src="images/couture04.jpeg" alt="Création 4" class="couture-img">
+            </a>
+        </div>
+        <div class="col-6">
+            <a href="https://images.gratisgraphics.com/a-criminal-court-case-involving-vladimir-putin-umfn1eiq.jpeg?h=699&q=70" data-lightbox="portfolioa">
+                <img src="https://images.gratisgraphics.com/a-criminal-court-case-involving-vladimir-putin-umfn1eiq.jpeg?h=699&q=70" alt="Création 5" class="couture-img">
+            </a>
+        </div>
+        <div class="col-6">
+            <a href="https://images.gratisgraphics.com/in-a-criminal-court-vladimir-putin-is-a-defendant-pwxqdhct.jpeg?h=699&q=70" data-lightbox="portfolioa">
+                <img src="https://images.gratisgraphics.com/in-a-criminal-court-vladimir-putin-is-a-defendant-pwxqdhct.jpeg?h=699&q=70" alt="Création 6" class="couture-img">
+            </a>
+        </div>
+    </div>
+    
+    
+<section class="w3-content w3-padding-64 w3-justify" id="dessins">
+  <h2 class="w3-text-white w3-center text-fr text-active" data-translation="drawings-title">Dessins et peintures</h2>
+  <h2 class="w3-text-white w3-center text-en text-hidden" data-translation="drawings-title">Drawings and paintings</h2>
+  <hr style="width:100%" class="w3-opacity">
+  <div class="section-img">
+    <div class="col-6">
+      <a href="https://images.gratisgraphics.com/a-man-and-woman-posing-for-a-picture-zqe7or8m.jpeg?h=700&q=70" data-lightbox="portfoliob">
+        <img src="https://images.gratisgraphics.com/a-man-and-woman-posing-for-a-picture-zqe7or8m.jpeg?h=700&q=70" alt="Création 3" class="couture-img"">
+      </a>
+    </div>
+    <div class="col-6">
+      <a href="https://images.pixexid.com/a-cat-holding-a-gun-c9d55vuc.webp?h=601&q=70" data-lightbox="portfoliob">
+        <img src="https://images.pixexid.com/a-cat-holding-a-gun-c9d55vuc.webp?h=601&q=70" alt="Création 4" class="couture-img"">
+      </a>
+    </div>
+  </div>
+</section>
+<section class="w3-content w3-padding-64 w3-justify" id="arts_numeriques">
+  <!-- Titre en français -->
+<h2 class="w3-text-white w3-center text-fr text-active" data-translation="digital-art-title">Arts numériques</h2>
+<!-- Titre en anglais -->
+<h2 class="w3-text-white w3-center text-en text-hidden" data-translation="digital-art-title">Digital art</h2>
+  <hr style="width:100%" class="w3-opacity">
+  <div class="section-img">
+    <div class="col-6">
+      <a href="https://images.pixexid.com/a-french-bulldog-in-a-garment-biduj6uz.webp?h=601&q=70" data-lightbox="portfolioc">
+        <img src="https://images.pixexid.com/a-french-bulldog-in-a-garment-biduj6uz.webp?h=601&q=70" alt="Création 5" class="couture-img"">
+      </a>
+    </div>
+    <div class="col-6">
+      <a href="https://images.pixexid.com/a-couple-of-happy-seniors-walking-on-a-beach-f4oubsoq.jpeg?h=700&q=70" data-lightbox="portfolioc">
+        <img src="https://images.pixexid.com/a-couple-of-happy-seniors-walking-on-a-beach-f4oubsoq.jpeg?h=700&q=70" alt="Création 6" class="couture-img">
+      </a>
+    </div>
+  </div>
+</section> 
+  
+<section class="w3-content contact-padding w3-text-light-grey w3-justify" id="contact">
+  <!-- Titre en français -->
+<h2 class="w3-text-white text-fr text-active" data-translation="contact-title">Contactez-moi</h2>
+<!-- Titre en anglais -->
+<h2 class="w3-text-white text-en text-hidden" data-translation="contact-title">Contact me</h2>
+  <hr style="width:200px" class="w3-opacity">
+  <!-- Paragraphe en français -->
+<p class="text-fr text-active" data-translation="contact-text">
+  Si vous souhaitez me contacter pour discuter d'un projet ou pour toute autre demande, n'hésitez pas à utiliser les icônes ci-dessous.
+</p>
+<!-- Paragraphe en anglais -->
+<p class="text-en text-hidden" data-translation="contact-text">
+  If you would like to contact me to discuss a project or for any other inquiries, please feel free to use the icons below.
+</p>
+  <div class="fluff-container">
+    <div class="kero">
+      <div class="kero-head">
+          <div class="kero-face">
+              <div class="kero-eye kero-eye-left"></div>
+              <div class="kero-eye kero-eye-right"></div>
+              <div class="kero-nose"></div>
+              <div class="kero-mouth">
+                  <div class="kero-mouth-inner"></div>
+              </div>
+              <div class="kero-blush kero-blush-left"></div>
+              <div class="kero-blush kero-blush-right"></div>
+          </div>
+          <div class="kero-ear kero-ear-left"></div>
+          <div class="kero-ear kero-ear-right"></div>
+      </div>
+      <div class="kero-bow">
+          <div class="kero-bow-tie"></div>
+          <div class="kero-bow-ribbon kero-bow-ribbon-left"></div>
+          <div class="kero-bow-ribbon kero-bow-ribbon-right"></div>
+          <div class="kero-bow-string"></div>
+      </div>
+      <div class="kero-body">
+          <div class="kero-torso"></div>
+          <div class="kero-wing kero-wing-left">
+              <div class="kero-wing-inner"></div>
+          </div>
+          <div class="kero-wing kero-wing-right">
+              <div class="kero-wing-inner"></div>
+          </div>
+          <div class="kero-arm kero-arm-left"></div>
+          <div class="kero-arm kero-arm-right"></div>
+          <div class="kero-leg kero-leg-left">
+              <div class="kero-leg-upper"></div>
+              <div class="kero-foot"></div>
+          </div>
+          <div class="kero-leg kero-leg-right">
+              <div class="kero-leg-upper"></div>
+              <div class="kero-foot"></div>
+          </div>
+          <div class="kero-tail">
+              <div class="kero-tail-length"></div>
+              <div class="kero-tail-fluff"></div>
+          </div>
+      </div>
+  
+
+  
+
+  </div>
+</section>
+</div>
+</div>
+<footer class="w3-center" id="main">
+  <div class="socials">
+    <div class="social-icon-container">
+      <a href="mailto:contact@monemail.com" target="_blank" class="social-icon">
+        <i class="fa fa-envelope"></i>
+      </a>
+      <div class="social-icon-hover">
+        <a href="mailto:contact@monemail.com" target="_blank">
+          <h4>Contactez-nous par e-mail</h4>
+          <img src="https://source.unsplash.com/random/340x200" alt="Image Email">
+        </a>
+      </div>
+    </div>
+    <div class="social-icon-container">
+      <a href="https://www.instagram.com/monprofil1/" target="_blank" class="social-icon">
+        <i class="fa fa-instagram"></i>
+      </a>
+      <div class="social-icon-hover">
+        <a href="https://www.instagram.com/monprofil1/" target="_blank">
+          <h4>Instagram couture</h4>
+          <img src="https://source.unsplash.com/random/222x200" alt="Image Instagram">
+        </a>
+      </div>
+    </div>
+    <div class="social-icon-container">
+      <a href="https://www.instagram.com/monprofil2/" target="_blank" class="social-icon">
+        <i class="fa fa-instagram"></i>
+      </a>
+      <div class="social-icon-hover">
+        <a href="https://www.instagram.com/monprofil2/" target="_blank">
+          <h4>Mon profil Instagram</h4>
+          <img src="https://source.unsplash.com/random/400x233" alt="Image Instagram">
+        </a>
+      </div>
+    </div>
+    <div class="social-icon-container">
+      <a href="https://www.facebook.com/monprofil/" target="_blank" class="social-icon">
+        <i class="fa fa-facebook"></i>
+      </a>
+      <div class="social-icon-hover">
+        <a href="https://www.facebook.com/monprofil/" target="_blank">
+          <h4>Rejoignez-nous sur Facebook</h4>
+          <img src="https://source.unsplash.com/random/300x500" alt="Image Facebook">
+        </a>
+      </div>
+    </div>
+    <div class="social-icon-container">
+      <a href="#" class="social-icon">
+        <i class="fa fa-twitter"></i>
+      </a>
+      <div class="social-icon-hover">
+        <a href="#" target="_blank">
+          <h4>Suivez-nous sur Twitter</h4>
+          <img src="https://source.unsplash.com/random/400x200" alt="Image Twitter">
+        </a>
+      </div>
+    </div>
+    <div class="social-icon-container">
+      <a href="#" class="social-icon">
+        <i class="fa fa-linkedin"></i>
+      </a>
+      <div class="social-icon-hover">
+        <a href="#" target="_blank">
+          <h4>LinkedIn</h4>
+          <img src="https://source.unsplash.com/random/"  alt="Image LinkedIn">
+        </a>
+      </div>
+    </div>
+  </div>
+  <p class="end-padding">Powered by mITAINE</p>
+</footer>
+</body>
+<script>
+  const fluffContainer = document.querySelector('.fluff-container');
+  const fluffStyle = fluffContainer.style;
+
+  function handleIntersection(entries, observer) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        fluffStyle.visibility = 'visible';
+        fluffContainer.classList.add('appear');
+      } else {
+        fluffStyle.visibility = 'hidden';
+        fluffContainer.classList.remove('appear');
+      }
+    });
+  }
+
+  const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5
+  };
+
+  const observer = new IntersectionObserver(handleIntersection, options);
+  observer.observe(fluffContainer);
+
+  // Initialise l'état de visibilité de l'élément fluff-container
+  fluffStyle.visibility = 'hidden';
+  const initialEntry = {
+    isIntersecting: fluffContainer.getBoundingClientRect().top < window.innerHeight,
+    target: fluffContainer
+  };
+  handleIntersection([initialEntry], observer);
+
+
+  document.addEventListener("DOMContentLoaded", function () {
+  const title = document.getElementById("title");
+
+  function handleTransitionEnd(event) {
+    if (event.propertyName === "opacity") {
+      title.classList.add("animation-finished");
+
+      title.addEventListener("mouseover", function () {
+        title.classList.add("hovered");
+      });
+
+      title.addEventListener("mouseout", function () {
+        title.classList.remove("hovered");
+      });
+    }
+  }
+
+
+});
+
+
+
+</script>
+
+<script>
+  // Select the title container using the class
+  const titleContainer = document.querySelector(".title-container");
+
+  // Set the initial top value to -50vh
+  titleContainer.style.top = "-50vh";
+
+  // Function to animate the title based on the scroll
+  const animateTitleOnScroll = () => {
+    const scrollTop = window.scrollY;
+    const screenHeight = window.innerHeight;
+
+    // Calculate the top value based on screen height and scrollTop
+    // You can adjust the scrolling speed of the title by changing the value '0.5' to another number (e.g., '0.3', '0.7')
+    let topValue = -50 + (scrollTop * 150 * 0.92) / screenHeight;
+
+    if (topValue > 130) {
+      topValue = 130;
+    }
+
+    // Apply the top value
+    titleContainer.style.top = `${topValue}vh`;
+    // You can also adjust size, opacity, etc.
+  };
+
+  // Add an event listener to detect scroll
+  window.addEventListener("scroll", animateTitleOnScroll);
+
+
+
+
+  function toggleTranslation() {
+  const textsFr = document.querySelectorAll(".text-fr");
+  const textsEn = document.querySelectorAll(".text-en");
+  const translationButton = document.getElementById("translation-button");
+
+  textsFr.forEach((textFr) => {
+    if (textFr.classList.contains("text-active")) {
+      textFr.classList.remove("text-active");
+      textFr.classList.add("text-hidden");
+    } else {
+      textFr.classList.remove("text-hidden");
+      textFr.classList.add("text-active");
+    }
+  });
+
+  textsEn.forEach((textEn) => {
+    if (textEn.classList.contains("text-active")) {
+      textEn.classList.remove("text-active");
+      textEn.classList.add("text-hidden");
+    } else {
+      textEn.classList.remove("text-hidden");
+      textEn.classList.add("text-active");
+    }
+  });
+
+  translationButton.classList.toggle("text-fr-active");
+}
+
+</script>
+
+<script>
+  window.addEventListener('scroll', function() {
+    const translationContainer = document.getElementById('translation-container');
+    if (window.pageYOffset > window.innerHeight) {
+      translationContainer.style.opacity = '1';
+    } else {
+      translationContainer.style.opacity = '0';
+    }
+  });
+</script>
+
+
+
+
+<script src="lightbox-plus-jquery.js"></script>
+</body>
+</html>
