@@ -23,37 +23,56 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 @media only screen and (max-width: 600px) {#main {margin-left: 0}}
 
 
-
 .couture-img {
     width: 100%;
     height: auto;
     display: block;
-    margin: auto;
     margin-bottom: 12px;
-  transition: transform 0.2s ease-in-out;
-  }
-  .couture-img:hover {
-  filter: drop-shadow(0 0 10px #ffffff);
-     border-radius: 10px;
-     transform: scale(1.1);
+    transition: transform 0.43s ease-in-out;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.section-couture-img {
-  margin-top: 43px;
+.couture-img:hover {
+    filter: drop-shadow(0 0 10px #ffffff);
+    border-radius: 10px;
+    transform: scale(1.1);
 }
-.section-couture-img:hover .couture-img:not(:hover) {
-  transform: scale(0.9);
-}
-  .couture-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+
+.section-img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
-  }
+    padding: 15px;
+    margin-top: 22px;
+}
 
-  .couture-grid a {
-    display: block;
-  }
- 
+.section-img:hover .couture-img:not(:hover) {
+    transform: scale(0.9);
+}
+
+.col-4 {
+    flex-basis: calc(25% - 30px);
+}
+
+.col-6 {
+    flex-basis: calc(50% - 30px);
+}
+
+@media (max-width: 888px) {
+    .col-4 {
+        flex-basis: calc(50% - 30px);
+    }
+}
+
+@media (max-width: 600px) {
+    .col-4, .col-6 {
+        flex-basis: 100%;
+    }
+}
+
   .fluff-container {
   position: absolute;
   width: 2vw;
@@ -361,38 +380,37 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
       <h2 class="w3-text-white w3-center text-fr text-active" data-translation="couture-title">Couture</h2>
       <h2 class="w3-text-white w3-center text-en text-hidden" data-translation="couture-title">Sewing</h2>
       <hr style="width:100%" class="w3-opacity">
-      <div class="w3-row-padding section-couture-img">
-        <div class="w3-col m3">
-          <a href="images/couture01.jpeg" data-lightbox="portfolioa">
-            <img src="images/couture01.jpeg"Création 3" class="couture-img">         
-          </a>
+      <div class="section-img">
+        <div class="col-4">
+            <a href="images/couture01.jpeg" data-lightbox="portfolioa">
+                <img src="images/couture01.jpeg" alt="Création 1" class="couture-img">
+            </a>
         </div>
-        <div class="w3-col m3">
-          <a href="images/couture02_open.jpeg" data-lightbox="portfolioa">
-            <img src="images/couture02.jpeg" alt="Création 3" class="couture-img"> 
-          </a>        
+        <div class="col-4">
+            <a href="images/couture02_open.jpeg" data-lightbox="portfolioa">
+                <img src="images/couture02.jpeg" alt="Création 2" class="couture-img">
+            </a>
         </div>
-        <div class="w3-col m3">
-          <a href="images/couture03.jpeg" data-lightbox="portfolioa">
-            <img src="images/couture03.jpeg" alt="Création 3" class="couture-img"">
-          </a>
+        <div class="col-4">
+            <a href="images/couture03.jpeg" data-lightbox="portfolioa">
+                <img src="images/couture03.jpeg" alt="Création 3" class="couture-img">
+            </a>
         </div>
-        <div class="w3-col m3">
-          <a href="https://images.pixexid.com/a-girl-surrounded-by-stars-uwwidhzf.jpeg?h=700&q=70" data-lightbox="portfolioa">
-            <img src="https://images.pixexid.com/a-girl-surrounded-by-stars-uwwidhzf.jpeg?h=700&q=70" alt="Création 3" class="couture-img">
-          </a>
+        <div class="col-4">
+            <a href="images/couture04.jpeg" data-lightbox="portfolioa">
+                <img src="images/couture04.jpeg" alt="Création 4" class="couture-img">
+            </a>
         </div>
-        <div class="w3-col m6">
-          <a href="https://images.gratisgraphics.com/a-criminal-court-case-involving-vladimir-putin-umfn1eiq.jpeg?h=699&q=70" data-lightbox="portfolioa">
-            <img src="https://images.gratisgraphics.com/a-criminal-court-case-involving-vladimir-putin-umfn1eiq.jpeg?h=699&q=70" alt="Création 3" class="couture-img">
-          </a>
+        <div class="col-6">
+            <a href="https://images.gratisgraphics.com/a-criminal-court-case-involving-vladimir-putin-umfn1eiq.jpeg?h=699&q=70" data-lightbox="portfolioa">
+                <img src="https://images.gratisgraphics.com/a-criminal-court-case-involving-vladimir-putin-umfn1eiq.jpeg?h=699&q=70" alt="Création 5" class="couture-img">
+            </a>
         </div>
-        <div class="w3-col m6">
-          <a href="https://images.gratisgraphics.com/in-a-criminal-court-vladimir-putin-is-a-defendant-pwxqdhct.jpeg?h=699&q=70" data-lightbox="portfolioa">
-            <img src="https://images.gratisgraphics.com/in-a-criminal-court-vladimir-putin-is-a-defendant-pwxqdhct.jpeg?h=699&q=70" alt="Création 3" class="couture-img">
-          </a>
+        <div class="col-6">
+            <a href="https://images.gratisgraphics.com/in-a-criminal-court-vladimir-putin-is-a-defendant-pwxqdhct.jpeg?h=699&q=70" data-lightbox="portfolioa">
+                <img src="https://images.gratisgraphics.com/in-a-criminal-court-vladimir-putin-is-a-defendant-pwxqdhct.jpeg?h=699&q=70" alt="Création 6" class="couture-img">
+            </a>
         </div>
-      </div>
     </div>
     
     
@@ -400,13 +418,13 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   <h2 class="w3-text-white w3-center text-fr text-active" data-translation="drawings-title">Dessins et peintures</h2>
   <h2 class="w3-text-white w3-center text-en text-hidden" data-translation="drawings-title">Drawings and paintings</h2>
   <hr style="width:100%" class="w3-opacity">
-  <div class="w3-row-padding">
-    <div class="w3-col m6">
+  <div class="section-img">
+    <div class="col-6">
       <a href="https://images.gratisgraphics.com/a-man-and-woman-posing-for-a-picture-zqe7or8m.jpeg?h=700&q=70" data-lightbox="portfoliob">
         <img src="https://images.gratisgraphics.com/a-man-and-woman-posing-for-a-picture-zqe7or8m.jpeg?h=700&q=70" alt="Création 3" class="couture-img"">
       </a>
     </div>
-    <div class="w3-col m6">
+    <div class="col-6">
       <a href="https://images.pixexid.com/a-cat-holding-a-gun-c9d55vuc.webp?h=601&q=70" data-lightbox="portfoliob">
         <img src="https://images.pixexid.com/a-cat-holding-a-gun-c9d55vuc.webp?h=601&q=70" alt="Création 4" class="couture-img"">
       </a>
@@ -419,13 +437,13 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 <!-- Titre en anglais -->
 <h2 class="w3-text-white w3-center text-en text-hidden" data-translation="digital-art-title">Digital art</h2>
   <hr style="width:100%" class="w3-opacity">
-  <div class="w3-row-padding">
-    <div class="w3-col m6">
+  <div class="section-img">
+    <div class="col-6">
       <a href="https://images.pixexid.com/a-french-bulldog-in-a-garment-biduj6uz.webp?h=601&q=70" data-lightbox="portfolioc">
         <img src="https://images.pixexid.com/a-french-bulldog-in-a-garment-biduj6uz.webp?h=601&q=70" alt="Création 5" class="couture-img"">
       </a>
     </div>
-    <div class="w3-col m6">
+    <div class="col-6">
       <a href="https://images.pixexid.com/a-couple-of-happy-seniors-walking-on-a-beach-f4oubsoq.jpeg?h=700&q=70" data-lightbox="portfolioc">
         <img src="https://images.pixexid.com/a-couple-of-happy-seniors-walking-on-a-beach-f4oubsoq.jpeg?h=700&q=70" alt="Création 6" class="couture-img">
       </a>
