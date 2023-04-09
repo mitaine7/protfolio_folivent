@@ -670,11 +670,28 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
     // Apply the top value
     titleContainer.style.top = `${topValue}vh`;
-    // You can also adjust size, opacity, etc.
+
+    // Calculate the scale value based on scrollTop
+    // Initial scale is 1, minimum scale is 0.8
+    let scaleValue = 1 - (scrollTop * 0.0888) / screenHeight;
+    if (scaleValue < 0.888) {
+      scaleValue = 0.888;
+    }
+
+    // Apply the scale transformation
+    titleContainer.style.transform = `scale(${scaleValue})`;
+
+    // Request the next animation frame to keep the animation smooth
+    requestAnimationFrame(animateTitleOnScroll);
   };
 
+  // Call the function initially
+  animateTitleOnScroll();
+
   // Add an event listener to detect scroll
-  window.addEventListener("scroll", animateTitleOnScroll);
+   window.addEventListener("scroll", animateTitleOnScroll);
+
+
 
 
 
