@@ -17,7 +17,7 @@
 
 @media (max-width: 600px) {
   .hero-banner {
-      background-size: auto 100%;
+      background-size: 1000px 750px;
       background-repeat: no-repeat;
   }
 }
