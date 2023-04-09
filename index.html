@@ -33,11 +33,19 @@ body, h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.couture-img:hover {
+/* Styles pour les écrans supérieurs à 600px */
+@media screen and (min-width: 600px) {
+  .couture-img:hover {
     filter: drop-shadow(0 0 10px #ffffff);
     border-radius: 10px;
     transform: scale(1.1);
+  }
+  
+  .section-img:hover .couture-img:not(:hover) {
+    transform: scale(0.9);
+  }
 }
+
 
 .section-img {
     display: flex;
@@ -46,10 +54,6 @@ body, h1, h2, h3, h4, h5, h6 {
     gap: 20px;
     padding: 15px;
     margin-top: 35px;
-}
-
-.section-img:hover .couture-img:not(:hover) {
-    transform: scale(0.9);
 }
 
 .img--4 {
@@ -442,6 +446,11 @@ body, h1, h2, h3, h4, h5, h6 {
         <img src="images/dessin04.jpeg" alt="Création 4" class="couture-img">
     </a>
     </div>
+    <div class="img--2">
+      <a href="images/dessin05.jpeg" data-lightbox="portfolioa">
+        <img src="images/dessin05.jpeg" alt="Création 5" class="couture-img">
+    </a>
+    </div>
   </div>
 </section>
 <section class="w3-content w3-padding-64 w3-justify" id="arts_numeriques">
@@ -534,7 +543,7 @@ body, h1, h2, h3, h4, h5, h6 {
 <footer class="w3-center" id="main">
   <div class="socials">
     <div class="social-icon-container">
-      <a href="mailto:contact@monemail.com" target="_blank" class="social-icon">
+      <a target="_blank" class="social-icon">
         <i class="fa fa-envelope"></i>
       </a>
       <div class="social-icon-hover">
@@ -545,7 +554,7 @@ body, h1, h2, h3, h4, h5, h6 {
       </div>
     </div>
     <div class="social-icon-container">
-      <a href="https://www.instagram.com/monprofil1/" target="_blank" class="social-icon">
+      <a target="_blank" class="social-icon">
         <i class="fa fa-instagram"></i>
       </a>
       <div class="social-icon-hover">
@@ -556,7 +565,7 @@ body, h1, h2, h3, h4, h5, h6 {
       </div>
     </div>
     <div class="social-icon-container">
-      <a href="https://www.instagram.com/monprofil2/" target="_blank" class="social-icon">
+      <a target="_blank" class="social-icon">
         <i class="fa fa-instagram"></i>
       </a>
       <div class="social-icon-hover">
@@ -567,7 +576,7 @@ body, h1, h2, h3, h4, h5, h6 {
       </div>
     </div>
     <div class="social-icon-container">
-      <a href="https://www.facebook.com/monprofil/" target="_blank" class="social-icon">
+      <a target="_blank" class="social-icon">
         <i class="fa fa-facebook"></i>
       </a>
       <div class="social-icon-hover">
@@ -578,7 +587,7 @@ body, h1, h2, h3, h4, h5, h6 {
       </div>
     </div>
     <div class="social-icon-container">
-      <a href="#" class="social-icon">
+      <a class="social-icon">
         <i class="fa fa-twitter"></i>
       </a>
       <div class="social-icon-hover">
@@ -589,7 +598,7 @@ body, h1, h2, h3, h4, h5, h6 {
       </div>
     </div>
     <div class="social-icon-container">
-      <a href="#" class="social-icon">
+      <a class="social-icon">
         <i class="fa fa-linkedin"></i>
       </a>
       <div class="social-icon-hover">
