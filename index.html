@@ -53,22 +53,26 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     transform: scale(0.9);
 }
 
-.col-4 {
+.img--4 {
     flex-basis: calc(25% - 30px);
 }
 
-.col-6 {
+.img--2 {
     flex-basis: calc(50% - 30px);
 }
 
+.img--3 {
+    flex-basis: calc(33% - 30px);
+}
+
 @media (max-width: 888px) {
-    .col-4 {
+    .img--4, .img--3{
         flex-basis: calc(50% - 30px);
     }
 }
 
 @media (max-width: 600px) {
-    .col-4, .col-6 {
+    .img--2, .img--4, .img--3 {
         flex-basis: 100%;
     }
 }
@@ -381,32 +385,32 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
       <h2 class="w3-text-white w3-center text-en text-hidden" data-translation="couture-title">Sewing</h2>
       <hr style="width:100%" class="w3-opacity">
       <div class="section-img">
-        <div class="col-4">
+        <div class="img--4">
             <a href="images/couture01.jpeg" data-lightbox="portfolioa">
                 <img src="images/couture01.jpeg" alt="Création 1" class="couture-img">
             </a>
         </div>
-        <div class="col-4">
+        <div class="img--4">
             <a href="images/couture02_open.jpeg" data-lightbox="portfolioa">
                 <img src="images/couture02.jpeg" alt="Création 2" class="couture-img">
             </a>
         </div>
-        <div class="col-4">
+        <div class="img--4">
             <a href="images/couture03.jpeg" data-lightbox="portfolioa">
                 <img src="images/couture03.jpeg" alt="Création 3" class="couture-img">
             </a>
         </div>
-        <div class="col-4">
+        <div class="img--4">
             <a href="images/couture04.jpeg" data-lightbox="portfolioa">
                 <img src="images/couture04.jpeg" alt="Création 4" class="couture-img">
             </a>
         </div>
-        <div class="col-6">
+        <div class="img--2">
             <a href="images/couture05.jpeg" data-lightbox="portfolioa">
                 <img src="images/couture05.jpeg" alt="Création 5" class="couture-img">
             </a>
         </div>
-        <div class="col-6">
+        <div class="img--2">
           <a href="images/couture06.jpeg" data-lightbox="portfolioa">
             <img src="images/couture06.jpeg" alt="Création 6" class="couture-img">
         </a>
@@ -419,22 +423,22 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   <h2 class="w3-text-white w3-center text-en text-hidden" data-translation="drawings-title">Drawings and paintings</h2>
   <hr style="width:100%" class="w3-opacity">
   <div class="section-img">
-    <div class="col-4">
+    <div class="img--3">
       <a href="images/dessin01.jpeg" data-lightbox="portfolioa">
         <img src="images/dessin01.jpeg" alt="Création 1" class="couture-img">
     </a>
     </div>
-    <div class="col-4">
+    <div class="img--3">
       <a href="images/dessin02.jpeg" data-lightbox="portfolioa">
         <img src="images/dessin02.jpeg" alt="Création 2" class="couture-img">
     </a>
     </div>
-    <div class="col-4">
+    <div class="img--3">
       <a href="images/dessin03.jpeg" data-lightbox="portfolioa">
         <img src="images/dessin03.jpeg" alt="Création 3" class="couture-img">
     </a>
     </div>
-    <div class="col-6">
+    <div class="img--2">
       <a href="images/dessin04.jpeg" data-lightbox="portfolioa">
         <img src="images/dessin04.jpeg" alt="Création 4" class="couture-img">
     </a>
@@ -448,12 +452,12 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 <h2 class="w3-text-white w3-center text-en text-hidden" data-translation="digital-art-title">Digital art</h2>
   <hr style="width:100%" class="w3-opacity">
   <div class="section-img">
-    <div class="col-6">
+    <div class="img--2">
       <a href="https://images.pixexid.com/a-french-bulldog-in-a-garment-biduj6uz.webp?h=601&q=70" data-lightbox="portfolioc">
         <img src="https://images.pixexid.com/a-french-bulldog-in-a-garment-biduj6uz.webp?h=601&q=70" alt="Création 5" class="couture-img"">
       </a>
     </div>
-    <div class="col-6">
+    <div class="img--2">
       <a href="https://images.pixexid.com/a-couple-of-happy-seniors-walking-on-a-beach-f4oubsoq.jpeg?h=700&q=70" data-lightbox="portfolioc">
         <img src="https://images.pixexid.com/a-couple-of-happy-seniors-walking-on-a-beach-f4oubsoq.jpeg?h=700&q=70" alt="Création 6" class="couture-img">
       </a>
