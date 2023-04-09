@@ -2,17 +2,24 @@
 
 
 .hero-banner {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/image1.png);
-    background-position: center;
-    background-size: cover;
-    height: 150vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    cursor: url(images/logo.png), auto;
-    background-attachment: fixed;
-    position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/image1.png);
+  background-position: center;
+  background-size: cover;
+  height: 150vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: url(images/logo.png), auto;
+  background-attachment: fixed;
+  position: relative;
+}
+
+@media (max-width: 600px) {
+  .hero-banner {
+      background-size: auto 100%;
+      background-repeat: no-repeat;
+  }
 }
 .hero-banner::after {
     content: "";
