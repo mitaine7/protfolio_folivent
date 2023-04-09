@@ -14,13 +14,16 @@
   background-attachment: fixed;
   position: relative;
 }
-
+/* Media query pour les petits écrans */
 @media (max-width: 600px) {
   .hero-banner {
-      background-size: 1000px 750px;
+      background-size: 1257px 897px; /* Largeur fixe 360px, hauteur fixe 640px */
+      background-position: center;
       background-repeat: no-repeat;
   }
 }
+
+
 .hero-banner::after {
     content: "";
     position: absolute;
