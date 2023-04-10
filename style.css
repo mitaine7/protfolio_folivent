@@ -175,17 +175,22 @@
         list-style-type: none;
         padding: 0;
         margin: 0;
-        margin-bottom: 22px;
-        margin-top: 11px;
+        margin-bottom: 33px;
+        margin-top: 22px;
         width: 100%;
         height: 100%;
         flex-direction: column;
         justify-content: space-between;
     }
+    .nav-item {
+      width: 100%;
+    }
       
-      .nav-item {
-        width: 100%;
-      }
+    .nav-icon {
+      width: 34px;
+      height: 34px;
+    }
+    
       
       .nav-link {
         display: flex;
@@ -215,7 +220,7 @@
         left: calc(100% + 1rem);
       }
       
-      .nav-link i,
+      .nav-link .nav-icon,
       .nav-link span {
         position: absolute;
         left: 50%;
@@ -225,7 +230,7 @@
         font-size: 35px; /* taille de l'icône ou du texte */
       }
       
-      .nav-link:hover i {
+      .nav-link:hover .nav-icon {
         opacity: 0;
       }
       
