@@ -63,7 +63,7 @@
 
 
 .hero-title {
-    font-size: 4.6em;
+    font-size: 4.8em;
     text-transform: uppercase;
     opacity: 0;
     transform: translateX(-100px);
@@ -75,7 +75,7 @@
     
     @media screen and (max-width: 1000px) {
     .hero-title {
-    font-size: 7vw;
+    font-size: 7.7vw;
     }
     }
     .hero-title span {
