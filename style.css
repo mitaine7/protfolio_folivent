@@ -271,11 +271,16 @@
       
 
       .social-icon-container {
-        position: relative;
-        display: inline-block;
         perspective: 1000px;
+        margin: 4px;
       }
       
+      .socials {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+      }
       .social-icon {
         display: inline-flex;
         align-items: center;
