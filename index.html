@@ -272,7 +272,7 @@ body, h1, h2, h3, h4, h5, h6 {
   opacity: 0;
   display: block;
   animation-name: slideInDown;
-  animation-duration: 1s;
+  animation-duration: 0.5s;
   animation-timing-function: ease;
   animation-fill-mode: forwards;
   animation-delay: 0s;
@@ -280,7 +280,7 @@ body, h1, h2, h3, h4, h5, h6 {
 
 @keyframes slideInDown {
   0% {
-    transform: translateY(-50%);
+    transform: translateY(-20%);
     opacity: 0;
   }
   100% {
@@ -346,33 +346,36 @@ body, h1, h2, h3, h4, h5, h6 {
       <li class="nav-item">
         <a href="#" class="nav-link">
           <img src="icons/home.svg" class="nav-icon" alt="home" />
-          <span>Accueil</span>
+          <span class="text-fr text-active" data-translation="home_nav">Accueil</span>
+          <span class="text-en text-hidden" data-translation="home_nav">Home</span>
         </a>
       </li>
       <li class="nav-item">
         <a href="#about" class="nav-link">
           <img src="icons/about.svg" class="nav-icon" alt="about" />
-          <span>A propos</span>
+          <span class="text-fr text-active" data-translation="home_nav">À propos</span>
+          <span class="text-en text-hidden" data-translation="home_nav">About</span>
         </a>
       </li>
       <li class="nav-item">
         <a href="#couture" class="nav-link">
           <img src="icons/scissors.svg" class="nav-icon" alt="Couture" />
-
-
-          <span>Couture</span>
+          <span class="text-fr text-active" data-translation="couture_nav">Couture</span>
+          <span class="text-en text-hidden" data-translation="couture_nav">Sewing</span>
         </a>
       </li>
       <li class="nav-item">
         <a href="#dessins" class="nav-link">
           <img src="icons/dessins.svg" class="nav-icon" alt="dessins" />
-          <span>Dessins et Peintures</span>
+          <span class="text-fr text-active" data-translation="dessins_nav">Dessins et Peintures</span>
+          <span class="text-en text-hidden" data-translation="dessins_nav">Drawings and Paintings</span>
         </a>
       </li>
       <li class="nav-item">
         <a href="#arts_numeriques" class="nav-link">
           <img src="icons/digital.svg" class="nav-icon" alt="digital" />
-          <span>Art Digital</span>
+          <span class="text-fr text-active" data-translation="digital_nav">Art Digital</span>
+          <span class="text-en text-hidden" data-translation="digital_nav">Digital Art</span>
         </a>
       </li>
       <li class="nav-item">
@@ -615,7 +618,8 @@ body, h1, h2, h3, h4, h5, h6 {
       </a>
       <div class="social-icon-hover">
         <a href="mailto:helene.costumes@gmail.com" target="_blank">
-          <h4>Contactez-nous par e-mail</h4>
+          <h4 class="text-fr text-active" data-translation="mail-text">Contactez-nous par e-mail</h4>
+          <h4 class="text-en text-hidden" data-translation="mail-text">Contact via e-mail</h4>
           <img src="https://source.unsplash.com/random/340x200" alt="Image Email">
         </a>
       </div>
@@ -626,7 +630,8 @@ body, h1, h2, h3, h4, h5, h6 {
       </a>
       <div class="social-icon-hover">
         <a href="https://www.instagram.com/imakecorsets" target="_blank">
-          <h4>Instagram couture</h4>
+          <h4 class="text-fr text-active" data-translation="insta1-text">Instagram Couture</h4>
+          <h4 class="text-en text-hidden" data-translation="insta1-text">Sewing Instagram</h4>
           <img src="https://source.unsplash.com/random/222x200" alt="Image Instagram">
         </a>
       </div>
@@ -637,7 +642,8 @@ body, h1, h2, h3, h4, h5, h6 {
       </a>
       <div class="social-icon-hover">
         <a href="https://www.instagram.com/theghouldraws/" target="_blank">
-          <h4>Instagram Dessin</h4>
+          <h4 class="text-fr text-active" data-translation="insta2-text">Instagram Dessin</h4>
+          <h4 class="text-en text-hidden" data-translation="insta2-text">Drawing Instagram</h4>
           <img src="https://source.unsplash.com/random/400x233" alt="Image Instagram">
         </a>
       </div>
@@ -648,7 +654,8 @@ body, h1, h2, h3, h4, h5, h6 {
       </a>
       <div class="social-icon-hover">
         <a href="https://www.facebook.com/Helenegirardincostumiere/" target="_blank">
-          <h4>Rejoignez-nous sur Facebook</h4>
+          <h4 class="text-fr text-active" data-translation="facebook-text">Rejoignez-nous sur Facebook</h4>
+          <h4 class="text-en text-hidden" data-translation="facebook-text">Join us on Facebook</h4>
           <img src="https://source.unsplash.com/random/300x500" alt="Image Facebook">
         </a>
       </div>
