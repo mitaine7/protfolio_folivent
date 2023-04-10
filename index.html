@@ -7,7 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="lightbox.css" rel="stylesheet" />
 <link rel="stylesheet" href="fluff.css">
 
@@ -275,6 +274,58 @@ body, h1, h2, h3, h4, h5, h6 {
   transition: opacity 0.5s;
 }
 
+
+
+
+
+
+
+/* Styles pour remplacer w3-top */
+.custom-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 8;
+}
+
+/* Styles pour remplacer w3-hide-large et w3-hide-medium */
+@media screen and (min-width: 601px) {
+  .custom-hide-large-medium {
+    display: none !important;
+  }
+}
+
+/* Styles pour remplacer w3-bar */
+.custom-bar {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  opacity: 0.6;
+}
+
+.custom-bar:hover {
+  opacity: 1;
+}
+
+/* Styles pour remplacer w3-bar-item et w3-button */
+.custom-bar-item {
+  text-decoration: none;
+  padding: 8px 16px;
+  width: 16.666%;
+  font-size: 24px;
+  color: #FFF;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-bar-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 </style>
 </head>
 <body class="w3-black">
@@ -326,16 +377,17 @@ body, h1, h2, h3, h4, h5, h6 {
   </nav>
 
 <!-- Navbar on small screens (Hidden on medium and large screens) -->
-<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-    <a href="#" class="w3-bar-item w3-button" style="width:16.666% !important; font-size: 24px;"><i class="fa fa-home"></i></a>
-    <a href="#about" class="w3-bar-item w3-button" style="width:16.666% !important; font-size: 24px;"><i class="fa fa-user"></i></a>
-    <a href="#couture" class="w3-bar-item w3-button" style="width:16.666% !important; font-size: 24px;"><i class="fa fa-scissors"></i></a>
-    <a href="#dessins" class="w3-bar-item w3-button" style="width:16.666% !important; font-size: 24px;"><i class="fa fa-paint-brush"></i></a>
-    <a href="#arts_numeriques" class="w3-bar-item w3-button" style="width:16.666% !important; font-size: 24px;"><i class="fa fa-desktop"></i></a>
-    <a href="#contact" class="w3-bar-item w3-button" style="width:16.666% !important; font-size: 24px;"><i class="fa fa-envelope"></i></a>
+<div class="custom-top custom-hide-large-medium" id="myNavbar">
+  <div class="custom-bar">
+    <a href="#" class="custom-bar-item"><img src="icons/home.svg" alt="home"/></a>
+    <a href="#about" class="custom-bar-item"><img src="icons/about.svg" alt="about" /></a>
+    <a href="#couture" class="custom-bar-item"><img src="icons/scissors.svg" alt="Couture" /></a>
+    <a href="#dessins" class="custom-bar-item"><img src="icons/dessins.svg" alt="dessins" /></a>
+    <a href="#arts_numeriques" class="custom-bar-item"><img src="icons/digital.svg" alt="digital" /></a>
+    <a href="#contact" class="custom-bar-item"><img src="icons/mail.svg" alt="contact"/></a>
   </div>
 </div>
+
 
 <div class="hero-banner" id="main">
   <div class="title-container">
