@@ -19,6 +19,10 @@ p {
   font-family: 'Martel', serif;
 }
 
+h2 {
+  font-family: 'Expletus Sans', cursive;
+}
+
 
 html, body {
     font-size: 15px;
@@ -383,6 +387,24 @@ hr {
 }
 
 
+.about-content{
+  display:flex;
+  flex-direction:row;
+  align-items:center; 
+  justify-content:center;
+}
+
+.about-portrait {
+  flex-basis: 33.33%; 
+  display: flex; 
+  justify-content: flex-end;
+}
+
+.about-text{
+  flex-basis: 66.66%; 
+  padding-left: 16px;
+}
+
 </style>
 </head>
 <body class="mblack">
@@ -476,12 +498,12 @@ hr {
 
 <div class="mpadding-large mcenter mitenu" id ="main">
   <div class="mcontent mpadding-64 mtext-light-grey" id="about">
-    <div class="mjustify" style="display:flex; flex-direction:row; align-items:center; justify-content:center;">
+    <div class="mjustify about-content" style="display:flex; flex-direction:row; align-items:center; justify-content:center;">
 
-      <div style="flex-basis: 33.33%; display: flex; justify-content: flex-end;">
+      <div class="about-portrait">
         <img class="portrait" src="images/portrait.jpg" alt="Votre photo" style="width:100%">
       </div>
-      <div style="flex-basis: 66.66%; padding-left: 16px;">
+      <div class="about-text" style="flex-basis: 66.66%; padding-left: 16px;">
         <h2 class="mtext-white text-fr text-active" data-translation="about-title">À propos de moi</h2>
         <h2 class="mtext-white text-en text-hidden" data-translation="about-title">About me</h2>
         <hr style="width:200px" class="mopacity hr-left"></hr>
