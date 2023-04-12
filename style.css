@@ -1,17 +1,6 @@
-@font-face {
-  font-family: 'Playfair Display SC Regular';
-  src: url('fonts/PlayfairDisplaySC-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&display=swap');
 
-@font-face {
-  font-family: 'Martel Regular';
-  src: url('fonts/Martel-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Martel&display=swap');
 
 
 .hero-banner {
