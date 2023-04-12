@@ -1,3 +1,16 @@
+@font-face {
+  font-family: 'Playfair Display SC Regular';
+  src: url('fonts/PlayfairDisplaySC-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Martel Regular';
+  src: url('fonts/Martel-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 
 
@@ -123,10 +136,11 @@
     left: 0; /* déplace la ligne vers la gauche */
 }
 
-.mitenu {
-
-    position: relative;
-    }
+.mintenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 
       
@@ -156,12 +170,7 @@
         max-width: 100%;
         height: auto;
       }
-      @media (max-width: 600px) {
-        .portrait {
-          max-width: 50%;
-          justify-content: center;
-        }
-      }
+   
       
       .nav-avatar {
         margin: 0;

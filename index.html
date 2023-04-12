@@ -6,19 +6,85 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="w3.css">
 <link href="lightbox.css" rel="stylesheet" />
 <link rel="stylesheet" href="fluff.css">
 
 
 <style>
-body, h1, h2, h3, h4, h5, h6 {
-  font-family: 'Helvetica', sans-serif;
+body, h1, h3, h4, h5, h6 {
+  font-family: 'Playfair Display SC Regular', serif;
 }
 
-.w3-row-padding img {margin-bottom: 12px}
-#main {margin-left: 120px}
+p {
+  font-family: 'Martel Regular', serif;
+}
+
+
+html, body {
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0;
+}
+html {
+    -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+#main {
+  margin-left: 120px;
+  transition: margin-left .4s;
+}
 @media only screen and (max-width: 600px) {#main {margin-left: 0}}
+
+*,*:before,*:after {
+    box-sizing: inherit
+}
+
+.mpadding-large {
+    padding: 12px 24px!important
+}
+
+.mpadding-64 {
+    padding-top: 64px!important;
+    padding-bottom: 64px!important;
+}
+
+.mcenter {
+    text-align: center!important
+}
+
+.mtext-light-grey {
+    color: #f1f1f1!important
+}
+
+.mcontent {
+    max-width: 980px;
+    margin-left:auto;
+    margin-right:auto;
+    
+}
+
+.mjustify{
+  text-align: justify !important
+}
+
+.mtext-white{
+  color:#fff !important
+}
+
+.mopacity{
+  opacity:0.60
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+}
 
 
 .couture-img {
@@ -106,24 +172,6 @@ body, h1, h2, h3, h4, h5, h6 {
 
 
 
-.w3-sidebar.visible {
-  animation-name: slideInSidebar;
-  animation-duration: 1s;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-}
-@keyframes slideInSidebar {
-  from {
-    transform: translateY(-50%);
-  }
-  to {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-}
-
-
-.w3-content {background-color: black;}
 
 .text-active {
   display: block;
@@ -291,16 +339,12 @@ body, h1, h2, h3, h4, h5, h6 {
 
 
 
-
-
-/* Styles pour remplacer w3-hide-large et w3-hide-medium */
 @media screen and (min-width: 601px) {
   .custom-hide-large-medium {
     display: none !important;
   }
 }
 
-/* Styles pour remplacer w3-bar */
 .custom-bar {
   display: flex;
   flex-wrap: nowrap;
@@ -333,10 +377,15 @@ body, h1, h2, h3, h4, h5, h6 {
   opacity: 1;
 }
 
+.mblack {
+    color: #fff!important;
+    background-color: #000!important
+}
+
 
 </style>
 </head>
-<body class="w3-black">
+<body class="mblack">
 
   <nav class="nav-sidebar visible">
     <div class="nav-avatar">
@@ -387,8 +436,8 @@ body, h1, h2, h3, h4, h5, h6 {
     </ul>
   </nav>
 
-<!-- Navbar on small screens (Hidden on medium and large screens) -->
-<div class="custom-top custom-hide-large-medium" id="myNavbar">
+  <!-- Navbar on small screens (Hidden on medium and large screens) -->
+  <div class="custom-top custom-hide-large-medium" id="myNavbar">
   <div class="custom-bar">
     <a href="#" class="custom-bar-item"><img src="icons/home.svg" alt="home"/></a>
     <a href="#about" class="custom-bar-item"><img src="icons/about.svg" alt="about" /></a>
@@ -397,7 +446,7 @@ body, h1, h2, h3, h4, h5, h6 {
     <a href="#arts_numeriques" class="custom-bar-item"><img src="icons/digital.svg" alt="digital" /></a>
     <a href="#contact" class="custom-bar-item"><img src="icons/mail.svg" alt="contact"/></a>
   </div>
-</div>
+  </div>
 
 
 <div class="hero-banner" id="main">
@@ -425,22 +474,26 @@ body, h1, h2, h3, h4, h5, h6 {
 
 
 
-<div class="w3-padding-large w3-center mitenu" id ="main">
-  <div class="w3-content w3-padding-64 w3-text-light-grey" id="about">
-    <div class="w3-row">
-      <div class="w3-col m4">
+<div class="mpadding-large mcenter mitenu" id ="main">
+  <div class="mcontent mpadding-64 mtext-light-grey" id="about">
+    <div class="mjustify" style="display:flex; flex-direction:row; align-items:center; justify-content:center;">
+
+      <div style="flex-basis: 33.33%; display: flex; justify-content: flex-end;">
         <img class="portrait" src="images/portrait.jpg" alt="Votre photo" style="width:100%">
       </div>
-      <div class="w3-col m8 w3-justify">
-        <h2 class="w3-text-white text-fr text-active" data-translation="about-title">À propos de moi</h2>
-        <h2 class="w3-text-white text-en text-hidden" data-translation="about-title">About me</h2>
-        <hr style="width:200px" class="w3-opacity">
+      <div style="flex-basis: 66.66%; padding-left: 16px;">
+        <h2 class="mtext-white text-fr text-active" data-translation="about-title">À propos de moi</h2>
+        <h2 class="mtext-white text-en text-hidden" data-translation="about-title">About me</h2>
+        <hr style="width:200px" class="mopacity hr-left"></hr>
         <div id="text-container">
           <div class="text-fr text-active" data-translation="about-text">
-            <p>Je suis une couturière et artiste passionnée avec plusieurs années d'expérience dans la création de vêtements sur mesure et diverses œuvres d'art. Mon objectif est de créer des pièces uniques qui mettent en valeur la personnalité et le style de chaque client, ainsi que des œuvres d'art qui suscitent des émotions et des réflexions. J'attache une grande importance à la qualité et au souci du détail dans mon travail.</p>
+            <p>Ah, sacré bordel, là me voilà donc, une couturière et artiste passionnée, trimeuse de plusieurs années, dans la sueur et les chutes de tissu. Mon but, hein ? Vous le voulez, je vous le donne : créer des fringues qui collent à la peau de ces clients, leur foutre des œuvres qui les secouent, les fassent chialer ou penser.</p>
+
+              <p>La qualité, mon pote, c'est pas du flan, je la traîne comme un boulet, toujours là, jamais lâchée. Le souci du détail, je le flanque à chaque point d'aiguille, chaque trace de pinceau. Ça vous branche ? Alors venez, je vous emmène dans mon bordel artistique, et ensemble, on se paiera une tranche de rêve.</p>
           </div>
           <div class="text-en text-hidden" data-translation="about-text">
-            <p>I am a passionate seamstress and artist with several years of experience in creating custom-made clothing and various works of art. My goal is to create unique pieces that highlight the personality and style of each client, as well as artworks that evoke emotions and reflections. I place great importance on quality and attention to detail in my work.</p>
+            <p>Ah, damn mess, here I am then, a passionate seamstress and artist, toiling away for several years, in sweat and fabric scraps. My goal, huh? You want it, I give it to you: create clothes that stick to the skin of these clients, shove artworks down their throats that shake them, make them cry or think.</p>
+            <p>Quality, buddy, ain't no joke, I drag it around like a ball and chain, always there, never let go. Attention to detail, I slap it on every stitch, every brushstroke. You up for it? Then come on, I'll take you into my artistic mess, and together, we'll have a slice of dream.</p>
           </div>
         </div>
       </div>
@@ -448,10 +501,10 @@ body, h1, h2, h3, h4, h5, h6 {
   </div>
   
    
-    <div class="w3-content w3-padding-64 w3-justify"  id="couture">
-      <h2 class="w3-text-white w3-center text-fr text-active" data-translation="couture-title">Couture</h2>
-      <h2 class="w3-text-white w3-center text-en text-hidden" data-translation="couture-title">Sewing</h2>
-      <hr style="width:100%" class="w3-opacity">
+    <div class="mcontent mpadding-64 mjustify"  id="couture">
+      <h2 class="mtext-white mcenter text-fr text-active" data-translation="couture-title">Couture</h2>
+      <h2 class="mtext-white mcenter text-en text-hidden" data-translation="couture-title">Sewing</h2>
+      <hr style="width:100%" class="mopacity">
       <div class="section-img">
         <div class="img--4">
             <a href="images/couture01.jpeg" data-lightbox="portfolioa">
@@ -486,10 +539,10 @@ body, h1, h2, h3, h4, h5, h6 {
     </div>
     
     
-<section class="w3-content w3-padding-64 w3-justify" id="dessins">
-  <h2 class="w3-text-white w3-center text-fr text-active" data-translation="drawings-title">Dessins et peintures</h2>
-  <h2 class="w3-text-white w3-center text-en text-hidden" data-translation="drawings-title">Drawings and paintings</h2>
-  <hr style="width:100%" class="w3-opacity">
+<section class="mcontent mpadding-64 mjustify" id="dessins">
+  <h2 class="mtext-white mcenter text-fr text-active" data-translation="drawings-title">Dessins et peintures</h2>
+  <h2 class="mtext-white mcenter text-en text-hidden" data-translation="drawings-title">Drawings and paintings</h2>
+  <hr style="width:100%" class="mopacity">
   <div class="section-img">
     <div class="img--4">
       <a href="images/dessin01.jpeg" data-lightbox="portfolioa">
@@ -523,12 +576,12 @@ body, h1, h2, h3, h4, h5, h6 {
     </div>
   </div>
 </section>
-<section class="w3-content w3-padding-64 w3-justify" id="arts_numeriques">
+<section class="mcontent mpadding-64 mjustify" id="arts_numeriques">
   <!-- Titre en français -->
-<h2 class="w3-text-white w3-center text-fr text-active" data-translation="digital-art-title">Arts numériques</h2>
+<h2 class="mtext-white mcenter text-fr text-active" data-translation="digital-art-title">Arts numériques</h2>
 <!-- Titre en anglais -->
-<h2 class="w3-text-white w3-center text-en text-hidden" data-translation="digital-art-title">Digital art</h2>
-  <hr style="width:100%" class="w3-opacity">
+<h2 class="mtext-white mcenter text-en text-hidden" data-translation="digital-art-title">Digital art</h2>
+  <hr style="width:100%" class="mopacity">
   <div class="section-img">
     <div class="img--2">
       <a href="https://images.pixexid.com/a-french-bulldog-in-a-garment-biduj6uz.webp?h=601&q=70" data-lightbox="portfolioc">
@@ -543,19 +596,19 @@ body, h1, h2, h3, h4, h5, h6 {
   </div>
 </section> 
   
-<section class="w3-content contact-padding w3-text-light-grey w3-justify" id="contact">
+<section class="mcontent contact-padding mtext-light-grey mjustify" id="contact">
   <!-- Titre en français -->
-<h2 class="w3-text-white text-fr text-active" data-translation="contact-title">Contactez-moi</h2>
+<h2 class="mtext-white text-fr text-active" data-translation="contact-title">Contactez-moi</h2>
 <!-- Titre en anglais -->
-<h2 class="w3-text-white text-en text-hidden" data-translation="contact-title">Contact me</h2>
-  <hr style="width:200px" class="w3-opacity">
+<h2 class="mtext-white text-en text-hidden" data-translation="contact-title">Contact me</h2>
+  <hr style="width:200px" class="mopacity">
   <!-- Paragraphe en français -->
 <p class="text-fr text-active" data-translation="contact-text">
-  Si vous souhaitez me contacter pour discuter d'un projet ou pour toute autre demande, n'hésitez pas à utiliser les icônes ci-dessous.
+  Ah, vous voulez causer d'un projet ou autre salmigondis ? Pas d'chichi, mes cocos ! Balancez-moi vos idées en cliquant sur ces putains d'icônes juste en bas. Allez-y, j'vous attends!
 </p>
 <!-- Paragraphe en anglais -->
 <p class="text-en text-hidden" data-translation="contact-text">
-  If you would like to contact me to discuss a project or for any other inquiries, please feel free to use the icons below.
+  Ah, you wanna chat 'bout a project or some other goddamn thing? No fuss, mates! Just smash those bloody icons down there. Go on, I'm waitin' for ya!
 </p>
   <div class="fluff-container">
     <div class="kero">
@@ -610,7 +663,7 @@ body, h1, h2, h3, h4, h5, h6 {
 </section>
 </div>
 </div>
-<footer class="w3-center" id="main">
+<footer class="mcenter" id="main">
   <div class="socials">
     <div class="social-icon-container">
       <a target="_blank" class="social-icon">
