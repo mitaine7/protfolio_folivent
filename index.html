@@ -125,7 +125,6 @@ hr {
 }
 
 
-
 .section-img {
     display: flex;
     flex-wrap: wrap;
@@ -144,6 +143,8 @@ hr {
     margin-top: 35px;
 }
 
+@media screen and (min-width: 601px) {
+
 .section-imgd::before {
     content: "";
     position: absolute;
@@ -158,10 +159,7 @@ hr {
   width: 0;
 
 }
-
-.section-imgd:hover .couture-img:not(:hover) {
-    transform: scale(0.9);
-  }
+}
 
 .img--4 {
     flex-basis: calc(25% - 30px);
@@ -181,11 +179,11 @@ hr {
     }
 }
 
-@media (max-width: 600px) {
+/*@media (max-width: 600px) {
     .img--2, .img--4, .img--3 {
         flex-basis: 100%;
     }
-}
+}*/
 
   .fluff-container {
   position: absolute;
@@ -456,9 +454,10 @@ hr {
   justify-content:center;
 }
 
-@media screen and (min-width: 601px) {
+@media screen and (max-width: 601px) {
   .mheight {
-    min-height: 100vh;
+    height: auto;
+    min-height: 100vh!important;
   }
 }
 
@@ -1197,7 +1196,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const scroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
-  smoothMobile: false,
+  smoothMobile: true,
 });
 new ResizeObserver(() => scroll.update()).observe(
   document.querySelector("[data-scroll-container]")
