@@ -141,7 +141,19 @@ hr {
     gap: 20px;
     padding: 15px;
     margin-top: 35px;
+    pointer-events: none; /* désactive les événements de souris par défaut */
+    opacity:0;
+    transition: opacity 1s;
 }
+
+.section-imgd.is-inview {
+  opacity: 1;
+}
+
+.section-imgd.is-inview.pointer-enabled {
+  pointer-events: auto; /* active les événements de souris après 1,5 seconde */
+}
+
 
 @media screen and (min-width: 601px) {
 
@@ -154,11 +166,12 @@ hr {
     background: #000000;
     transition: width 1s ease-out;;
     transition-delay: 0.25s;
+    
 }
 .section-imgd.is-inview::before {
   width: 0;
-
 }
+
 }
 
 .img--4 {
@@ -199,7 +212,7 @@ hr {
 
 .appearfl {
   animation: appearfl 1s ease-in-out forwards;
-  animation-delay: 4.3s;
+  animation-delay: 22.22s;
 }
 
 @keyframes appearfl {
@@ -743,17 +756,22 @@ hr {
   </nav>
   
 
-  <!-- Navbar on small screens (Hidden on medium and large screens) -->
-  <nav class="custom-top custom-hide-large-medium" id="myNavbar">
-    <div class="custom-bar">
-      <a href="#" class="custom-bar-item"><img src="icons/home.svg" alt="home"/></a>
-      <a href="#about" class="custom-bar-item"><img src="icons/about.svg" alt="about" /></a>
-      <a href="#couture" class="custom-bar-item"><img src="icons/scissors.svg" alt="Couture" /></a>
-      <a href="#dessins" class="custom-bar-item"><img src="icons/dessins.svg" alt="dessins" /></a>
-      <a href="#arts_numeriques" class="custom-bar-item"><img src="icons/digital.svg" alt="digital" /></a>
-      <a href="#contact" class="custom-bar-item"><img src="icons/mail.svg" alt="contact"/></a>
-    </div>
-  </nav>
+<!-- Navbar on small screens (Hidden on medium and large screens) -->
+<nav class="custom-top custom-hide-large-medium" id="myNavbar">
+  <div class="custom-bar">
+    <a href="#home" class="custom-bar-item nav-link"><img src="icons/home.svg" alt="home" /></a>
+    <a href="#about" class="custom-bar-item nav-link"><img src="icons/about.svg" alt="about" /></a>
+    <a href="#couture" class="custom-bar-item nav-link"><img src="icons/scissors.svg" alt="Couture" /></a>
+    <a href="#dessins" class="custom-bar-item nav-link"><img src="icons/dessins.svg" alt="dessins" /></a>
+    <a href="#arts_numeriques" class="custom-bar-item nav-link"><img src="icons/digital.svg" alt="digital" /></a>
+    <a href="#contact" class="custom-bar-item nav-link"><img src="icons/mail.svg" alt="contact" /></a>
+  </div>
+</nav>
+
+
+
+
+
   <div id="translation-container" data-scroll data-scroll-target=".mitenu">
     <button id="translation-button" class="text-fr-active" onclick="toggleTranslation()">
       <div id="top-half">
@@ -845,12 +863,12 @@ hr {
                       <img src="images/couture04.jpeg" alt="Création 4" class="couture-img">
                   </a>
               </div>
-              <div data-scroll data-scroll-speed="3" data-scroll-delay="0.02" data-scroll-target="#couture" class="img--2">
+              <div data-scroll data-scroll-speed="3" data-scroll-target="#couture" class="img--2">
                   <a href="images/couture05_open.jpeg" data-lightbox="portfolioa">
                       <img src="images/couture05.jpeg" alt="Création 5" class="couture-img">
                   </a>
               </div>
-              <div data-scroll data-scroll-speed="3" data-scroll-delay="0.2" data-scroll-target="#couture" class="img--2">
+              <div data-scroll data-scroll-speed="3" data-scroll-target="#couture" class="img--2">
                 <a href="images/couture06_open.jpeg" data-lightbox="portfolioa">
                   <img src="images/couture06.jpeg" alt="Création 6" class="couture-img">
                 </a>
@@ -940,16 +958,16 @@ hr {
       <section class="mcontent mtext-light-grey mjustify fin-section" id="contact">
         <div>
         <!-- Titre en français -->
-        <h2 data-scroll data-scroll-speed="1" data-scroll-target=".socials" data-scroll-repeat="true" class="mtext-white text-fr text-active tcont" data-translation="contact-title">Contactez-moi</h2>
+        <h2 data-scroll data-scroll-speed="1" data-scroll-target="#contact" data-scroll-repeat="true" class="mtext-white text-fr text-active tcont" data-translation="contact-title">Contactez-moi</h2>
         <!-- Titre en anglais -->
-        <h2 data-scroll data-scroll-speed="1" data-scroll-target=".socials" data-scroll-repeat="true" class="mtext-white text-en text-hidden tcont" data-translation="contact-title">Contact me</h2>
-          <hr data-scroll data-scroll-speed="2" data-scroll-target=".socials" data-scroll-repeat="true" style="width:200px" class="mopacity lcont">
+        <h2 data-scroll data-scroll-speed="1" data-scroll-target="#contact" data-scroll-repeat="true" class="mtext-white text-en text-hidden tcont" data-translation="contact-title">Contact me</h2>
+          <hr data-scroll data-scroll-speed="2" data-scroll-target="#contact" data-scroll-repeat="true" style="width:200px" class="mopacity lcont">
           <!-- Paragraphe en français -->
-        <p data-scroll data-scroll-speed="3" data-scroll-target=".socials" data-scroll-repeat="true" class="text-fr text-active ccont" data-translation="contact-text">
+        <p data-scroll data-scroll-speed="3" data-scroll-target="#contact" data-scroll-repeat="true" class="text-fr text-active ccont" data-translation="contact-text">
           N'hésitez pas à utiliser les icônes ci-dessous pour me contacter ou me suivre sur les réseaux sociaux. Que vous soyez intéressé par un projet de couture personnalisé, une collaboration artistique ou simplement pour rester à jour sur mes dernières créations, je serais ravie de rentrer en contact avec vous.
         </p>
         <!-- Paragraphe en anglais -->
-        <p data-scroll data-scroll-speed="3" data-scroll-target=".socials" data-scroll-repeat="true" class="text-en text-hidden ccont" data-translation="contact-text">
+        <p data-scroll data-scroll-speed="3" data-scroll-target="#contact" data-scroll-repeat="true" class="text-en text-hidden ccont" data-translation="contact-text">
           Feel free to use the icons below to contact me or follow me on social media. Whether you're interested in a custom sewing project, an artistic collaboration, or just want to stay up-to-date on my latest creations, I'd love to connect with you.
         </p>
         <div class="socials">
@@ -1232,6 +1250,27 @@ loader.addEventListener('animationend', () => {
   nav.classList.add('appear');
   herot.classList.add('titleappear');
 });
+
+
+scroll.on('scroll', () => {
+  /* Code pour activer/désactiver les éléments selon leur visibilité */
+
+  const sectionImgd = document.querySelector('.section-imgd');
+  if (sectionImgd.classList.contains('is-inview')) {
+    if (!sectionImgd.classList.contains('pointer-enabled')) {
+      setTimeout(() => {
+        sectionImgd.classList.add('pointer-enabled');
+        console.log('Classe pointer-enabled ajoutée !');
+      }, 1500);
+    }
+  } else {
+    if (sectionImgd.classList.contains('pointer-enabled')) {
+      sectionImgd.classList.remove('pointer-enabled');
+      console.log('Classe pointer-enabled retirée !');
+    }
+  }
+});
+
 
 
 </script>
