@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="style.css">
 <link href="lightbox.css" rel="stylesheet" />
 <link rel="stylesheet" href="fluff.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
 
 
 
@@ -410,8 +411,7 @@ hr {
 
 </style>
 </head>
-<body class="mblack">
-
+<body  class="mblack">
   <nav class="nav-sidebar visible">
     <div class="nav-avatar">
       <img src="images/portrait.jpg" alt="Avatar">
@@ -462,289 +462,291 @@ hr {
   </nav>
 
   <!-- Navbar on small screens (Hidden on medium and large screens) -->
-  <div class="custom-top custom-hide-large-medium" id="myNavbar">
-  <div class="custom-bar">
-    <a href="#" class="custom-bar-item"><img src="icons/home.svg" alt="home"/></a>
-    <a href="#about" class="custom-bar-item"><img src="icons/about.svg" alt="about" /></a>
-    <a href="#couture" class="custom-bar-item"><img src="icons/scissors.svg" alt="Couture" /></a>
-    <a href="#dessins" class="custom-bar-item"><img src="icons/dessins.svg" alt="dessins" /></a>
-    <a href="#arts_numeriques" class="custom-bar-item"><img src="icons/digital.svg" alt="digital" /></a>
-    <a href="#contact" class="custom-bar-item"><img src="icons/mail.svg" alt="contact"/></a>
-  </div>
-  </div>
+  <nav class="custom-top custom-hide-large-medium" id="myNavbar">
+    <div class="custom-bar">
+      <a href="#" class="custom-bar-item"><img src="icons/home.svg" alt="home"/></a>
+      <a href="#about" class="custom-bar-item"><img src="icons/about.svg" alt="about" /></a>
+      <a href="#couture" class="custom-bar-item"><img src="icons/scissors.svg" alt="Couture" /></a>
+      <a href="#dessins" class="custom-bar-item"><img src="icons/dessins.svg" alt="dessins" /></a>
+      <a href="#arts_numeriques" class="custom-bar-item"><img src="icons/digital.svg" alt="digital" /></a>
+      <a href="#contact" class="custom-bar-item"><img src="icons/mail.svg" alt="contact"/></a>
+    </div>
+  </nav>
 
-
-<div class="hero-banner" id="main">
-  <div class="title-container">
-    <div class="hero-title-container">
-      <div class="hero-title">
-        <span>H</span><span>é</span><span>l</span><span>è</span><span>n</span><span>e</span>
-        <span>G</span><span>i</span><span>r</span><span>a</span><span>r</span><span>d</span><span>i</span><span>n</span>
+  <div id="translation-container" style="opacity:0;">
+    <button id="translation-button" class="text-fr-active" onclick="toggleTranslation()">
+      <div id="top-half">
+        <span id="fr-text">FR</span>
       </div>
-    </div>
-  </div>
-</div>
-
-<div id="translation-container" style="opacity:0;">
-  <button id="translation-button" class="text-fr-active" onclick="toggleTranslation()">
-    <div id="top-half">
-      <span id="fr-text">FR</span>
-    </div>
-    <div id="bottom-half">
-      <span id="en-text">EN</span>
-    </div>
-  </button>
-  
-</div>
-
-
-
-<div class="mpadding-large mcenter mitenu" id ="main">
-  <div class="mcontent mpadding-64 mtext-light-grey" id="about">
-    <div class="mjustify about-content" style="display:flex; flex-direction:row; align-items:center; justify-content:center;">
-
-      <div class="about-portrait">
-        <img class="portrait" src="images/portrait.jpg" alt="Votre photo" style="width:100%">
+      <div id="bottom-half">
+        <span id="en-text">EN</span>
       </div>
-      <div class="about-text" style="flex-basis: 66.66%; padding-left: 16px;">
-        <h2 class="mtext-white text-fr text-active" data-translation="about-title">À propos de moi</h2>
-        <h2 class="mtext-white text-en text-hidden" data-translation="about-title">About me</h2>
-        <hr style="width:200px" class="mopacity hr-left"></hr>
-        <div id="text-container">
-          <div class="text-fr text-active" data-translation="about-text">
-            <p>Je me présente, moi c'est Hélène Girardin, une passionnée de la couture, de la création de costumes et de la confection de corsets. Mais ce n'est pas tout, j'ai également une âme d'artiste et je m'exprime à travers mes dessins, mes peintures et mes créations numériques. J'aime explorer de nouvelles techniques et j'ai une imagination débordante qui me permet de créer des pièces uniques et originales.</p>
+    </button>
+    
+  </div>
 
-              <p>Je suis une artiste autodidacte qui a commencé à créer dès son plus jeune âge. Mon travail reflète mon amour pour les détails minutieux et les matériaux de qualité. Je suis constamment à la recherche de nouvelles inspirations et je m'efforce de créer des pièces qui racontent une histoire et qui sont aussi belles que fonctionnelles. Pour moi, la couture et l'art sont des formes d'expression qui me permettent de laisser libre cours à ma créativité et de partager ma passion avec le monde.</p>
-              
-              <p>Si vous êtes curieux de découvrir mes créations, vous pouvez jeter un coup d'œil à mon portfolio personnel sur ce site. Cependant, gardez à l'esprit qu'il ne s'agit là que d'un petit échantillon de mon travail. Pour voir plus d'œuvres et suivre mes aventures créatives, n'hésitez pas à me suivre sur mes réseaux sociaux. Je suis impatiente de partager mes projets futurs avec vous et de continuer à créer des pièces mémorables qui inspirent et captivent le public.</p>
-
-          </div>
-          <div class="text-en text-hidden" data-translation="about-text">
-            <p>Allow me to introduce myself, I'm Hélène Girardin, a passionate seamstress, costume designer, and corset maker. But that's not all, I also have an artist's soul and express myself through my drawings, paintings, and digital creations. I love exploring new techniques and have a boundless imagination that allows me to create unique and original pieces.</p>
-            <p>As a self-taught artist, I began creating from a young age. My work reflects my love for intricate details and quality materials. I'm constantly seeking new inspiration and strive to create pieces that tell a story and are as beautiful as they are functional. For me, sewing and art are forms of expression that allow me to unleash my creativity and share my passion with the world.</p>
-            <p>If you're curious to discover my creations, you can take a look at my personal portfolio on this website. However, keep in mind that this is just a small sample of my work. To see more of my pieces and follow my creative adventures, feel free to follow me on my social media channels. I'm excited to share my future projects with you and continue creating memorable pieces that inspire and captivate the audience.</p>
+  <div data-scroll-container >
+    <hero class="hero-banner" id="main">
+        <div class="title-container">
+          <div class="hero-title-container">
+            <div class="hero-title">
+              <span>H</span><span>é</span><span>l</span><span>è</span><span>n</span><span>e</span>
+              <span>G</span><span>i</span><span>r</span><span>a</span><span>r</span><span>d</span><span>i</span><span>n</span>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-  
-   
-    <div class="mcontent mpadding-64 mjustify"  id="couture">
-      <h2 class="mtext-white mcenter text-fr text-active" data-translation="couture-title">Couture</h2>
-      <h2 class="mtext-white mcenter text-en text-hidden" data-translation="couture-title">Sewing</h2>
-      <hr style="width:100%" class="mopacity">
-      <div class="section-img">
-        <div class="img--4">
-            <a href="images/couture01.jpeg" data-lightbox="portfolioa">
-                <img src="images/couture01.jpeg" alt="Création 1" class="couture-img">
-            </a>
-        </div>
-        <div class="img--4">
-            <a href="images/couture02_open.jpeg" data-lightbox="portfolioa">
-                <img src="images/couture02.jpeg" alt="Création 2" class="couture-img">
-            </a>
-        </div>
-        <div class="img--4">
-            <a href="images/couture03.jpeg" data-lightbox="portfolioa">
-                <img src="images/couture03.jpeg" alt="Création 3" class="couture-img">
-            </a>
-        </div>
-        <div class="img--4">
-            <a href="images/couture04.jpeg" data-lightbox="portfolioa">
-                <img src="images/couture04.jpeg" alt="Création 4" class="couture-img">
-            </a>
-        </div>
-        <div class="img--2">
-            <a href="images/couture05.jpeg" data-lightbox="portfolioa">
-                <img src="images/couture05.jpeg" alt="Création 5" class="couture-img">
-            </a>
-        </div>
-        <div class="img--2">
-          <a href="images/couture06.jpeg" data-lightbox="portfolioa">
-            <img src="images/couture06.jpeg" alt="Création 6" class="couture-img">
-        </a>
-        </div>
-    </div>
-    
-    
-<section class="mcontent mpadding-64 mjustify" id="dessins">
-  <h2 class="mtext-white mcenter text-fr text-active" data-translation="drawings-title">Dessins et peintures</h2>
-  <h2 class="mtext-white mcenter text-en text-hidden" data-translation="drawings-title">Drawings and paintings</h2>
-  <hr style="width:100%" class="mopacity">
-  <div class="section-img">
-    <div class="img--4">
-      <a href="images/dessin01.jpeg" data-lightbox="portfolioa">
-        <img src="images/dessin01.jpeg" alt="Création 1" class="couture-img">
-    </a>
-    </div>
-    <div class="img--4">
-      <a href="images/dessin02.jpeg" data-lightbox="portfolioa">
-        <img src="images/dessin02.jpeg" alt="Création 2" class="couture-img">
-    </a>
-    </div>
-    <div class="img--4">
-      <a href="images/dessin03.jpeg" data-lightbox="portfolioa">
-        <img src="images/dessin03.jpeg" alt="Création 3" class="couture-img">
-    </a>
-    </div>
-    <div class="img--4">
-      <a href="images/dessin04.jpeg" data-lightbox="portfolioa">
-        <img src="images/dessin04.jpeg" alt="Création 4" class="couture-img">
-    </a>
-    </div>
-    <div class="img--2">
-      <a href="images/dessin05.jpeg" data-lightbox="portfolioa">
-        <img src="images/dessin05.jpeg" alt="Création 5" class="couture-img">
-    </a>
-    </div>
-    <div class="img--2">
-      <a href="images/dessin06.jpeg" data-lightbox="portfolioa">
-        <img src="images/dessin06.jpeg" alt="Création 6" class="couture-img">
-    </a>
-    </div>
-  </div>
-</section>
-<section class="mcontent mpadding-64 mjustify" id="arts_numeriques">
-  <!-- Titre en français -->
-<h2 class="mtext-white mcenter text-fr text-active" data-translation="digital-art-title">Arts numériques</h2>
-<!-- Titre en anglais -->
-<h2 class="mtext-white mcenter text-en text-hidden" data-translation="digital-art-title">Digital art</h2>
-  <hr style="width:100%" class="mopacity">
-  <div class="section-img">
-    <div class="img--2">
-      <a href="https://images.pixexid.com/a-french-bulldog-in-a-garment-biduj6uz.webp?h=601&q=70" data-lightbox="portfolioc">
-        <img src="https://images.pixexid.com/a-french-bulldog-in-a-garment-biduj6uz.webp?h=601&q=70" alt="Création 5" class="couture-img"">
-      </a>
-    </div>
-    <div class="img--2">
-      <a href="https://images.pixexid.com/a-couple-of-happy-seniors-walking-on-a-beach-f4oubsoq.jpeg?h=700&q=70" data-lightbox="portfolioc">
-        <img src="https://images.pixexid.com/a-couple-of-happy-seniors-walking-on-a-beach-f4oubsoq.jpeg?h=700&q=70" alt="Création 6" class="couture-img">
-      </a>
-    </div>
-  </div>
-</section> 
-  
-<section class="mcontent contact-padding mtext-light-grey mjustify" id="contact">
-  <!-- Titre en français -->
-<h2 class="mtext-white text-fr text-active" data-translation="contact-title">Contactez-moi</h2>
-<!-- Titre en anglais -->
-<h2 class="mtext-white text-en text-hidden" data-translation="contact-title">Contact me</h2>
-  <hr style="width:200px" class="mopacity">
-  <!-- Paragraphe en français -->
-<p class="text-fr text-active" data-translation="contact-text">
-  N'hésitez pas à utiliser les icônes ci-dessous pour me contacter ou me suivre sur les réseaux sociaux. Que vous soyez intéressé par un projet de couture personnalisé, une collaboration artistique ou simplement pour rester à jour sur mes dernières créations, je serais ravie de rentrer en contact avec vous.
-</p>
-<!-- Paragraphe en anglais -->
-<p class="text-en text-hidden" data-translation="contact-text">
-  Feel free to use the icons below to contact me or follow me on social media. Whether you're interested in a custom sewing project, an artistic collaboration, or just want to stay up-to-date on my latest creations, I'd love to connect with you.
-</p>
-  <div class="fluff-container">
-    <div class="kero">
-      <div class="kero-head">
-          <div class="kero-face">
-              <div class="kero-eye kero-eye-left"></div>
-              <div class="kero-eye kero-eye-right"></div>
-              <div class="kero-nose"></div>
-              <div class="kero-mouth">
-                  <div class="kero-mouth-inner"></div>
+      </hero>
+
+    <div class="mpadding-large mcenter mitenu" id ="main">
+      <section class="mcontent mpadding-64 mtext-light-grey" id="about">
+        <div class="mjustify about-content" style="display:flex; flex-direction:row; align-items:center; justify-content:center;">
+
+          <div class="about-portrait">
+            <img class="portrait" src="images/portrait.jpg" alt="Votre photo" style="width:100%">
+          </div>
+          <div class="about-text" style="flex-basis: 66.66%; padding-left: 16px;">
+            <h2 class="mtext-white text-fr text-active" data-translation="about-title">À propos de moi</h2>
+            <h2 class="mtext-white text-en text-hidden" data-translation="about-title">About me</h2>
+            <hr style="width:200px" class="mopacity hr-left"></hr>
+            <div id="text-container">
+              <div class="text-fr text-active" data-translation="about-text">
+                <p>Je me présente, moi c'est Hélène Girardin, une passionnée de la couture, de la création de costumes et de la confection de corsets. Mais ce n'est pas tout, j'ai également une âme d'artiste et je m'exprime à travers mes dessins, mes peintures et mes créations numériques. J'aime explorer de nouvelles techniques et j'ai une imagination débordante qui me permet de créer des pièces uniques et originales.</p>
+
+                  <p>Je suis une artiste autodidacte qui a commencé à créer dès son plus jeune âge. Mon travail reflète mon amour pour les détails minutieux et les matériaux de qualité. Je suis constamment à la recherche de nouvelles inspirations et je m'efforce de créer des pièces qui racontent une histoire et qui sont aussi belles que fonctionnelles. Pour moi, la couture et l'art sont des formes d'expression qui me permettent de laisser libre cours à ma créativité et de partager ma passion avec le monde.</p>
+                  
+                  <p>Si vous êtes curieux de découvrir mes créations, vous pouvez jeter un coup d'œil à mon portfolio personnel sur ce site. Cependant, gardez à l'esprit qu'il ne s'agit là que d'un petit échantillon de mon travail. Pour voir plus d'œuvres et suivre mes aventures créatives, n'hésitez pas à me suivre sur mes réseaux sociaux. Je suis impatiente de partager mes projets futurs avec vous et de continuer à créer des pièces mémorables qui inspirent et captivent le public.</p>
+
               </div>
-              <div class="kero-blush kero-blush-left"></div>
-              <div class="kero-blush kero-blush-right"></div>
+              <div class="text-en text-hidden" data-translation="about-text">
+                <p>Allow me to introduce myself, I'm Hélène Girardin, a passionate seamstress, costume designer, and corset maker. But that's not all, I also have an artist's soul and express myself through my drawings, paintings, and digital creations. I love exploring new techniques and have a boundless imagination that allows me to create unique and original pieces.</p>
+                <p>As a self-taught artist, I began creating from a young age. My work reflects my love for intricate details and quality materials. I'm constantly seeking new inspiration and strive to create pieces that tell a story and are as beautiful as they are functional. For me, sewing and art are forms of expression that allow me to unleash my creativity and share my passion with the world.</p>
+                <p>If you're curious to discover my creations, you can take a look at my personal portfolio on this website. However, keep in mind that this is just a small sample of my work. To see more of my pieces and follow my creative adventures, feel free to follow me on my social media channels. I'm excited to share my future projects with you and continue creating memorable pieces that inspire and captivate the audience.</p>
+              </div>
+            </div>
           </div>
-          <div class="kero-ear kero-ear-left"></div>
-          <div class="kero-ear kero-ear-right"></div>
+        </div>
+      </section>
+      
+      <section class="mcontent mpadding-64 mjustify"  id="couture">
+          <h2 class="mtext-white mcenter text-fr text-active" data-translation="couture-title">Couture</h2>
+          <h2 class="mtext-white mcenter text-en text-hidden" data-translation="couture-title">Sewing</h2>
+          <hr style="width:100%" class="mopacity">
+          <div class="section-img">
+            <div class="img--4">
+                <a href="images/couture01.jpeg" data-lightbox="portfolioa">
+                    <img src="images/couture01.jpeg" alt="Création 1" class="couture-img">
+                </a>
+            </div>
+            <div class="img--4">
+                <a href="images/couture02_open.jpeg" data-lightbox="portfolioa">
+                    <img src="images/couture02.jpeg" alt="Création 2" class="couture-img">
+                </a>
+            </div>
+            <div class="img--4">
+                <a href="images/couture03.jpeg" data-lightbox="portfolioa">
+                    <img src="images/couture03.jpeg" alt="Création 3" class="couture-img">
+                </a>
+            </div>
+            <div class="img--4">
+                <a href="images/couture04.jpeg" data-lightbox="portfolioa">
+                    <img src="images/couture04.jpeg" alt="Création 4" class="couture-img">
+                </a>
+            </div>
+            <div class="img--2">
+                <a href="images/couture05.jpeg" data-lightbox="portfolioa">
+                    <img src="images/couture05.jpeg" alt="Création 5" class="couture-img">
+                </a>
+            </div>
+            <div class="img--2">
+              <a href="images/couture06.jpeg" data-lightbox="portfolioa">
+                <img src="images/couture06.jpeg" alt="Création 6" class="couture-img">
+              </a>
+            </div>
+          </div>
+      </section>
+        
+        
+      <section class="mcontent mpadding-64 mjustify" id="dessins">
+        <h2 class="mtext-white mcenter text-fr text-active" data-translation="drawings-title">Dessins et peintures</h2>
+        <h2 class="mtext-white mcenter text-en text-hidden" data-translation="drawings-title">Drawings and paintings</h2>
+        <hr style="width:100%" class="mopacity">
+        <div class="section-img">
+          <div class="img--4">
+            <a href="images/dessin01.jpeg" data-lightbox="portfolioa">
+              <img src="images/dessin01.jpeg" alt="Création 1" class="couture-img">
+          </a>
+          </div>
+          <div class="img--4">
+            <a href="images/dessin02.jpeg" data-lightbox="portfolioa">
+              <img src="images/dessin02.jpeg" alt="Création 2" class="couture-img">
+          </a>
+          </div>
+          <div class="img--4">
+            <a href="images/dessin03.jpeg" data-lightbox="portfolioa">
+              <img src="images/dessin03.jpeg" alt="Création 3" class="couture-img">
+          </a>
+          </div>
+          <div class="img--4">
+            <a href="images/dessin04.jpeg" data-lightbox="portfolioa">
+              <img src="images/dessin04.jpeg" alt="Création 4" class="couture-img">
+          </a>
+          </div>
+          <div class="img--2">
+            <a href="images/dessin05.jpeg" data-lightbox="portfolioa">
+              <img src="images/dessin05.jpeg" alt="Création 5" class="couture-img">
+          </a>
+          </div>
+          <div class="img--2">
+            <a href="images/dessin06.jpeg" data-lightbox="portfolioa">
+              <img src="images/dessin06.jpeg" alt="Création 6" class="couture-img">
+          </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="mcontent mpadding-64 mjustify" id="arts_numeriques">
+          <!-- Titre en français -->
+        <h2 class="mtext-white mcenter text-fr text-active" data-translation="digital-art-title">Arts numériques</h2>
+        <!-- Titre en anglais -->
+        <h2 class="mtext-white mcenter text-en text-hidden" data-translation="digital-art-title">Digital art</h2>
+          <hr style="width:100%" class="mopacity">
+        <div class="section-img">
+          <div class="img--2">
+            <a href="https://images.pixexid.com/a-french-bulldog-in-a-garment-biduj6uz.webp?h=601&q=70" data-lightbox="portfolioc">
+              <img src="https://images.pixexid.com/a-french-bulldog-in-a-garment-biduj6uz.webp?h=601&q=70" alt="Création 5" class="couture-img"">
+            </a>
+          </div>
+          <div class="img--2">
+            <a href="https://images.pixexid.com/a-couple-of-happy-seniors-walking-on-a-beach-f4oubsoq.jpeg?h=700&q=70" data-lightbox="portfolioc">
+              <img src="https://images.pixexid.com/a-couple-of-happy-seniors-walking-on-a-beach-f4oubsoq.jpeg?h=700&q=70" alt="Création 6" class="couture-img">
+            </a>
+          </div>
+        </div>
+      </section> 
+        
+      <section class="mcontent contact-padding mtext-light-grey mjustify" id="contact">
+        <!-- Titre en français -->
+        <h2 class="mtext-white text-fr text-active" data-translation="contact-title">Contactez-moi</h2>
+        <!-- Titre en anglais -->
+        <h2 class="mtext-white text-en text-hidden" data-translation="contact-title">Contact me</h2>
+          <hr style="width:200px" class="mopacity">
+          <!-- Paragraphe en français -->
+        <p class="text-fr text-active" data-translation="contact-text">
+          N'hésitez pas à utiliser les icônes ci-dessous pour me contacter ou me suivre sur les réseaux sociaux. Que vous soyez intéressé par un projet de couture personnalisé, une collaboration artistique ou simplement pour rester à jour sur mes dernières créations, je serais ravie de rentrer en contact avec vous.
+        </p>
+        <!-- Paragraphe en anglais -->
+        <p class="text-en text-hidden" data-translation="contact-text">
+          Feel free to use the icons below to contact me or follow me on social media. Whether you're interested in a custom sewing project, an artistic collaboration, or just want to stay up-to-date on my latest creations, I'd love to connect with you.
+        </p>
+        <div class="fluff-container">
+          <div class="kero">
+            <div class="kero-head">
+                <div class="kero-face">
+                    <div class="kero-eye kero-eye-left"></div>
+                    <div class="kero-eye kero-eye-right"></div>
+                    <div class="kero-nose"></div>
+                    <div class="kero-mouth">
+                        <div class="kero-mouth-inner"></div>
+                    </div>
+                    <div class="kero-blush kero-blush-left"></div>
+                    <div class="kero-blush kero-blush-right"></div>
+                </div>
+                <div class="kero-ear kero-ear-left"></div>
+                <div class="kero-ear kero-ear-right"></div>
+            </div>
+            <div class="kero-bow">
+                <div class="kero-bow-tie"></div>
+                <div class="kero-bow-ribbon kero-bow-ribbon-left"></div>
+                <div class="kero-bow-ribbon kero-bow-ribbon-right"></div>
+                <div class="kero-bow-string"></div>
+            </div>
+            <div class="kero-body">
+                <div class="kero-torso"></div>
+                <div class="kero-wing kero-wing-left">
+                    <div class="kero-wing-inner"></div>
+                </div>
+                <div class="kero-wing kero-wing-right">
+                    <div class="kero-wing-inner"></div>
+                </div>
+                <div class="kero-arm kero-arm-left"></div>
+                <div class="kero-arm kero-arm-right"></div>
+                <div class="kero-leg kero-leg-left">
+                    <div class="kero-leg-upper"></div>
+                    <div class="kero-foot"></div>
+                </div>
+                <div class="kero-leg kero-leg-right">
+                    <div class="kero-leg-upper"></div>
+                    <div class="kero-foot"></div>
+                </div>
+                <div class="kero-tail">
+                    <div class="kero-tail-length"></div>
+                    <div class="kero-tail-fluff"></div>
+                </div>
+            </div>
+        
+
+        
+
+        </div>
+      </section>
+    </div>
+    
+    <footer class="mcenter" id="main">
+      <div class="socials">
+        <div class="social-icon-container">
+          <a target="_blank" class="social-icon">
+            <img src="icons/mail_24.svg" alt="contact" />
+          </a>
+          <div class="social-icon-hover">
+            <a href="mailto:helene.costumes@gmail.com" target="_blank">
+              <h4 class="text-fr text-active" data-translation="mail-text">Contactez-nous par e-mail</h4>
+              <h4 class="text-en text-hidden" data-translation="mail-text">Contact via e-mail</h4>
+              <img src="https://source.unsplash.com/random/340x200" alt="Image Email">
+            </a>
+          </div>
+        </div>
+        <div class="social-icon-container">
+          <a target="_blank" class="social-icon">
+            <img src="icons/insta.svg" alt="insta" />
+          </a>
+          <div class="social-icon-hover">
+            <a href="https://www.instagram.com/imakecorsets" target="_blank">
+              <h4 class="text-fr text-active" data-translation="insta1-text">Instagram Couture</h4>
+              <h4 class="text-en text-hidden" data-translation="insta1-text">Sewing Instagram</h4>
+              <img src="https://source.unsplash.com/random/222x200" alt="Image Instagram">
+            </a>
+          </div>
+        </div>
+        <div class="social-icon-container">
+          <a target="_blank" class="social-icon">
+            <img src="icons/insta.svg" alt="insta" />
+          </a>
+          <div class="social-icon-hover">
+            <a href="https://www.instagram.com/theghouldraws/" target="_blank">
+              <h4 class="text-fr text-active" data-translation="insta2-text">Instagram Dessin</h4>
+              <h4 class="text-en text-hidden" data-translation="insta2-text">Drawing Instagram</h4>
+              <img src="https://source.unsplash.com/random/400x233" alt="Image Instagram">
+            </a>
+          </div>
+        </div>
+        <div class="social-icon-container">
+          <a target="_blank" class="social-icon">
+            <img src="icons/facebook.svg" alt="facebook" />
+          </a>
+          <div class="social-icon-hover">
+            <a href="https://www.facebook.com/Helenegirardincostumiere/" target="_blank">
+              <h4 class="text-fr text-active" data-translation="facebook-text">Rejoignez-nous sur Facebook</h4>
+              <h4 class="text-en text-hidden" data-translation="facebook-text">Join us on Facebook</h4>
+              <img src="https://source.unsplash.com/random/300x500" alt="Image Facebook">
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="kero-bow">
-          <div class="kero-bow-tie"></div>
-          <div class="kero-bow-ribbon kero-bow-ribbon-left"></div>
-          <div class="kero-bow-ribbon kero-bow-ribbon-right"></div>
-          <div class="kero-bow-string"></div>
-      </div>
-      <div class="kero-body">
-          <div class="kero-torso"></div>
-          <div class="kero-wing kero-wing-left">
-              <div class="kero-wing-inner"></div>
-          </div>
-          <div class="kero-wing kero-wing-right">
-              <div class="kero-wing-inner"></div>
-          </div>
-          <div class="kero-arm kero-arm-left"></div>
-          <div class="kero-arm kero-arm-right"></div>
-          <div class="kero-leg kero-leg-left">
-              <div class="kero-leg-upper"></div>
-              <div class="kero-foot"></div>
-          </div>
-          <div class="kero-leg kero-leg-right">
-              <div class="kero-leg-upper"></div>
-              <div class="kero-foot"></div>
-          </div>
-          <div class="kero-tail">
-              <div class="kero-tail-length"></div>
-              <div class="kero-tail-fluff"></div>
-          </div>
-      </div>
-  
+      <p class="end-padding">Powered by mITAINE</p>
+    </footer>
+  </div>
 
   
-
-  </div>
-</section>
-</div>
-</div>
-<footer class="mcenter" id="main">
-  <div class="socials">
-    <div class="social-icon-container">
-      <a target="_blank" class="social-icon">
-        <img src="icons/mail_24.svg" alt="contact" />
-      </a>
-      <div class="social-icon-hover">
-        <a href="mailto:helene.costumes@gmail.com" target="_blank">
-          <h4 class="text-fr text-active" data-translation="mail-text">Contactez-nous par e-mail</h4>
-          <h4 class="text-en text-hidden" data-translation="mail-text">Contact via e-mail</h4>
-          <img src="https://source.unsplash.com/random/340x200" alt="Image Email">
-        </a>
-      </div>
-    </div>
-    <div class="social-icon-container">
-      <a target="_blank" class="social-icon">
-        <img src="icons/insta.svg" alt="insta" />
-      </a>
-      <div class="social-icon-hover">
-        <a href="https://www.instagram.com/imakecorsets" target="_blank">
-          <h4 class="text-fr text-active" data-translation="insta1-text">Instagram Couture</h4>
-          <h4 class="text-en text-hidden" data-translation="insta1-text">Sewing Instagram</h4>
-          <img src="https://source.unsplash.com/random/222x200" alt="Image Instagram">
-        </a>
-      </div>
-    </div>
-    <div class="social-icon-container">
-      <a target="_blank" class="social-icon">
-        <img src="icons/insta.svg" alt="insta" />
-      </a>
-      <div class="social-icon-hover">
-        <a href="https://www.instagram.com/theghouldraws/" target="_blank">
-          <h4 class="text-fr text-active" data-translation="insta2-text">Instagram Dessin</h4>
-          <h4 class="text-en text-hidden" data-translation="insta2-text">Drawing Instagram</h4>
-          <img src="https://source.unsplash.com/random/400x233" alt="Image Instagram">
-        </a>
-      </div>
-    </div>
-    <div class="social-icon-container">
-      <a target="_blank" class="social-icon">
-        <img src="icons/facebook.svg" alt="facebook" />
-      </a>
-      <div class="social-icon-hover">
-        <a href="https://www.facebook.com/Helenegirardincostumiere/" target="_blank">
-          <h4 class="text-fr text-active" data-translation="facebook-text">Rejoignez-nous sur Facebook</h4>
-          <h4 class="text-en text-hidden" data-translation="facebook-text">Join us on Facebook</h4>
-          <img src="https://source.unsplash.com/random/300x500" alt="Image Facebook">
-        </a>
-      </div>
-    </div>
-  </div>
-  <p class="end-padding">Powered by mITAINE</p>
-</footer>
 </body>
 <script>
   const fluffContainer = document.querySelector('.fluff-container');
@@ -805,51 +807,47 @@ hr {
 </script>
 
 <script>
-  // Select the title container using the class
-  const titleContainer = document.querySelector(".title-container");
+ // Select the title container using the class
+ const titleContainer = document.querySelector(".title-container");
 
-  // Set the initial top value to -50vh
-  titleContainer.style.top = "-50vh";
+// Set the initial top value to -50vh
+titleContainer.style.top = "-50vh";
 
-  // Function to animate the title based on the scroll
-  const animateTitleOnScroll = () => {
-    const scrollTop = window.scrollY;
-    const screenHeight = window.innerHeight;
+// Function to animate the title based on the scroll
+const animateTitleOnScroll = () => {
+  const scrollTop = window.scrollY;
+  const screenHeight = window.innerHeight;
 
-    // Calculate the top value based on screen height and scrollTop
-    // You can adjust the scrolling speed of the title by changing the value '0.5' to another number (e.g., '0.3', '0.7')
-    let topValue = -50 + (scrollTop * 150 * 0.92) / screenHeight;
+  // Calculate the top value based on screen height and scrollTop
+  // You can adjust the scrolling speed of the title by changing the value '0.5' to another number (e.g., '0.3', '0.7')
+  let topValue = -50 + (scrollTop * 150 * 0.92) / screenHeight;
 
-    if (topValue > 130) {
-      topValue = 130;
-    }
+  if (topValue > 130) {
+    topValue = 130;
+  }
 
-    // Apply the top value
-    titleContainer.style.top = `${topValue}vh`;
+  // Apply the top value
+  titleContainer.style.top = `${topValue}vh`;
 
-    // Calculate the scale value based on scrollTop
-    // Initial scale is 1, minimum scale is 0.8
-    let scaleValue = 1 - (scrollTop * 0.0888) / screenHeight;
-    if (scaleValue < 0.888) {
-      scaleValue = 0.888;
-    }
+  // Calculate the scale value based on scrollTop
+  // Initial scale is 1, minimum scale is 0.8
+  let scaleValue = 1 - (scrollTop * 0.0888) / screenHeight;
+  if (scaleValue < 0.888) {
+    scaleValue = 0.888;
+  }
 
-    // Apply the scale transformation
-    titleContainer.style.transform = `scale(${scaleValue})`;
+  // Apply the scale transformation
+  titleContainer.style.transform = `scale(${scaleValue})`;
 
-    // Request the next animation frame to keep the animation smooth
-    requestAnimationFrame(animateTitleOnScroll);
-  };
+  // Request the next animation frame to keep the animation smooth
+  requestAnimationFrame(animateTitleOnScroll);
+};
 
-  // Call the function initially
-  animateTitleOnScroll();
+// Call the function initially
+animateTitleOnScroll();
 
-  // Add an event listener to detect scroll
-   window.addEventListener("scroll", animateTitleOnScroll);
-
-
-
-
+// Add an event listener to detect scroll
+ window.addEventListener("scroll", animateTitleOnScroll);
 
 
   function toggleTranslation() {
@@ -898,7 +896,16 @@ hr {
 });
 
 </script>
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+<script>
+  
+const locoScroll = new LocomotiveScroll({
+  el: document.querySelector('[data-scroll-container]'),
+  smooth: true
+}); 
 
+
+</script>
 
 
 

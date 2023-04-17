@@ -7,52 +7,77 @@
 
 
 .hero-banner {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/image1.png);
-  background-position: center;
-  background-size: cover;
-  height: 150vh;
+  height: 100vh;
   display: flex;
-  align-items: center;
+  top: 0;
   justify-content: center;
   flex-direction: column;
   cursor: url(images/logo.png), auto;
-  background-attachment: fixed;
   position: relative;
+  overflow: hidden;
+  align-items: center;
 }
+
+
+.background-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/image1.png);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+
+}
+
 /* Media query pour les petits écrans */
 @media (max-width: 600px) {
-  .hero-banner {
-      background-size: 1257px 897px; /* Largeur fixe 360px, hauteur fixe 640px */
-      background-position: center top;
-      background-repeat: no-repeat;
+  .background-image {
+    background-size: 1257px 897px;
+    background-position: center top;
+    background-repeat: no-repeat;
   }
 }
 
 
-.hero-banner::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 10vh;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
-    z-index: 1;
-  }
 
 .title-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: -50vh;
-    bottom: 0;
-    
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  top: 0;
+  justify-content: center;
+  flex-direction: column;
 }
 
 
 
-.hero-title-container:hover {
+
+
+
+.hero-title-container {
+   opacity: 0;
+  transition: opacity 0.5s;
+    font-family: 'Noto Serif Thai', serif;
+    transform: rotateX(-80deg) translateY(100%);
+        transform-origin: top center;
+        transform-style: preserve-3d;
+        transition: 0.8s cubic-bezier(0.215, 0.61, 0.355,1);
+  }
+  
+
+   
+
+.hero-title {
+    font-size: 4.8em;
+    text-transform: uppercase;
+    opacity: 0;
+    transition:all 1s;
+    position: relative;
+    z-index: 2;
+    }
+
+.hero-title:hover {
     color: #fff;
     text-shadow: 0 0 5px #ffffff,
                 0 0 25px #ffffff,
@@ -60,23 +85,7 @@
                 0 0 100px #ffffff;
 }
 
-.hero-title-container {
-    transition: 1s;  
-    font-family: 'Noto Serif Thai', serif;
-  }
-  
-
-
-.hero-title {
-    font-size: 4.8em;
-    text-transform: uppercase;
-    opacity: 0;
-    transform: translateX(-100px);
-    animation: slide-in 2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-    animation-delay: 0.66s;
-    position: relative;
-    z-index: 2;
-    }
+    
     
     @media screen and (max-width: 1000px) {
     .hero-title {
@@ -100,18 +109,6 @@
     
 
 
-@keyframes slide-in {
-    0% {
-        opacity: 0;
-        transform: translateX(100px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-
 .hero-title::before {
     content: '';
     position: absolute;
@@ -128,11 +125,24 @@
     left: 0; /* déplace la ligne vers la gauche */
 }
 
-.mintenu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.hero-title.is-inview{
+  opacity:1;
+  transition-delay:0.3s;
 }
+
+.hero-title-container.titleappear{
+  transition-delay: 0.8s;
+  transform: none;
+  opacity: 1!important;
+}
+
+.mitenu{
+  position: relative;
+  z-index: 10;
+  background-color: #000000;
+  transition: transform 0.3s ease-in-out;
+}
+
 
 
       
@@ -143,6 +153,7 @@
         width: 120px;
         height: 100%;
         display: flex;
+        height: 100VH;
         flex-direction: column;
         align-items: center;
         overflow: auto;
@@ -248,12 +259,12 @@
         text-align: center;
       }
 
-      .nav-sidebar.visible {
+      .nav-sidebar.appear {
         animation-name: slideInSidebar;
         animation-duration: 1s;
         animation-timing-function: ease;
         animation-fill-mode: forwards;
-        animation-delay: 0.1s; /* Ajouter un délai de 0.1s à l'animation */
+      
       }
       @keyframes slideInSidebar {
         to {
@@ -262,16 +273,24 @@
         }
       }
       
-      .contact-padding {
-        padding-top: 64px;
-      }
+
 
       .end-padding {
         padding-top: 25px!important;
-        padding-bottom: 10px!important;
+        padding-bottom: 0!important;
         font-size: 11px;
+        opacity: 0;
+        transform: rotateX(-80deg) translateY(100%);
+        transform-origin: top center;
+        transform-style: preserve-3d;
+        transition: 0.8s cubic-bezier(0.215, 0.61, 0.355,1);
       }
       
+      .end-padding.is-inview {
+        opacity: 1;
+        transition-delay: 1.8s;
+        transform: none;
+      }
 
       .social-icon-container {
         perspective: 1000px;
@@ -283,7 +302,20 @@
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: center;
+        margin-top: 200px;
       }
+      @keyframes bounce {
+        0%, 20%, 50%, 80%, 100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-30px);
+        }
+        60% {
+          transform: translateY(-15px);
+        }
+      }
+      
       .social-icon {
         display: inline-flex;
         align-items: center;
@@ -296,8 +328,16 @@
         font-size: 24px;
         text-decoration: none;
         padding: 20px;
-        transition: all 0.3s ease-in-out;
+        transition: all 0.5s ease-in-out;
+        opacity: 0; /* Ajoutez cette ligne pour masquer les éléments au départ */
       }
+      
+      .social-icon.is-inview {
+        transition-delay: 1.5s;
+        animation:  bounce 1s ease-in 1s forwards;
+        opacity: 1; /* Ajoutez cette ligne pour rendre les éléments visibles lorsqu'ils sont en vue */
+      }
+      
       
       .social-icon:hover {
         opacity: 0.7;
