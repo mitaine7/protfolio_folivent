@@ -303,6 +303,8 @@
         flex-wrap: nowrap;
         justify-content: center;
         margin-top: 200px;
+        opacity: 0; /* Ajoutez cette ligne pour masquer les éléments au départ */
+        transition: all 0.5s ease-in-out;
       }
       @keyframes bounce {
         0%, 20%, 50%, 80%, 100% {
@@ -329,10 +331,10 @@
         text-decoration: none;
         padding: 20px;
         transition: all 0.5s ease-in-out;
-        opacity: 0; /* Ajoutez cette ligne pour masquer les éléments au départ */
+        
       }
       
-      .social-icon.is-inview {
+      .socials.is-inview {
         transition-delay: 1s;
         animation:  bounce 1s ease-in 1s forwards;
         opacity: 1; /* Ajoutez cette ligne pour rendre les éléments visibles lorsqu'ils sont en vue */
