@@ -1,703 +1,24 @@
 <!DOCTYPE html>
 <html class="is-smooth-scroll-compatible is-loading">
 <head>
-<title>Hélène Girardin - Couturière et Artiste Passionnée</title>
-<link rel="icon" type="image/x-icon" href="images/favicon.ico">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Découvrez les créations uniques et inspirantes d'Hélène Girardin, couturière et artiste passionnée. De vêtements sur mesure à des œuvres d'art émouvantes, Hélène vous offre son talent et sa passion pour l'expression de soi.">
-<meta name="keywords" content="Hélène Girardin, couturière, artiste, vêtements sur mesure, œuvres d'art, expression de soi">
-<link rel="stylesheet" href="style.css">
-<link href="lightbox.css" rel="stylesheet" />
-<link rel="stylesheet" href="fluff.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
-
-
-
-<style>
-body, h1, h3, h4, h5, h6 {
-  font-family: 'Playfair Display SC', serif;
-}
-
-p {
-  font-family: 'Martel', serif;
-}
-
-h2 {
-  font-family: 'Lato', sans-serif;
-}
-
-
-html, body {
-    font-size: 15px;
-    line-height: 1.5;
-    margin: 0;
-}
-html {
-    -webkit-text-size-adjust: 100%;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    box-sizing: border-box;
-}
-
-#main {
-  margin-left: 120px;
-  transition: margin-left .4s;
-}
-@media only screen and (max-width: 600px) {#main {margin-left: 0}}
-
-*,*:before,*:after {
-    box-sizing: inherit
-}
-
-.mpadding-large {
-    padding: 0 24px!important
-}
-
-.mpadding-64 {
-    padding-top: 64px!important;
-    padding-bottom: 64px!important;
-}
-
-.mcenter {
-    text-align: center!important
-}
-
-.mtext-light-grey {
-    color: #f1f1f1!important
-}
-
-.mcontent {
-    max-width: 980px;
-    margin-left:auto;
-    margin-right:auto;
-    
-}
-
-.mjustify{
-  text-align: justify !important
-}
-
-.mtext-white{
-  color:#fff !important;
-  z-index: 333
-}
-
-.mopacity{
-  opacity:0.60
-}
-
-hr {
-    border: 0;
-    border-top: 1px solid #eee;
-    margin: 20px 0;
-    box-sizing: content-box;
-    height: 0;
-    overflow: visible;
-}
-
-
-.couture-img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 12px;
-    transition: transform 0.43s ease-in-out;
-    object-fit: cover;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-/* Styles pour les écrans supérieurs à 600px */
-@media screen and (min-width: 600px) {
-  .couture-img:hover {
-    filter: drop-shadow(0 0 10px #ffffff);
-    border-radius: 10px;
-    transform: scale(1.1);
-  }
-  
-  .section-img:hover .couture-img:not(:hover) {
-    transform: scale(0.9);
-  }
-
-  .section-imgd:hover .couture-img:not(:hover) {
-    transform: scale(0.9);
-  }
-}
-
-
-.section-img {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 15px;
-    margin-top: 35px;
-}
-
-.section-imgd {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 15px;
-    margin-top: 35px;
-    pointer-events: none; /* désactive les événements de souris par défaut */
-    opacity:0;
-    transition: opacity 1s;
-}
-
-.section-imgd.is-inview {
-  opacity: 1;
-}
-
-.section-imgd.is-inview.pointer-enabled {
-  pointer-events: auto; /* active les événements de souris après 1,5 seconde */
-}
-
-
-@media screen and (min-width: 601px) {
-
-.section-imgd::before {
-    content: "";
-    position: absolute;
-    height: 110%;
-    width: 100%;
-    top: -3px;
-    background: #000000;
-    transition: width 1s ease-out;;
-    transition-delay: 0.25s;
-    
-}
-.section-imgd.is-inview::before {
-  width: 0;
-}
-
-}
-
-.img--4 {
-    flex-basis: calc(25% - 30px);
-}
-
-.img--2 {
-    flex-basis: calc(50% - 30px);
-}
-
-.img--3 {
-    flex-basis: calc(33% - 30px);
-}
-
-@media (max-width: 888px) {
-    .img--4, .img--3{
-        flex-basis: calc(50% - 30px);
-    }
-}
-
-/*@media (max-width: 600px) {
-    .img--2, .img--4, .img--3 {
-        flex-basis: 100%;
-    }
-}*/
-
-  .fluff-container {
-  position: absolute;
-  opacity: 0;
-  width: 2vw;
-  height: 2vw;
-  left: 90%; /* position initiale à gauche de l'écran */
-  bottom: 100px;
-  transform: translateX(-50%) scale(0.2);
-
-}
-
-
-.appearfl {
-  animation: appearfl 1s ease-in-out forwards;
-  animation-delay: 22.22s;
-}
-
-@keyframes appearfl {
-  0% {
-    opacity: 0;
-    transform: translateX(0%) scale(0.2);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(-100%) scale(0.2);
-  }
-}
-
-
-
-
-.text-active {
-  display: block;
-}
-
-.text-hidden {
-  display: none;
-}
-#translation-container {
-  position: fixed;
-  z-index: 1000;
-  bottom: 20px;
-  right: 20px;
-  opacity: 1;
-  transition: opacity 1s;
-}
-
-#translation-button {
-  background-color: transparent;
-  font-weight: bold;
-  border: none;
-  width: 50px;
-  height: 50px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.3s;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  overflow: hidden;
-  position: relative;
-  padding: 0;
-  opacity: 0.5;
-  animation: float 1.5s ease-in-out infinite;
-}
-
-#translation-button:hover {
-  animation: float 1.5s ease-in-out infinite, hoverFloat 0.3s forwards;
-  transform: scale(1.1);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-  opacity: 1;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0px) scale(1);
-  }
-  50% {
-    transform: translateY(-3px) scale(1);
-  }
-  100% {
-    transform: translateY(0px) scale(1);
-  }
-}
-
-@keyframes hoverFloat {
-  0% {
-    transform: translateY(0px) scale(1);
-  }
-  100% {
-    transform: translateY(-5px) scale(1.1);
-  }
-}
-
-#top-half,
-#bottom-half {
-  width: 100%;
-  height: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#top-half {
-  background-color: #ffffff;
-}
-
-#bottom-half {
-  background-color: #000000;
-}
-
-.text-fr-active #top-half {
-  background-color: #ffffff;
-}
-
-.text-fr-active #bottom-half {
-  background-color: #000000;
-}
-
-#translation-button:not(.text-fr-active) #top-half {
-  background-color: #000000;
-}
-
-#translation-button:not(.text-fr-active) #bottom-half {
-  background-color: #ffffff;
-}
-
-#fr-text {
-  color: #000000;
-}
-
-#en-text {
-  color: #ffffff;
-}
-
-.text-fr-active #fr-text {
-  color: #000000;
-}
-
-.text-fr-active #en-text {
-  color: #ffffff;
-}
-
-#translation-button:not(.text-fr-active) #fr-text {
-  color: #ffffff;
-}
-
-#translation-button:not(.text-fr-active) #en-text {
-  color: #000000;
-}
-
-.text-fr,
-.text-en {
-  transition: opacity 0.5s;
-}
-
-
-.background-image.is-inview + #translation-container #translation-button {
-  opacity: 0;
-}
-
-
-
-
-.custom-top {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 8;
-  background-color: #000;
-  opacity: 0;
-  display: none;
-}
-
-.custom-top.visible {
-  opacity: 0;
-  display: block;
-  animation-name: slideInDown;
-  animation-duration: 0.5s;
-  animation-timing-function: ease;
-  animation-fill-mode: forwards;
-  animation-delay: 0s;
-}
-
-@keyframes slideInDown {
-  0% {
-    transform: translateY(-20%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0%);
-    opacity: 1;
-  }
-}
-
-
-
-@media screen and (min-width: 601px) {
-  .custom-hide-large-medium {
-    display: none !important;
-  }
-}
-
-.custom-bar {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  background-color: #000;
-  opacity: 0.8;
-}
-
-.custom-bar:hover {
-  opacity: 1;
-}
-
-.custom-bar-item {
-  text-decoration: none;
-  padding: 8px 16px;
-  width: 16.666%;
-  font-size: 24px;
-  color: #FFF;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0.6;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.custom-bar-item:hover {
-  background-color: rgba(255, 255, 255, 0.184);
-  opacity: 1;
-}
-
-.mblack {
-    color: #fff!important;
-    background-color: #000!important
-}
-
-
-.about-content{
-  display:flex;
-  flex-direction:row;
-  align-items:center; 
-  justify-content:center;
-}
-
-.about-portrait {
-  flex-basis: 33.33%; 
-  display: flex; 
-  justify-content: flex-end;
-}
-
-.about-text{
-  flex-basis: 66.66%; 
-  padding-left: 16px;
-}
-
-
-
-.mheight {
-  height: 100vh;
-  display:flex; 
-  flex-direction:row; 
-  align-items:center; 
-  justify-content:center;
-}
-
-@media screen and (max-width: 888px) {
-  .mheight {
-    height: auto;
-    min-height: 100vh!important;
-  }
-}
-
-.fin-section {
-  min-height: 50vh;
-  display:flex; 
-  flex-direction:row; 
-  align-items:center; 
-  justify-content:center;
-}
-.vide222{
-  content: "";
-  height: 222px;
-}
-
-.imgc1
-{
-  opacity: 0;
-  transform: translateX(-50px);
-  transition: all 0.5s;
-}
-
-.imgc1.is-inview {
-  transition-delay: 0.1s;
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.imgc2
-{
-  opacity: 0;
-  transform: translateX(-50px);
-  transition: all 0.5s;
-}
-
-.imgc2.is-inview {
-  transition-delay: 0.2s;
-  opacity: 1;
-  transform: translateX(0);
-}
-.imgc3
-{
-  opacity: 0;
-  transform: translateX(-50px);
-  transition: all 0.5s;
-}
-
-.imgc3.is-inview {
-  transition-delay: 0.3s;
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.imgc4
-{
-  opacity: 0;
-  transform: translateX(-50px);
-  transition: all 0.5s;
-}
-
-.imgc4.is-inview {
-  transition-delay: 0.4s;
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.ligne-dessins {
-  width: 0%;
-  transition: all 0.6s;
-}
-
-.ligne-dessins.is-inview {
-  transition-delay: 0.5s;
-  width: 100%;
-}  
-
-.ligne-digital {
-  width: 100%;
-  opacity: 0;
-  transform: rotate(-90deg);
-  transform-origin: right;
-  transition: all 1.6s;
-}
-
-.ligne-digital.is-inview {
-  transform: rotate(0deg);
-  opacity: 0.6;
-}
-
-.imga1
-{
-  opacity: 0;
-  transform: scale(0.2);
-  transition: all 0.5s;
-}
-
-.imga1.is-inview {
-  transition-delay: 0.7s;
-  opacity: 1;
-  transform: scale(1);
-} 
-
-.imga2
-{
-  opacity: 0;
-  transform: scale(0.2);
-  transition: all 0.5s;
-}
-
-.imga2.is-inview {
-  transition-delay: 0.4s;
-  opacity: 1;
-  transform: scale(1);
-} 
-
-.tcont {
-  opacity: 0;
-  transition: opacity 0.8s;
-}
-.tcont.is-inview {
-  opacity: 1;
-  transition-delay: 0.1s;
-}
-
-.lcont {
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-.lcont.is-inview {
-  opacity: 1;
-  transition-delay: 0.3s;
-}
-
-.ccont {
-  opacity: 0;
-  transition: opacity 0.8s;
-}
-.ccont.is-inview {
-  opacity: 1;
-  transition-delay: 0.5s;
-}
-
-.rep100{
-  content: "";
- top: 105vh;
- position: fixed;
-
-}
-
-.loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: #000000;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  overflow: hidden;
-  cursor: none;
-}
-
-.image-container {
-  position: relative;
-  width: 25%;
-  min-width: 333px; /* Redimensionnement du GIF */
-  height: auto;
-  overflow: hidden;
-}
-
-.loader img {
-  width: 100%;
-  height: auto;
-  display: block;
-  
-  
-
-}
-
-.fade-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  box-shadow: inset 0 0 20px 20px rgb(0, 0, 0); /* Ombre intérieure */
-  
-}
-
-
-
-.disappear {
-  animation: vanish 1s forwards;
-  animation-delay: 2s;
-}
-@keyframes vanish {
-  100%{
-  transform: translateY(-100vh);
-  visibility: hidden;  
-  }
-}
-
-#loading-cursor {
-  position: absolute;
-  background-image: url(images/wait.gif);
-  background-size: 100%;
-  background-repeat: no-repeat; /* Ajoutez cette ligne pour empêcher la répétition */
-  width: 50px; /* Modifiez la taille en fonction de votre GIF */
-  height: 50px; /* Modifiez la taille en fonction de votre GIF */
-  pointer-events: none; /* Empêche l'élément de capturer les événements de la souris */
-  z-index: 10000;
-  display: none;
-}
-
-
-
-
-
-
-</style>
+  <!-- Titre et favicon -->
+  <title>Hélène Girardin - Couturière et Artiste Passionnée</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+  <!-- Métadonnées -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Découvrez les créations uniques et inspirantes d'Hélène Girardin, couturière et artiste passionnée. De vêtements sur mesure à des œuvres d'art émouvantes, Hélène vous offre son talent et sa passion pour l'expression de soi.">
+  <meta name="keywords" content="Hélène Girardin, couturière, artiste, vêtements sur mesure, œuvres d'art, expression de soi">
+
+  <!-- Styles CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link href="lightbox.css" rel="stylesheet" />
+  <link rel="stylesheet" href="fluff.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
 </head>
 <body  class="mblack">
+  <!-- Loader -->
   <div class="loader">
     <div id="loading-cursor"></div>
     <div class="image-container">
@@ -705,14 +26,17 @@ hr {
       <div class="fade-overlay"></div>
     </div>
   </div>
-  
+    
 
-
-    <nav class="nav-sidebar visible" id="sidebar">
+  <!-- Navigation -->
+  <nav class="nav-sidebar visible" id="sidebar">
+    <!-- Avatar -->
     <div class="nav-avatar">
       <img src="images/portrait.jpg" alt="Avatar">
     </div>
+    <!-- Éléments de navigation -->
     <ul class="nav-items">
+      <!-- Accueil -->
       <li class="nav-item" data-scroll>
         <a href="#home" class="nav-link">
           <img src="icons/home.svg" class="nav-icon" alt="home" />
@@ -720,6 +44,7 @@ hr {
           <span class="text-en text-hidden" data-translation="home_nav">Home</span>
         </a>
       </li>
+      <!-- À propos -->
       <li class="nav-item" data-scroll>
         <a href="#about" class="nav-link">
           <img src="icons/about.svg" class="nav-icon" alt="about" />
@@ -727,6 +52,7 @@ hr {
           <span class="text-en text-hidden" data-translation="home_nav">About</span>
         </a>
       </li>
+      <!-- Couture -->
       <li class="nav-item" data-scroll>
         <a href="#couture" class="nav-link">
           <img src="icons/scissors.svg" class="nav-icon" alt="Couture" />
@@ -734,6 +60,7 @@ hr {
           <span class="text-en text-hidden" data-translation="couture_nav">Sewing</span>
         </a>
       </li>
+      <!-- Dessins et Peintures -->
       <li class="nav-item" data-scroll>
         <a href="#dessins" class="nav-link">
           <img src="icons/dessins.svg" class="nav-icon" alt="dessins" />
@@ -741,6 +68,7 @@ hr {
           <span class="text-en text-hidden" data-translation="dessins_nav">Drawings and Paintings</span>
         </a>
       </li>
+      <!-- Art Digital -->
       <li class="nav-item" data-scroll>
         <a href="#arts_numeriques" class="nav-link">
           <img src="icons/digital.svg" class="nav-icon" alt="digital" />
@@ -748,6 +76,7 @@ hr {
           <span class="text-en text-hidden" data-translation="digital_nav">Digital Art</span>
         </a>
       </li>
+      <!-- Contact -->
       <li class="nav-item" data-scroll>
         <a href="#contact" class="nav-link">
           <img src="icons/mail_24.svg" class="nav-icon" alt="contact" />
@@ -756,25 +85,24 @@ hr {
       </li>
     </ul>
   </nav>
+
   
-
-<!-- Navbar on small screens (Hidden on medium and large screens) -->
-<nav class="custom-top custom-hide-large-medium" id="myNavbar">
-  <div class="custom-bar">
-    <a href="#home" class="custom-bar-item nav-link"><img src="icons/home.svg" alt="home" /></a>
-    <a href="#about" class="custom-bar-item nav-link"><img src="icons/about.svg" alt="about" /></a>
-    <a href="#couture" class="custom-bar-item nav-link"><img src="icons/scissors.svg" alt="Couture" /></a>
-    <a href="#dessins" class="custom-bar-item nav-link"><img src="icons/dessins.svg" alt="dessins" /></a>
-    <a href="#arts_numeriques" class="custom-bar-item nav-link"><img src="icons/digital.svg" alt="digital" /></a>
-    <a href="#contact" class="custom-bar-item nav-link"><img src="icons/mail.svg" alt="contact" /></a>
-  </div>
-</nav>
-
+  <!-- Barre de navigation pour petits écrans (cachée sur les écrans moyens et grands) -->
+  <nav class="custom-top custom-hide-large-medium" id="myNavbar">
+    <div class="custom-bar">
+      <a href="#home" class="custom-bar-item nav-link"><img src="icons/home.svg" alt="home" /></a>
+      <a href="#about" class="custom-bar-item nav-link"><img src="icons/about.svg" alt="about" /></a>
+      <a href="#couture" class="custom-bar-item nav-link"><img src="icons/scissors.svg" alt="Couture" /></a>
+      <a href="#dessins" class="custom-bar-item nav-link"><img src="icons/dessins.svg" alt="dessins" /></a>
+      <a href="#arts_numeriques" class="custom-bar-item nav-link"><img src="icons/digital.svg" alt="digital" /></a>
+      <a href="#contact" class="custom-bar-item nav-link"><img src="icons/mail.svg" alt="contact" /></a>
+    </div>
+  </nav>
 
 
-
-
+  <!-- Conteneur de bouton de traduction -->
   <div id="translation-container" data-scroll data-scroll-target="#about">
+    <!-- Bouton de traduction -->
     <button id="translation-button" class="text-fr-active" onclick="toggleTranslation()">
       <div id="top-half">
         <span id="fr-text">FR</span>
@@ -783,50 +111,58 @@ hr {
         <span id="en-text">EN</span>
       </div>
     </button>
-    
   </div>
 
-
+  <!-- Conteneur de défilement -->
   <div data-scroll-container>
-    
-      <hero class="hero-banner">
-          <div data-scroll data-scroll-speed="3" class="background-image" id="home"></div>
-         
-            <div class="title-container" id="main">
-              <div class="hero-title-container" data-scroll data-scroll-repeat="true">
-                <div class="hero-title" data-scroll data-scroll-repeat="true">
-                  <span data-scroll data-scroll-speed="-3" data-scroll-target=".hero-banner">H</span><span data-scroll data-scroll-speed="-3" data-scroll-target=".hero-banner">é</span><span data-scroll data-scroll-speed="-3" data-scroll-target=".hero-banner">l</span><span data-scroll data-scroll-speed="-3" data-scroll-target=".hero-banner">è</span><span data-scroll data-scroll-speed="-3" data-scroll-target=".hero-banner">n</span><span data-scroll data-scroll-speed="-3" data-scroll-target=".hero-banner">e</span>
-              <span data-scroll data-scroll-speed="-3" data-scroll-target=".hero-banner">G</span><span data-scroll data-scroll-speed="-3" data-scroll-target=".hero-banner">i</span><span data-scroll data-scroll-speed="-3" data-scroll-target=".hero-banner">r</span><span data-scroll data-scroll-speed="-3" data-scroll-target=".hero-banner">a</span><span data-scroll data-scroll-speed="-3" data-scroll-target=".hero-banner">r</span><span data-scroll data-scroll-speed="-3" data-scroll-target=".hero-banner">d</span><span data-scroll data-scroll-speed="-3" data-scroll-target=".hero-banner">i</span><span data-scroll data-scroll-speed="-3" data-scroll-target=".hero-banner">n</span>
-                </div>
-              </div>
+    <!-- Bannière du héros (image de fond en grand) -->
+    <hero class="hero-banner">
+      <!-- Image de fond avec effet de parallaxe -->
+      <div data-scroll data-scroll-speed="-7" data-scroll-target=".hero-banner" class="background-image" id="home"></div>
       
+      <!-- Conteneur du titre -->
+      <div class="title-container" id="main">
+        <!-- Conteneur du titre du héros avec effet de défilement -->
+        <div class="hero-title-container" data-scroll data-scroll-repeat="true">
+          <!-- Titre du héros avec effet de défilement sur chaque lettre -->
+          <div class="hero-title" data-scroll data-scroll-repeat="true">
+            <span data-scroll data-scroll-speed="3" data-scroll-target=".hero-banner">H</span><span data-scroll data-scroll-speed="3" data-scroll-target=".hero-banner">é</span><span data-scroll data-scroll-speed="3" data-scroll-target=".hero-banner">l</span><span data-scroll data-scroll-speed="3" data-scroll-target=".hero-banner">è</span><span data-scroll data-scroll-speed="3" data-scroll-target=".hero-banner">n</span><span data-scroll data-scroll-speed="3" data-scroll-target=".hero-banner">e</span>
+            <span data-scroll data-scroll-speed="3" data-scroll-target=".hero-banner">G</span><span data-scroll data-scroll-speed="3" data-scroll-target=".hero-banner">i</span><span data-scroll data-scroll-speed="3" data-scroll-target=".hero-banner">r</span><span data-scroll data-scroll-speed="3" data-scroll-target=".hero-banner">a</span><span data-scroll data-scroll-speed="3" data-scroll-target=".hero-banner">r</span><span data-scroll data-scroll-speed="3" data-scroll-target=".hero-banner">d</span><span data-scroll data-scroll-speed="3" data-scroll-target=".hero-banner">i</span><span data-scroll data-scroll-speed="3" data-scroll-target=".hero-banner">n</span>
           </div>
-          <div data-scroll class="rep100" ></div>
-      </hero>
-   
-
-      <section class="vide222"></section>
+        </div>
+      </div>
+      <!-- Espace vide pour ajuster la hauteur de la bannière -->
+      <div data-scroll class="rep100"></div>
+    </hero>
+  
+    <section class="vide222"></section>
 
     <div class="mpadding-large mcenter mitenu" id ="main">
       <section class="mcontent mtext-light-grey mheight" id="about">
         <div class="mjustify about-content">
-
-          <div data-scroll data-scroll-speed="-2.22"  data-scroll-target="#about" class="about-portrait">
+    
+          <!-- Image de profil -->
+          <div data-scroll data-scroll-speed="-2.22" data-scroll-target="#about" class="about-portrait">
             <img class="portrait" src="images/portrait.jpg" alt="Votre photo" style="width:100%">
           </div>
+    
+          <!-- Texte de présentation -->
           <div class="about-text" style="flex-basis: 66.66%; padding-left: 16px;">
             <h2 data-scroll data-scroll-speed="-1.1" data-scroll-direction="horizontal" data-scroll-target="#about" class="mtext-white text-fr text-active" data-translation="about-title">À propos de moi</h2>
             <h2 data-scroll data-scroll-speed="-1.1" data-scroll-direction="horizontal" data-scroll-target="#about" class="mtext-white text-en text-hidden" data-translation="about-title">About me</h2>
-              <hr style="width:200px" class="mopacity hr-left"></hr>
+            <hr style="width:200px" class="mopacity hr-left"></hr>
             <div id="text-container">
+    
+              <!-- Texte en français -->
               <div data-scroll data-scroll-speed="2" data-scroll-target="#about" class="text-fr text-active" data-translation="about-text">
                 <p>Je me présente, moi c'est Hélène Girardin, une passionnée de la couture, de la création de costumes et de la confection de corsets. Mais ce n'est pas tout, j'ai également une âme d'artiste et je m'exprime à travers mes dessins, mes peintures et mes créations numériques. J'aime explorer de nouvelles techniques et j'ai une imagination débordante qui me permet de créer des pièces uniques et originales.</p>
-
-                  <p>Je suis une artiste autodidacte qui a commencé à créer dès son plus jeune âge. Mon travail reflète mon amour pour les détails minutieux et les matériaux de qualité. Je suis constamment à la recherche de nouvelles inspirations et je m'efforce de créer des pièces qui racontent une histoire et qui sont aussi belles que fonctionnelles. Pour moi, la couture et l'art sont des formes d'expression qui me permettent de laisser libre cours à ma créativité et de partager ma passion avec le monde.</p>
-                  
-                  <p>Si vous êtes curieux de découvrir mes créations, vous pouvez jeter un coup d'œil à mon portfolio personnel sur ce site. Cependant, gardez à l'esprit qu'il ne s'agit là que d'un petit échantillon de mon travail. Pour voir plus d'œuvres et suivre mes aventures créatives, n'hésitez pas à me suivre sur mes réseaux sociaux. Je suis impatiente de partager mes projets futurs avec vous et de continuer à créer des pièces mémorables qui inspirent et captivent le public.</p>
-
+    
+                <p>Je suis une artiste autodidacte qui a commencé à créer dès son plus jeune âge. Mon travail reflète mon amour pour les détails minutieux et les matériaux de qualité. Je suis constamment à la recherche de nouvelles inspirations et je m'efforce de créer des pièces qui racontent une histoire et qui sont aussi belles que fonctionnelles. Pour moi, la couture et l'art sont des formes d'expression qui me permettent de laisser libre cours à ma créativité et de partager ma passion avec le monde.</p>
+    
+                <p>Si vous êtes curieux de découvrir mes créations, vous pouvez jeter un coup d'œil à mon portfolio personnel sur ce site. Cependant, gardez à l'esprit qu'il ne s'agit là que d'un petit échantillon de mon travail. Pour voir plus d'œuvres et suivre mes aventures créatives, n'hésitez pas à me suivre sur mes réseaux sociaux. Je suis impatiente de partager mes projets futurs avec vous et de continuer à créer des pièces mémorables qui inspirent et captivent le public.</p>
+    
               </div>
+              <!-- Cette div est animée en scroll avec une vitesse de 2 -->
               <div data-scroll data-scroll-speed="2" data-scroll-target="#about" class="text-en text-hidden" data-translation="about-text">
                 <p>Allow me to introduce myself, I'm Hélène Girardin, a passionate seamstress, costume designer, and corset maker. But that's not all, I also have an artist's soul and express myself through my drawings, paintings, and digital creations. I love exploring new techniques and have a boundless imagination that allows me to create unique and original pieces.</p>
                 <p>As a self-taught artist, I began creating from a young age. My work reflects my love for intricate details and quality materials. I'm constantly seeking new inspiration and strive to create pieces that tell a story and are as beautiful as they are functional. For me, sewing and art are forms of expression that allow me to unleash my creativity and share my passion with the world.</p>
@@ -837,448 +173,353 @@ hr {
         </div>
       </section>
 
+      <!-- Cette section est vide et n'a pas de contenu -->
       <section class="vide222"></section>
       
-      <section class="mcontent mpadding-64 mjustify mheight"  id="couture">
+      <!-- Cette section contient des images de couture et un titre en français et en anglais -->
+      <section class="mcontent mpadding-64 mjustify mheight" id="couture">
         <div>
-            <h2 data-scroll data-scroll-direction="horizontal" data-scroll-speed="7" data-scroll-target="#couture" class="mtext-white mcenter text-fr text-active" data-translation="couture-title">Couture</h2>
-            <h2 data-scroll data-scroll-direction="horizontal" data-scroll-speed="7" data-scroll-target="#couture" class="mtext-white mcenter text-en text-hidden" data-translation="couture-title">Sewing</h2>
-            <hr data-scroll data-scroll-direction="horizontal" data-scroll-speed="-7" data-scroll-target="#couture" style="width:100%" class="mopacity">   
-            <div class="section-img"  data-scroll data-scroll-speed="2" data-scroll-target="#couture">
-              <div class="img--4 imgc1" data-scroll data-scroll-repeat="true"data-scroll-target="#couture">
-                  <a href="images/couture01_open.jpeg" data-lightbox="portfolioa">
-                      <img src="images/couture01.jpeg" alt="Création 1" class="couture-img">
-                  </a>
+          <!-- Titre en français animé en scroll horizontal avec une vitesse de 7 -->
+          <h2 data-scroll data-scroll-direction="horizontal" data-scroll-speed="7" data-scroll-target="#couture" class="mtext-white mcenter text-fr text-active" data-translation="couture-title">Couture</h2>
+          <!-- Titre en anglais animé en scroll horizontal avec une vitesse de 7 et caché par défaut -->
+          <h2 data-scroll data-scroll-direction="horizontal" data-scroll-speed="7" data-scroll-target="#couture" class="mtext-white mcenter text-en text-hidden" data-translation="couture-title">Sewing</h2>
+          <!-- Ligne horizontale animée en scroll horizontal avec une vitesse de -7 et une largeur de 100% -->
+          <hr data-scroll data-scroll-direction="horizontal" data-scroll-speed="-7" data-scroll-target="#couture" style="width:100%" class="mopacity">   
+          <!-- Cette div contient des images de couture animées en scroll avec une vitesse de 2 -->
+          <div class="section-img"  data-scroll data-scroll-speed="2" data-scroll-target="#couture">
+            <!-- Div pour la première image -->
+            <div class="img--4 imgc1" data-scroll data-scroll-repeat="true"data-scroll-target="#couture">
+              <!-- Lien vers l'image agrandie quand on clique dessus avec un effet de lightbox -->
+              <a href="images/couture01_open.jpeg" data-lightbox="portfolioa">
+                <!-- Image de couture avec une classe pour la mise en forme -->
+                <img src="images/couture01.jpeg" alt="Création 1" class="couture-img">
+              </a>
+            </div>
+            <!-- Div pour la deuxième image -->
+            <div class="img--4 imgc2" data-scroll data-scroll-repeat="true" data-scroll-target="#couture">
+              <!-- Lien vers l'image agrandie quand on clique dessus avec un effet de lightbox -->
+              <a href="images/couture02_open.jpeg" data-lightbox="portfolioa">
+                <!-- Image de couture avec une classe pour la mise en forme -->
+                <img src="images/couture02.jpeg" alt="Création 2" class="couture-img">
+              </a>
+            </div>
+            <!-- Div pour la troisième image -->
+            <div class="img--4 imgc3" data-scroll data-scroll-repeat="true" data-scroll-target="#couture">
+              <!-- Lien vers l'image agrandie quand on clique dessus avec un effet de lightbox -->
+              <a href="images/couture03.jpeg" data-lightbox="portfolioa">
+                <!-- Image de couture avec une classe pour la mise en forme -->
+                <img src="images/couture03.jpeg" alt="Création 3" class="couture-img">
+              </a>
+            </div>
+            <!-- Div pour la quatrième image -->
+            <div class="img--4 imgc4" data-scroll data-scroll-repeat="true" data-scroll-target="#couture">
+              <!-- Lien vers l'image agrandie quand on clique dessus avec un effet de lightbox -->
+              <a href="images/couture04_open.jpeg" data-lightbox="portfolioa">
+                <!-- Image de couture avec une classe pour la mise en forme -->
+                <img src="images/couture04.jpeg" alt="Création 4" class="couture-img">
+              </a>
+            </div>
+            <!-- Div pour la cinquième image animée en scroll horizontal avec une vitesse de -0.3 -->
+            <div data-scroll data-scroll-speed="-0.3" data-scroll-target="#couture" data-scroll-direction="horizontal" class="img--2">
+              <!-- Lien vers l'image agrandie quand on clique dessus avec un effet de lightbox -->
+              <a href="images/couture05_open.jpeg" data-lightbox="portfolioa">
+                <!-- Image de couture avec une classe pour la mise en forme -->
+                <img src="images/couture05.jpeg" alt="Création 5" class="couture-img">
+              </a>
+            </div>
+            <!-- Div pour la sixième image animée en scroll horizontal avec une vitesse de 0.3 -->
+            <div data-scroll data-scroll-speed="0.3" data-scroll-target="#couture" data-scroll-direction="horizontal" class="img--2">
+              <!-- Lien vers l'image agrandie quand on clique dessus avec un effet de lightbox -->
+              <a href="images/couture06_open.jpeg" data-lightbox="portfolioa">
+                <!-- Image de couture avec une classe pour la mise en forme -->
+                <img src="images/couture06.jpeg" alt="Création 6" class="couture-img">
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+        
+      <!-- Cette section est vide et n'a pas de contenu -->
+      <section class="vide222"></section>
+              
+      <!-- Cette section contient des images de dessins et peintures et un titre en français et en anglais -->
+      <section class="mcontent mpadding-64 mjustify mheight" id="dessins">
+        <div>
+          <!-- Titre en français animé en scroll avec une vitesse de -2 -->
+          <h2 data-scroll data-scroll-speed="-2" data-scroll-target="#dessins" class="mtext-white mcenter text-fr text-active" data-translation="drawings-title">Dessins et peintures</h2>
+          <!-- Titre en anglais animé en scroll avec une vitesse de -2 et caché par défaut -->
+          <h2 data-scroll data-scroll-speed="-2" data-scroll-target="#dessins" class="mtext-white mcenter text-en text-hidden" data-translation="drawings-title">Drawings and paintings</h2>
+          <!-- Ligne horizontale animée en scroll et répétée avec une classe pour la mise en forme -->
+          <hr data-scroll data-scroll-repeat="true" data-scroll-target="#dessins" class="mopacity ligne-dessins">
+          <!-- Cette div contient des images de dessins et peintures animées en scroll -->
+          <div class="section-img">
+            <!-- Div pour la première image animée en scroll avec une vitesse de -1 -->
+            <div class="img--4" data-scroll data-scroll-speed="-1" data-scroll-target="#dessins">
+              <!-- Lien vers l'image agrandie quand on clique dessus avec un effet de lightbox -->
+              <a href="images/dessin01.jpeg" data-lightbox="portfoliob">
+                <!-- Image de dessin et peinture avec une classe pour la mise en forme -->
+                <img src="images/dessin01.jpeg" alt="Création 1" class="couture-img">
+              </a>
+            </div>
+            <!-- Div pour la deuxième image animée en scroll avec une vitesse de 1 -->
+            <div class="img--4"  data-scroll data-scroll-speed="1" data-scroll-target="#dessins">
+              <!-- Lien vers l'image agrandie quand on clique dessus avec un effet de lightbox -->
+              <a href="images/dessin02.jpeg" data-lightbox="portfoliob">
+                <!-- Image de dessin et peinture avec une classe pour la mise en forme -->
+                <img src="images/dessin02.jpeg" alt="Création 2" class="couture-img">
+              </a>
+            </div>
+            <!-- Div pour la troisième image animée en scroll avec une vitesse de -1 -->
+            <div class="img--4"  data-scroll data-scroll-speed="-1" data-scroll-target="#dessins">
+              <!-- Lien vers l'image agrandie quand on clique dessus avec un effet de lightbox -->
+              <a href="images/dessin03.jpeg" data-lightbox="portfoliob">
+                <!-- Image de dessin et peinture avec une classe pour la mise en forme -->
+                <img src="images/dessin03.jpeg" alt="Création 3" class="couture-img">
+              </a>
+            </div>
+            <!-- Div pour la quatrième image animée en scroll avec une vitesse de 1 -->
+            <div class="img--4"  data-scroll data-scroll-speed="1" data-scroll-target="#dessins">
+              <!-- Lien vers l'image agrandie quand on clique dessus avec un effet de lightbox -->
+              <a href="images/dessin04.jpeg" data-lightbox="portfoliob">
+                <!-- Image de dessin et peinture avec une classe pour la mise en forme -->
+                <img src="images/dessin04.jpeg" alt="Création 4" class="couture-img">
+              </a>
+            </div>
+            <!-- Div pour la cinquième image animée en scroll avec une direction horizontale et une vitesse de 2 -->
+            <div class="img--2"  data-scroll data-scroll-speed="2" data-scroll-direction="horizontal" data-scroll-target="#dessins">
+              <!-- Lien vers l'image agrandie quand on clique dessus avec un effet de lightbox -->
+              <a href="images/dessin05.jpeg" data-lightbox="portfoliob">
+                <!-- Image de dessin et peinture avec une classe pour la mise en forme -->
+                <img src="images/dessin05.jpeg" alt="Création 5" class="couture-img">
+              </a>
+            </div>
+            <!-- Div pour la sixième image animée en scroll avec une direction horizontale inverse et une vitesse de -2 -->
+            <div class="img--2" data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal" data-scroll-target="#dessins">
+              <!-- Lien vers l'image agrandie quand on clique dessus avec un effet de lightbox -->
+              <a href="images/dessin06.jpeg" data-lightbox="portfoliob">
+                <!-- Image de dessin et peinture avec une classe pour la mise en forme -->
+                <img src="images/dessin06.jpeg" alt="Création 6" class="couture-img">
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="vide222"></section>
+
+      <!-- Section pour les arts numériques -->
+      <section class="mcontent mpadding-64 mjustify mheight" id="arts_numeriques">
+        <div>
+          <!-- Titre en français -->
+          <h2 data-scroll data-scroll-speed="2" data-scroll-target="#arts_numeriques" class="mtext-white mcenter text-fr text-active" data-translation="digital-art-title">Arts numériques</h2>
+          <!-- Titre en anglais -->
+          <h2 data-scroll data-scroll-speed="2" data-scroll-target="#arts_numeriques" class="mtext-white mcenter text-en text-hidden" data-translation="digital-art-title">Digital art</h2>
+          <hr data-scroll data-scroll-speed="1.1" data-scroll-target="#arts_numeriques" class="mopacity">
+          <!-- Section pour les images des créations numériques -->
+          <div class="section-imgd" data-scroll data-scroll-repeat="true" data-scroll-speed="3">
+            <!-- Première création -->
+            <div data-scroll data-scroll-repeat="true" data-scroll-target="#arts_numeriques" class="img--4">
+              <a href="images/digital01_open.jpeg" data-lightbox="portfolioc">
+                <img src="images/digital01.jpeg" alt="Création 5" class="couture-img"">
+              </a>
+            </div>
+            <!-- Deuxième création -->
+            <div data-scroll data-scroll-repeat="true" data-scroll-target="#arts_numeriques" class="img--4">
+              <a href="images/digital02_open.jpeg" data-lightbox="portfolioc">
+                <img src="images/digital02.jpeg" alt="Création 5" class="couture-img"">
+              </a>
+            </div>
+            <!-- Troisième création -->
+            <div data-scroll data-scroll-repeat="true" data-scroll-target="#arts_numeriques" class="img--4">
+              <a href="images/digital03_open.jpeg" data-lightbox="portfolioc">
+                <img src="images/digital03.jpeg" alt="Création 5" class="couture-img"">
+              </a>
+            </div>
+            <!-- Quatrième création -->
+            <div data-scroll data-scroll-repeat="true" data-scroll-target="#arts_numeriques" class="img--4">
+              <a href="images/digital04.jpeg" data-lightbox="portfolioc">
+                <img src="images/digital04.jpeg" alt="Création 5" class="couture-img"">
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+      <section class="mcontent mtext-light-grey mjustify fin-section" id="contact">
+        <div>
+          <!-- Titre en français -->
+          <h2 
+            data-scroll 
+            data-scroll-speed="1" 
+            data-scroll-target="#contact" 
+            data-scroll-repeat="true" 
+            class="mtext-white text-fr text-active tcont" 
+            data-translation="contact-title">
+            Contactez-moi
+          </h2>
+          
+          <!-- Titre en anglais -->
+          <h2 
+            data-scroll 
+            data-scroll-speed="1" 
+            data-scroll-target="#contact" 
+            data-scroll-repeat="true" 
+            class="mtext-white text-en text-hidden tcont" 
+            data-translation="contact-title">
+            Contact me
+          </h2>
+          
+          <!-- Ligne de séparation -->
+          <hr 
+            data-scroll 
+            data-scroll-speed="2" 
+            data-scroll-target="#contact" 
+            data-scroll-repeat="true" 
+            style="width:200px" 
+            class="mopacity lcont">
+          
+          <!-- Paragraphe en français -->
+          <p 
+            data-scroll 
+            data-scroll-speed="3" 
+            data-scroll-target="#contact" 
+            data-scroll-repeat="true" 
+            class="text-fr text-active ccont" 
+            data-translation="contact-text">
+            N'hésitez pas à utiliser les icônes ci-dessous pour me contacter ou me suivre sur les réseaux sociaux. Que vous soyez intéressé par un projet de couture personnalisé, une collaboration artistique ou simplement pour rester à jour sur mes dernières créations, je serais ravie de rentrer en contact avec vous.
+          </p>
+          
+          <!-- Paragraphe en anglais -->
+          <p 
+            data-scroll 
+            data-scroll-speed="3" 
+            data-scroll-target="#contact" 
+            data-scroll-repeat="true" 
+            class="text-en text-hidden ccont" 
+            data-translation="contact-text">
+            Feel free to use the icons below to contact me or follow me on social media. Whether you're interested in a custom sewing project, an artistic collaboration, or just want to stay up-to-date on my latest creations, I'd love to connect with you.
+          </p>
+          
+          <!-- Liste des réseaux sociaux -->
+          <div class="socials" data-scroll data-scroll-repeat="true">
+            
+            <!-- Icône mail -->
+            <div class="social-icon-container">
+              <a target="_blank" class="social-icon">
+                <img src="icons/mail_24.svg" alt="contact" />
+              </a>
+              <div class="social-icon-hover">
+                <a href="mailto:helene.costumes@gmail.com" target="_blank">
+                  <h4 class="text-fr text-active" data-translation="mail-text">Contactez-nous par e-mail</h4>
+                  <h4 class="text-en text-hidden" data-translation="mail-text">Contact via e-mail</h4>
+                  <img src="https://source.unsplash.com/random/340x200" alt="Image Email">
+                </a>
               </div>
-              <div class="img--4 imgc2" data-scroll data-scroll-repeat="true" data-scroll-target="#couture">
-                  <a href="images/couture02_open.jpeg" data-lightbox="portfolioa">
-                      <img src="images/couture02.jpeg" alt="Création 2" class="couture-img">
-                  </a>
+            </div>
+            <!-- Icône Instagram Couture -->
+            <div class="social-icon-container">
+              <a target="_blank" class="social-icon">
+                <img src="icons/insta.svg" alt="insta" />
+              </a>
+              <div class="social-icon-hover">
+                <a href="https://www.instagram.com/imakecorsets" target="_blank">
+                  <h4 class="text-fr text-active" data-translation="insta1-text">Instagram Couture</h4>
+                  <h4 class="text-en text-hidden" data-translation="insta1-text">Sewing Instagram</h4>
+                  <img src="https://source.unsplash.com/random/222x200" alt="Image Instagram">
+                </a>
               </div>
-              <div class="img--4 imgc3" data-scroll data-scroll-repeat="true" data-scroll-target="#couture">
-                  <a href="images/couture03.jpeg" data-lightbox="portfolioa">
-                      <img src="images/couture03.jpeg" alt="Création 3" class="couture-img">
-                  </a>
+            </div>
+            
+            <!-- Icône Instagram Dessin -->
+            <div class="social-icon-container">
+              <a target="_blank" class="social-icon">
+                <img src="icons/insta.svg" alt="insta" />
+              </a>
+              <div class="social-icon-hover">
+                <a href="https://www.instagram.com/theghouldraws/" target="_blank">
+                  <h4 class="text-fr text-active" data-translation="insta2-text">Instagram Dessin</h4>
+                  <h4 class="text-en text-hidden" data-translation="insta2-text">Drawing Instagram</h4>
+                  <img src="images/apercu_igdessins.jpg" alt="Image Instagram">
+                </a>
               </div>
-              <div class="img--4 imgc4" data-scroll data-scroll-repeat="true" data-scroll-target="#couture">
-                  <a href="images/couture04_open.jpeg" data-lightbox="portfolioa">
-                      <img src="images/couture04.jpeg" alt="Création 4" class="couture-img">
-                  </a>
-              </div>
-              <div data-scroll data-scroll-speed="-0.3" data-scroll-target="#couture" data-scroll-direction="horizontal" class="img--2">
-                  <a href="images/couture05_open.jpeg" data-lightbox="portfolioa">
-                      <img src="images/couture05.jpeg" alt="Création 5" class="couture-img">
-                  </a>
-              </div>
-              <div data-scroll data-scroll-speed="0.3" data-scroll-target="#couture" data-scroll-direction="horizontal" class="img--2">
-                <a href="images/couture06_open.jpeg" data-lightbox="portfolioa">
-                  <img src="images/couture06.jpeg" alt="Création 6" class="couture-img">
+            </div>
+            
+            <!-- Icône Facebook -->
+            <div class="social-icon-container">
+              <a target="_blank" class="social-icon">
+                <img src="icons/facebook.svg" alt="facebook" />
+              </a>
+              <div class="social-icon-hover">
+                <a href="https://www.facebook.com/Helenegirardincostumiere/" target="_blank">
+                  <h4 class="text-fr text-active" data-translation="facebook-text">Rejoignez-nous sur Facebook</h4>
+                  <h4 class="text-en text-hidden" data-translation="facebook-text">Join us on Facebook</h4>
+                  <img src="images/apercu_fb.jpg" alt="Image Facebook">
                 </a>
               </div>
             </div>
           </div>
-      </section>
-        
-      <section class="vide222"></section>
-        
-      <section class="mcontent mpadding-64 mjustify mheight" id="dessins">
-        <div>
-          <h2  data-scroll data-scroll-speed="-2" data-scroll-target="#dessins" class="mtext-white mcenter text-fr text-active" data-translation="drawings-title">Dessins et peintures</h2>
-          <h2  data-scroll data-scroll-speed="-2" data-scroll-target="#dessins" class="mtext-white mcenter text-en text-hidden" data-translation="drawings-title">Drawings and paintings</h2>
-          <hr data-scroll data-scroll-repeat="true" data-scroll-target="#dessins" class="mopacity ligne-dessins">
-          <div class="section-img">
-            <div class="img--4" data-scroll data-scroll-speed="-1"data-scroll-target="#dessins">
-              <a href="images/dessin01.jpeg" data-lightbox="portfoliob">
-                <img src="images/dessin01.jpeg" alt="Création 1" class="couture-img">
-            </a>
-            </div>
-            <div class="img--4"  data-scroll data-scroll-speed="1" data-scroll-target="#dessins">
-              <a href="images/dessin02.jpeg" data-lightbox="portfoliob">
-                <img src="images/dessin02.jpeg" alt="Création 2" class="couture-img">
-            </a>
-            </div>
-            <div class="img--4"  data-scroll data-scroll-speed="-1" data-scroll-target="#dessins">
-              <a href="images/dessin03.jpeg" data-lightbox="portfoliob">
-                <img src="images/dessin03.jpeg" alt="Création 3" class="couture-img">
-            </a>
-            </div>
-            <div class="img--4"  data-scroll data-scroll-speed="1" data-scroll-target="#dessins">
-              <a href="images/dessin04.jpeg" data-lightbox="portfoliob">
-                <img src="images/dessin04.jpeg" alt="Création 4" class="couture-img">
-            </a>
-            </div>
-            <div class="img--2"  data-scroll data-scroll-speed="2" data-scroll-direction="horizontal" data-scroll-target="#dessins">
-              <a href="images/dessin05.jpeg" data-lightbox="portfoliob">
-                <img src="images/dessin05.jpeg" alt="Création 5" class="couture-img">
-            </a>
-            </div>
-            <div class="img--2" data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal" data-scroll-target="#dessins">
-              <a href="images/dessin06.jpeg" data-lightbox="portfoliob">
-                <img src="images/dessin06.jpeg" alt="Création 6" class="couture-img">
-            </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="vide222"></section>
-
-      <section class="mcontent mpadding-64 mjustify mheight" id="arts_numeriques">
-        <div>
-          <!-- Titre en français -->
-        <h2 data-scroll data-scroll-speed="2" data-scroll-target="#arts_numeriques" class="mtext-white mcenter text-fr text-active" data-translation="digital-art-title">Arts numériques</h2>
-        <!-- Titre en anglais -->
-        <h2 data-scroll data-scroll-speed="2" data-scroll-target="#arts_numeriques" class="mtext-white mcenter text-en text-hidden" data-translation="digital-art-title">Digital art</h2>
-          <hr data-scroll data-scroll-speed="1.1" data-scroll-target="#arts_numeriques" class="mopacity">
-        <div class="section-imgd" data-scroll data-scroll-repeat="true" data-scroll-speed="3">
-          <div data-scroll data-scroll-repeat="true" data-scroll-target="#arts_numeriques" class="img--4">
-            <a href="images/digital01_open.jpeg" data-lightbox="portfolioc">
-              <img src="images/digital01.jpeg" alt="Création 5" class="couture-img"">
-            </a>
-          </div>
-          <div data-scroll data-scroll-repeat="true" data-scroll-target="#arts_numeriques" class="img--4">
-            <a href="images/digital02_open.jpeg" data-lightbox="portfolioc">
-              <img src="images/digital02.jpeg" alt="Création 5" class="couture-img"">
-            </a>
-          </div>
-          <div data-scroll data-scroll-repeat="true" data-scroll-target="#arts_numeriques" class="img--4">
-            <a href="images/digital03_open.jpeg" data-lightbox="portfolioc">
-              <img src="images/digital03.jpeg" alt="Création 5" class="couture-img"">
-            </a>
-          </div>
-          <div data-scroll data-scroll-repeat="true" data-scroll-target="#arts_numeriques" class="img--4">
-            <a href="images/digital04.jpeg" data-lightbox="portfolioc">
-              <img src="images/digital04.jpeg" alt="Création 5" class="couture-img"">
-            </a>
-          </div>
-        </div>
-      </div>
-      </section> 
-
-    
-
-      <section class="mcontent mtext-light-grey mjustify fin-section" id="contact">
-        <div>
-        <!-- Titre en français -->
-        <h2 data-scroll data-scroll-speed="1" data-scroll-target="#contact" data-scroll-repeat="true" class="mtext-white text-fr text-active tcont" data-translation="contact-title">Contactez-moi</h2>
-        <!-- Titre en anglais -->
-        <h2 data-scroll data-scroll-speed="1" data-scroll-target="#contact" data-scroll-repeat="true" class="mtext-white text-en text-hidden tcont" data-translation="contact-title">Contact me</h2>
-          <hr data-scroll data-scroll-speed="2" data-scroll-target="#contact" data-scroll-repeat="true" style="width:200px" class="mopacity lcont">
-          <!-- Paragraphe en français -->
-        <p data-scroll data-scroll-speed="3" data-scroll-target="#contact" data-scroll-repeat="true" class="text-fr text-active ccont" data-translation="contact-text">
-          N'hésitez pas à utiliser les icônes ci-dessous pour me contacter ou me suivre sur les réseaux sociaux. Que vous soyez intéressé par un projet de couture personnalisé, une collaboration artistique ou simplement pour rester à jour sur mes dernières créations, je serais ravie de rentrer en contact avec vous.
-        </p>
-        <!-- Paragraphe en anglais -->
-        <p data-scroll data-scroll-speed="3" data-scroll-target="#contact" data-scroll-repeat="true" class="text-en text-hidden ccont" data-translation="contact-text">
-          Feel free to use the icons below to contact me or follow me on social media. Whether you're interested in a custom sewing project, an artistic collaboration, or just want to stay up-to-date on my latest creations, I'd love to connect with you.
-        </p>
-        <div class="socials" data-scroll data-scroll-repeat="true">
-          <div class="social-icon-container">
-            <a target="_blank" class="social-icon">
-              <img src="icons/mail_24.svg" alt="contact" />
-            </a>
-            <div class="social-icon-hover">
-              <a href="mailto:helene.costumes@gmail.com" target="_blank">
-                <h4 class="text-fr text-active" data-translation="mail-text">Contactez-nous par e-mail</h4>
-                <h4 class="text-en text-hidden" data-translation="mail-text">Contact via e-mail</h4>
-                <img src="https://source.unsplash.com/random/340x200" alt="Image Email">
-              </a>
-            </div>
-          </div>
-          <div class="social-icon-container">
-            <a target="_blank" class="social-icon">
-              <img src="icons/insta.svg" alt="insta" />
-            </a>
-            <div class="social-icon-hover">
-              <a href="https://www.instagram.com/imakecorsets" target="_blank">
-                <h4 class="text-fr text-active" data-translation="insta1-text">Instagram Couture</h4>
-                <h4 class="text-en text-hidden" data-translation="insta1-text">Sewing Instagram</h4>
-                <img src="https://source.unsplash.com/random/222x200" alt="Image Instagram">
-              </a>
-            </div>
-          </div>
-          <div class="social-icon-container">
-            <a target="_blank" class="social-icon">
-              <img src="icons/insta.svg" alt="insta" />
-            </a>
-            <div class="social-icon-hover">
-              <a href="https://www.instagram.com/theghouldraws/" target="_blank">
-                <h4 class="text-fr text-active" data-translation="insta2-text">Instagram Dessin</h4>
-                <h4 class="text-en text-hidden" data-translation="insta2-text">Drawing Instagram</h4>
-                <img src="images/apercu_igdessins.jpg" alt="Image Instagram">
-              </a>
-            </div>
-          </div>
-          <div class="social-icon-container">
-            <a target="_blank" class="social-icon">
-              <img src="icons/facebook.svg" alt="facebook" />
-            </a>
-            <div class="social-icon-hover">
-              <a href="https://www.facebook.com/Helenegirardincostumiere/" target="_blank">
-                <h4 class="text-fr text-active" data-translation="facebook-text">Rejoignez-nous sur Facebook</h4>
-                <h4 class="text-en text-hidden" data-translation="facebook-text">Join us on Facebook</h4>
-                <img src="images/apercu_fb.jpg" alt="Image Facebook">
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="fluff-container">
-          <div class="kero">
-            <div class="kero-head">
+          <!-- Dessin de Kero le renard -->
+          <div class="fluff-container">
+            <div class="kero">
+              <div class="kero-head">
                 <div class="kero-face">
-                    <div class="kero-eye kero-eye-left"></div>
-                    <div class="kero-eye kero-eye-right"></div>
-                    <div class="kero-nose"></div>
-                    <div class="kero-mouth">
-                        <div class="kero-mouth-inner"></div>
-                    </div>
-                    <div class="kero-blush kero-blush-left"></div>
-                    <div class="kero-blush kero-blush-right"></div>
+                  <div class="kero-eye kero-eye-left"></div>
+                  <div class="kero-eye kero-eye-right"></div>
+                  <div class="kero-nose"></div>
+                  <div class="kero-mouth">
+                    <div class="kero-mouth-inner"></div>
+                  </div>
+                  <div class="kero-blush kero-blush-left"></div>
+                  <div class="kero-blush kero-blush-right"></div>
                 </div>
                 <div class="kero-ear kero-ear-left"></div>
                 <div class="kero-ear kero-ear-right"></div>
-            </div>
-            <div class="kero-bow">
+              </div>
+              <div class="kero-bow">
                 <div class="kero-bow-tie"></div>
                 <div class="kero-bow-ribbon kero-bow-ribbon-left"></div>
                 <div class="kero-bow-ribbon kero-bow-ribbon-right"></div>
                 <div class="kero-bow-string"></div>
-            </div>
-            <div class="kero-body">
+              </div>
+              <div class="kero-body">
                 <div class="kero-torso"></div>
                 <div class="kero-wing kero-wing-left">
-                    <div class="kero-wing-inner"></div>
+                  <div class="kero-wing-inner"></div>
                 </div>
                 <div class="kero-wing kero-wing-right">
-                    <div class="kero-wing-inner"></div>
+                  <div class="kero-wing-inner"></div>
                 </div>
                 <div class="kero-arm kero-arm-left"></div>
                 <div class="kero-arm kero-arm-right"></div>
                 <div class="kero-leg kero-leg-left">
-                    <div class="kero-leg-upper"></div>
-                    <div class="kero-foot"></div>
+                  <div class="kero-leg-upper"></div>
+                  <div class="kero-foot"></div>
                 </div>
                 <div class="kero-leg kero-leg-right">
-                    <div class="kero-leg-upper"></div>
-                    <div class="kero-foot"></div>
+                  <div class="kero-leg-upper"></div>
+                  <div class="kero-foot"></div>
                 </div>
                 <div class="kero-tail">
-                    <div class="kero-tail-length"></div>
-                    <div class="kero-tail-fluff"></div>
+                  <div class="kero-tail-length"></div>
+                  <div class="kero-tail-fluff"></div>
                 </div>
+              </div>
             </div>
-        
-
-        
-
+          </div>
+          <!-- Signature -->
+          <div style="perspective: 666px;" class="mcenter" id="signature">
+            <p data-scroll data-scroll-repeat="true" data-scroll-delay="0" data-scroll-target=".socials" class="end-padding">Powered by mITAINE</p>
+          </div>
         </div>
-      </div>
-      <div style="perspective: 666px;" class="mcenter" id="signature">
-        <p data-scroll data-scroll-repeat="true" data-scroll-delay="0" data-scroll-target=".socials" class="end-padding">Powered by mITAINE</p>
-      </div>
       </section>
     </div>
   </div>
 </body>
-<script>
-  const fluffContainer = document.querySelector('.fluff-container');
-  const fluffStyle = fluffContainer.style;
-
-  function handleIntersection(entries, observer) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        fluffStyle.visibility = 'visible';
-        fluffContainer.classList.add('appearfl');
-      } else {
-        fluffStyle.visibility = 'hidden';
-        fluffContainer.classList.remove('appearfl');
-      }
-    });
-  }
-
-  const options = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.5
-  };
-
-  const observer = new IntersectionObserver(handleIntersection, options);
-  observer.observe(fluffContainer);
-
-  // Initialise l'état de visibilité de l'élément fluff-container
-  fluffStyle.visibility = 'hidden';
-  const initialEntry = {
-    isIntersecting: fluffContainer.getBoundingClientRect().top < window.innerHeight,
-    target: fluffContainer
-  };
-  handleIntersection([initialEntry], observer);
-
-
-  document.addEventListener("DOMContentLoaded", function () {
-  const title = document.getElementById("title");
-
-  function handleTransitionEnd(event) {
-    if (event.propertyName === "opacity") {
-      title.classList.add("animation-finished");
-
-      title.addEventListener("mouseover", function () {
-        title.classList.add("hovered");
-      });
-
-      title.addEventListener("mouseout", function () {
-        title.classList.remove("hovered");
-      });
-    }
-  }
-
-
-});
-
-
-
-</script>
-
-<script>
- 
-
-  function toggleTranslation() {
-  const textsFr = document.querySelectorAll(".text-fr");
-  const textsEn = document.querySelectorAll(".text-en");
-  const translationButton = document.getElementById("translation-button");
-
-  textsFr.forEach((textFr) => {
-    if (textFr.classList.contains("text-active")) {
-      textFr.classList.remove("text-active");
-      textFr.classList.add("text-hidden");
-    } else {
-      textFr.classList.remove("text-hidden");
-      textFr.classList.add("text-active");
-    }
-  });
-
-  textsEn.forEach((textEn) => {
-    if (textEn.classList.contains("text-active")) {
-      textEn.classList.remove("text-active");
-      textEn.classList.add("text-hidden");
-    } else {
-      textEn.classList.remove("text-hidden");
-      textEn.classList.add("text-active");
-    }
-  });
-
-  translationButton.classList.toggle("text-fr-active");
-}
-
-</script>
-
-<script>
-
-  window.addEventListener("load", function() {
-  // Ajouter la classe "visible" à la barre de navigation
-  document.querySelector(".custom-top").classList.add("visible");
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  var customCursor = document.getElementById("loading-cursor");
-
-  function showCustomCursor() {
-    customCursor.style.display = "block";
-  }
-
-  function hideCustomCursor() {
-    customCursor.style.display = "none";
-  }
-
-  // Affiche le curseur personnalisé lors du déplacement de la souris
-  document.addEventListener("mousemove", function (e) {
-    customCursor.style.left = e.pageX + "px";
-    customCursor.style.top = e.pageY + "px";
-    showCustomCursor();
-  });
-
-  // Cache le curseur personnalisé lorsqu'il quitte la fenêtre
-  document.addEventListener("mouseleave", function () {
-    hideCustomCursor();
-  });
-
-  // Affiche le curseur personnalisé lorsqu'il entre dans la fenêtre
-  document.addEventListener("mouseenter", function () {
-    showCustomCursor();
-  });
-});
-
-</script>
 <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
-<script>
-  
-
-
-  const scroll = new LocomotiveScroll({
-  el: document.querySelector("[data-scroll-container]"),
-  smooth: true,
-  smoothMobile: true,
-});
-new ResizeObserver(() => scroll.update()).observe(
-  document.querySelector("[data-scroll-container]")
-);
-
-const links = document.querySelectorAll(".nav-link");
-
-links.forEach(link => {
-  link.addEventListener("click", e => {
-    e.preventDefault();
-    scroll.scrollTo(link.getAttribute("href"));
-  });
-});
-
-var loader = document.querySelector(".loader")
-window.addEventListener("load", vanish);
-function vanish() {
- loader.classList.add("disappear");
-}
-
-
-// sélectionnez l'élément de la barre de navigation
-const herot = document.querySelector(".hero-title-container");
-
-
-
-// sélectionnez l'élément de la barre de navigation
-const nav = document.querySelector('nav');
-
-
-// ajoutez la classe "appear" à la barre de navigation lorsque le preloader est masqué
-loader.addEventListener('animationend', () => {
-  nav.classList.add('appear');
-  herot.classList.add('titleappear');
-});
-
-
-scroll.on('scroll', () => {
-  /* Code pour activer/désactiver les éléments selon leur visibilité */
-
-  const sectionImgd = document.querySelector('.section-imgd');
-  if (sectionImgd.classList.contains('is-inview')) {
-    if (!sectionImgd.classList.contains('pointer-enabled')) {
-      setTimeout(() => {
-        sectionImgd.classList.add('pointer-enabled');
-        console.log('Classe pointer-enabled ajoutée !');
-      }, 1500);
-    }
-  } else {
-    if (sectionImgd.classList.contains('pointer-enabled')) {
-      sectionImgd.classList.remove('pointer-enabled');
-      console.log('Classe pointer-enabled retirée !');
-    }
-  }
-});
-
-
-
-</script>
-
-
-
 <script src="lightbox-plus-jquery.js"></script>
+<script src="index.js"></script>
 </body>
 </html>
