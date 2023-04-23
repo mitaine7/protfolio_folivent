@@ -444,7 +444,15 @@ hr {
   padding-left: 16px;
 }
 
+.about-titre{
+  opacity: 0;
+  transition: opacity 1s;
+}
 
+.about-titre.is-inview {
+  transition-delay: 0.022s;
+  opacity: 1;
+}
 
 .mheight {
   height: 100vh;
@@ -765,10 +773,13 @@ hr {
     font-size: 7.7vw;
     }
     }
+
+
     .hero-title span {
         display: inline-block;
         transition: transform 0.22s, text-shadow 0.22s;
         will-change: transform;
+        transform: scale(1);
     }
     
     .hero-title span:hover {
