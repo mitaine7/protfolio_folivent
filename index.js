@@ -129,6 +129,7 @@ const scroll = new LocomotiveScroll({
 el: document.querySelector("[data-scroll-container]"),
 smooth: true,
 smoothMobile: true,
+touchMultiplier: 3,
 });
 
 // Mise à jour de Locomotive Scroll lors du redimensionnement de la fenêtre
