@@ -126,8 +126,11 @@
         <div class="hero-title-container" data-scroll data-scroll-repeat="true">
           <!-- Titre du héros avec effet de défilement sur chaque lettre -->
           <div class="hero-title" data-scroll data-scroll-repeat="true">
-            <span data-scroll data-scroll-speed="5" data-scroll-target=".hero-banner">H</span><span data-scroll data-scroll-speed="5" data-scroll-target=".hero-banner">é</span><span data-scroll data-scroll-speed="5" data-scroll-target=".hero-banner">l</span><span data-scroll data-scroll-speed="5" data-scroll-target=".hero-banner">è</span><span data-scroll data-scroll-speed="5" data-scroll-target=".hero-banner">n</span><span data-scroll data-scroll-speed="5" data-scroll-target=".hero-banner">e</span>
-            <span data-scroll data-scroll-speed="5" data-scroll-target=".hero-banner">G</span><span data-scroll data-scroll-speed="5" data-scroll-target=".hero-banner">i</span><span data-scroll data-scroll-speed="5" data-scroll-target=".hero-banner">r</span><span data-scroll data-scroll-speed="5" data-scroll-target=".hero-banner">a</span><span data-scroll data-scroll-speed="5" data-scroll-target=".hero-banner">r</span><span data-scroll data-scroll-speed="5" data-scroll-target=".hero-banner">d</span><span data-scroll data-scroll-speed="5" data-scroll-target=".hero-banner">i</span><span data-scroll data-scroll-speed="5" data-scroll-target=".hero-banner">n</span>
+            <div data-scroll data-scroll-speed="5" data-scroll-target=".hero-banner">
+              <span>H</span><span>é</span><span>l</span><span>è</span><span>n</span><span>e</span>
+              <span>G</span><span>i</span><span>r</span><span>a</span><span>r</span><span>d</span><span>i</span><span>n</span>
+            </div>
+            
           </div>
         </div>
       </div>
@@ -148,8 +151,8 @@
     
           <!-- Texte de présentation -->
           <div class="about-text" style="flex-basis: 66.66%; padding-left: 16px;">
-            <h2 data-scroll data-scroll-speed="-1.1" data-scroll-direction="horizontal" data-scroll-target="#about" data-scroll-repeat="true" class="mtext-white about-titre text-fr text-active" data-translation="about-title">À propos de moi</h2>
-            <h2 data-scroll data-scroll-speed="-1.1" data-scroll-direction="horizontal" data-scroll-target="#about" class="mtext-white text-en about-titre text-hidden" data-translation="about-title">About me</h2>
+            <h2 data-scroll data-scroll-speed="1.1" data-scroll-direction="horizontal" data-scroll-target="#about" data-scroll-repeat="true" class="mtext-white about-titre text-fr text-active" data-translation="about-title">À propos de moi</h2>
+            <h2 data-scroll data-scroll-speed="1.1" data-scroll-direction="horizontal" data-scroll-target="#about" class="mtext-white text-en about-titre text-hidden" data-translation="about-title">About me</h2>
             <hr style="width:200px" class="mopacity hr-left"></hr>
             <div id="text-container">
     
@@ -180,11 +183,11 @@
       <section class="mcontent mpadding-64 mjustify mheight" id="couture">
         <div>
           <!-- Titre en français animé en scroll horizontal avec une vitesse de 7 -->
-          <h2 data-scroll data-scroll-direction="horizontal" data-scroll-speed="7" data-scroll-target="#couture" class="mtext-white mcenter text-fr text-active" data-translation="couture-title">Couture</h2>
+          <h2 data-scroll data-scroll-direction="horizontal" data-scroll-speed="-7" data-scroll-target="#couture" class="mtext-white mcenter text-fr text-active" data-translation="couture-title">Couture</h2>
           <!-- Titre en anglais animé en scroll horizontal avec une vitesse de 7 et caché par défaut -->
-          <h2 data-scroll data-scroll-direction="horizontal" data-scroll-speed="7" data-scroll-target="#couture" class="mtext-white mcenter text-en text-hidden" data-translation="couture-title">Sewing</h2>
+          <h2 data-scroll data-scroll-direction="horizontal" data-scroll-speed="-7" data-scroll-target="#couture" class="mtext-white mcenter text-en text-hidden" data-translation="couture-title">Sewing</h2>
           <!-- Ligne horizontale animée en scroll horizontal avec une vitesse de -7 et une largeur de 100% -->
-          <hr data-scroll data-scroll-direction="horizontal" data-scroll-speed="-7" data-scroll-target="#couture" style="width:100%" class="mopacity">   
+          <hr data-scroll data-scroll-direction="horizontal" data-scroll-speed="7" data-scroll-target="#couture" style="width:100%" class="mopacity">   
           <!-- Cette div contient des images de couture animées en scroll avec une vitesse de 2 -->
           <div class="section-img"  data-scroll data-scroll-speed="2" data-scroll-target="#couture">
             <!-- Div pour la première image -->
@@ -521,5 +524,23 @@
 <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
 <script src="lightbox-plus-jquery.js"></script>
 <script src="index.js"></script>
+<script>
+  document.querySelectorAll('.hero-title span').forEach((span) => {
+    span.addEventListener('mouseover', () => {
+        const previous = span.previousElementSibling;
+        if (previous) {
+            previous.classList.add('adjacent');
+        }
+    });
+
+    span.addEventListener('mouseout', () => {
+        const previous = span.previousElementSibling;
+        if (previous) {
+            previous.classList.remove('adjacent');
+        }
+    });
+});
+
+</script>
 </body>
 </html>

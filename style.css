@@ -776,20 +776,27 @@ hr {
 
 
     .hero-title span {
-        display: inline-block;
-        transition: transform 0.22s, text-shadow 0.22s;
-        will-change: transform;
-        transform: scale(1);
-    }
-    
-    .hero-title span:hover {
-        transform: scale(1.2);
-        text-shadow: 0 0 5px #ecf6c8,
-                    0 0 25px #ecf6c8,
-                    0 0 50px #ecf6c8,
-                    0 0 100px #ecf6c8;
-        opacity: 1;
-    }
+      display: inline-block;
+      transition: transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+      will-change: transform;
+      transform: scale(1) translateY(0);
+  }
+  
+  .hero-title span:hover {
+      transform: scale(1.1) translateY(-11px);
+      opacity: 1;
+  }
+  
+  .hero-title span:hover + span {
+      transition-delay: 0.2s;
+      transform: scale(1.05) translateY(-5px);
+  }
+  
+  .hero-title span.adjacent {
+      transition-delay: 0.1s;
+      transform: scale(1.05) translateY(-5px);
+  }
+  
     
 
 
