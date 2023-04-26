@@ -128,7 +128,7 @@ document.addEventListener("mouseenter", function () {
 const scroll = new LocomotiveScroll({
 el: document.querySelector("[data-scroll-container]"),
 smooth: true,
-smoothMobile: false,
+smoothMobile: true,
 touchMultiplier: 3,
 });
 
