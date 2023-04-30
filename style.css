@@ -1095,6 +1095,6 @@ hr {
         pointer-events: auto;
       }
       
-      [data-scroll] {
+      .is-inview {
         will-change: transform;
       }
