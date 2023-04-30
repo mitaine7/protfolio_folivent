@@ -429,19 +429,18 @@ hr {
 .about-content{
   display:flex;
   flex-direction:row;
-  align-items:center; 
+  align-items: flex-start;
   justify-content:center;
 }
 
 .about-portrait {
-  flex-basis: 33.33%; 
-  display: flex; 
-  justify-content: flex-end;
+  flex-basis: 25%; 
 }
 
 .about-text{
-  flex-basis: 66.66%; 
+  flex-basis: 75%; 
   padding-left: 16px;
+  align-self: center;
 }
 
 .about-titre{
@@ -862,7 +861,7 @@ hr {
       
       .portrait {
         max-width: 100%;
-        height: auto;
+        height: fit-content;
       }
    
       

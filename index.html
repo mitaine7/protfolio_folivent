@@ -115,10 +115,11 @@
 
   <!-- Conteneur de défilement -->
   <div data-scroll-container>
+    
     <!-- Bannière du héros (image de fond en grand) -->
-    <hero class="hero-banner">
+    <hero data-scroll-section="" class="hero-banner">
       <!-- Image de fond avec effet de parallaxe -->
-      <div data-scroll data-scroll-speed="-7" data-scroll-target=".hero-banner" class="background-image" id="home"></div>
+      <div data-scroll data-scroll-speed="-9" data-scroll-target=".hero-banner" data-scroll-position="top" class="background-image" id="home"></div>
       
       <!-- Conteneur du titre -->
       <div class="title-container" id="main">
@@ -126,7 +127,7 @@
         <div class="hero-title-container" data-scroll data-scroll-repeat="true">
           <!-- Titre du héros avec effet de défilement sur chaque lettre -->
           <div class="hero-title" data-scroll data-scroll-repeat="true">
-            <div data-scroll data-scroll-speed="5" data-scroll-target=".hero-banner">
+            <div data-scroll data-scroll-speed="5" data-scroll-target=".hero-banner" data-scroll-position="top">
               <span>H</span><span>é</span><span>l</span><span>è</span><span>n</span><span>e</span>
               <span>G</span><span>i</span><span>r</span><span>a</span><span>r</span><span>d</span><span>i</span><span>n</span>
             </div>
@@ -138,14 +139,14 @@
       <div data-scroll class="rep100"></div>
     </hero>
   
-    <section class="vide222"></section>
+    <section data-scroll-section="" class="vide222"></section>
 
-    <div class="mpadding-large mcenter mitenu" id ="main">
+    <div data-scroll-section="" class="mpadding-large mcenter mitenu" id ="main">
       <section class="mcontent mtext-light-grey mheight" id="about">
-        <div class="mjustify about-content">
+        <div data-scroll class="mjustify about-content">
     
           <!-- Image de profil -->
-          <div data-scroll data-scroll-speed="-2.22" data-scroll-target="#about" class="about-portrait">
+          <div data-scroll data-scroll-sticky data-scroll-speed="2" data-scroll-target=".about-content" class="about-portrait">
             <img class="portrait" src="images/portrait.jpg" alt="Votre photo" style="width:100%">
           </div>
     
@@ -175,10 +176,12 @@
           </div>
         </div>
       </section>
+    </div>
 
       <!-- Cette section est vide et n'a pas de contenu -->
-      <section class="vide222"></section>
-      
+      <section data-scroll-section="" class="vide222"></section>
+    
+    <div data-scroll-section="" class="mpadding-large mcenter mitenu" id ="main">  
       <!-- Cette section contient des images de couture et un titre en français et en anglais -->
       <section class="mcontent mpadding-64 mjustify mheight" id="couture">
         <div>
@@ -241,11 +244,12 @@
           </div>
         </div>
       </section>
-
+    </div>
         
       <!-- Cette section est vide et n'a pas de contenu -->
-      <section class="vide222"></section>
-              
+      <section data-scroll-section="" class="vide222"></section>
+    
+    <div data-scroll-section="" class="mpadding-large mcenter mitenu" id ="main">  
       <!-- Cette section contient des images de dessins et peintures et un titre en français et en anglais -->
       <section class="mcontent mpadding-64 mjustify mheight" id="dessins">
         <div>
@@ -308,10 +312,11 @@
           </div>
         </div>
       </section>
+    </div>
 
+      <section data-scroll-section="" class="vide222"></section>
 
-      <section class="vide222"></section>
-
+    <div data-scroll-section="" class="mpadding-large mcenter mitenu" id ="main">  
       <!-- Section pour les arts numériques -->
       <section class="mcontent mpadding-64 mjustify mheight" id="arts_numeriques">
         <div>
@@ -323,7 +328,7 @@
           <!-- Section pour les images des créations numériques -->
           <div class="section-imgd" data-scroll data-scroll-repeat="true" data-scroll-speed="-2" data-scroll-target="#arts_numeriques">
             <!-- Première création -->
-            <div data-scroll data-scroll-repeat="true" data-scroll-target="#arts_numeriques" class="img--4">
+            <div data-scroll data-scroll-repeat="true" class="img--4">
               <a href="images/digital01_open.jpeg" data-lightbox="portfolioc">
                 <img src="images/digital01.jpeg" alt="Création 5" class="couture-img"">
               </a>
@@ -349,8 +354,9 @@
           </div>
         </div>
       </section>
+    </div> 
       
-
+    <div data-scroll-section="" class="mpadding-large mcenter mitenu" id ="main">
       <section class="mcontent mtext-light-grey mjustify fin-section" id="contact">
         <div>
           <!-- Titre en français -->
