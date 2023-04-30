@@ -182,5 +182,6 @@ if (sectionImgd.classList.contains('is-inview')) {
     pointerEnabled = false;
     }
 }
+
 });
   
