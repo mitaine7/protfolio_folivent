@@ -1,3 +1,5 @@
+const customCursor = document.getElementById("loading-cursor");
+
 // Sélection de l'élément fluff-container
 const fluffContainer = document.querySelector('.fluff-container');
 const fluffStyle = fluffContainer.style;
@@ -81,28 +83,29 @@ const toggleClass = (element) => {
   });
   
   document.addEventListener("DOMContentLoaded", () => {
-  const customCursor = document.getElementById("loading-cursor");
   
-  const showCustomCursor = () => {
-  customCursor.style.display = "block";
-  };
+    const showCustomCursor = () => {
+      customCursor.style.display = "block";
+    };
   
-  const hideCustomCursor = () => {
-  customCursor.style.display = "none";
-  };
+    const hideCustomCursor = () => {
+      customCursor.style.display = "none";
+    };
   
-  // Affiche le curseur personnalisé lors du déplacement de la souris
-  document.addEventListener("mousemove", (e) => {
-  customCursor.style.left = e.pageX + "px";
-  customCursor.style.top = e.pageY + "px";
-  showCustomCursor();
-  });
+    // Fonction pour mettre à jour la position du curseur personnalisé
+    const updateCursor = (e) => {
+      customCursor.style.left = e.pageX + "px";
+      customCursor.style.top = e.pageY + "px";
+    };
   
-  // Cache le curseur personnalisé lorsqu'il quitte la fenêtre
-  document.addEventListener("mouseleave", hideCustomCursor);
+    // Affiche le curseur personnalisé lors du déplacement de la souris avec debounce
+    document.addEventListener("mousemove", debounce(updateCursor, 16)); // 16ms correspond à environ 60fps
   
-  // Affiche le curseur personnalisé lorsqu'il entre dans la fenêtre
-  document.addEventListener("mouseenter", showCustomCursor);
+    // Cache le curseur personnalisé lorsqu'il quitte la fenêtre
+    document.addEventListener("mouseleave", hideCustomCursor);
+  
+    // Affiche le curseur personnalisé lorsqu'il entre dans la fenêtre
+    document.addEventListener("mouseenter", showCustomCursor);
   });
   
   // Initialisation de Locomotive Scroll
@@ -165,28 +168,28 @@ const toggleClass = (element) => {
     }
     });
     
-    // Fonction debounce pour éviter l'appel trop fréquent de la fonction
-    function debounce(func, wait, immediate) {
-    let timeout;
-    return function () {
+// Fonction debounce pour éviter l'appel trop fréquent de la fonction
+function debounce(func, wait, immediate) {
+  let timeout;
+  return function () {
     const context = this,
-    args = arguments;
+      args = arguments;
     const later = function () {
-    timeout = null;
-    if (!immediate) func.apply(context, args);
+      timeout = null;
+      if (!immediate) func.apply(context, args);
     };
     const callNow = immediate && !timeout;
     clearTimeout(timeout);
     timeout = setTimeout(later, wait);
     if (callNow) func.apply(context, args);
-    };
-    }
-    
-    // Fonction pour mettre à jour la position du curseur personnalisé
-    const updateCursor = (e) => {
-    customCursor.style.left = e.pageX + "px";
-    customCursor.style.top = e.pageY + "px";
-    };
-    
-    // Affiche le curseur personnalisé lors du déplacement de la souris avec debounce
-    document.addEventListener("mousemove", debounce(updateCursor, 16)); // 16ms correspond à environ 60fps
+  };
+}
+
+// Fonction pour mettre à jour la position du curseur personnalisé
+const updateCursor = (e) => {
+  customCursor.style.left = e.pageX + "px";
+  customCursor.style.top = e.pageY + "px";
+};
+
+// Affiche le curseur personnalisé lors du déplacement de la souris avec debounce
+document.addEventListener("mousemove", debounce(updateCursor, 16)); // 16ms correspond à environ 60fps
