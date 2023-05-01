@@ -869,10 +869,17 @@ hr {
       }
       
       .portrait {
+        position: relative;
+        top: 10px;
         max-width: 100%;
         height: fit-content;
+    }
+
+    @media (max-width: 600px) {
+      .portrait {
+        top: 70px;
       }
-   
+    }
       
       .nav-avatar {
         margin: 0;
