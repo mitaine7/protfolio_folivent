@@ -470,6 +470,10 @@ hr {
   justify-content:center;
 }
 
+.horizontal-section {
+  width: 500vw;
+}
+
 @media screen and (max-width: 888px) {
   .mheight {
     height: auto;
