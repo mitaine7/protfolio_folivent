@@ -870,14 +870,16 @@ hr {
       
       .portrait {
         position: relative;
-        top: 10px;
+        padding-top: 3rem;
+        margin-bottom: 7rem;
         max-width: 100%;
         height: fit-content;
     }
 
     @media (max-width: 600px) {
       .portrait {
-        top: 70px;
+        padding-top: 70px;
+        margin-bottom: 222px;
       }
     }
       
