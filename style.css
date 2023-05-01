@@ -362,7 +362,7 @@ hr {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 8;
+  z-index: 888;
   background-color: #000;
   opacity: 0;
   display: none;
@@ -1104,6 +1104,6 @@ hr {
         pointer-events: auto;
       }
       
-      .is-inview {
+      [data-scroll] {
         will-change: transform;
       }
