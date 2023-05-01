@@ -94,33 +94,32 @@ document.querySelector(".custom-top").classList.add("visible");
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-const customCursor = document.getElementById("loading-cursor");
+  const customCursor = document.getElementById("loading-cursor");
 
-function showCustomCursor() {
-    customCursor.style.display = "block";
-}
+  function showCustomCursor() {
+      customCursor.style.display = "block";
+  }
 
-function hideCustomCursor() {
-    customCursor.style.display = "none";
-}
+  function hideCustomCursor() {
+      customCursor.style.display = "none";
 
-// Affiche le curseur personnalisé lors du déplacement de la souris
-document.addEventListener("mousemove", function (e) {
-    customCursor.style.left = e.pageX + "px";
-    customCursor.style.top = e.pageY + "px";
-    showCustomCursor();
+      // Supprimer les écouteurs d'événements
+      document.removeEventListener("mousemove", moveCustomCursor);
+      document.removeEventListener("mouseleave", hideCustomCursor);
+      document.removeEventListener("mouseenter", showCustomCursor);
+  }
+
+  function moveCustomCursor(e) {
+      customCursor.style.left = e.pageX + "px";
+      customCursor.style.top = e.pageY + "px";
+      showCustomCursor();
+  }
+
+  document.addEventListener("mousemove", moveCustomCursor);
+  document.addEventListener("mouseleave", hideCustomCursor);
+  document.addEventListener("mouseenter", showCustomCursor);
 });
 
-// Cache le curseur personnalisé lorsqu'il quitte la fenêtre
-document.addEventListener("mouseleave", function () {
-    hideCustomCursor();
-});
-
-// Affiche le curseur personnalisé lorsqu'il entre dans la fenêtre
-document.addEventListener("mouseenter", function () {
-    showCustomCursor();
-});
-});
     
   
     
@@ -137,7 +136,7 @@ document.querySelector("[data-scroll-container]")
 );
 
 // Gestion du défilement vers les sections lors du clic sur les liens de navigation
-const links = document.querySelectorAll(".nav-link");
+const links = document.querySelectorAll(".nav-lien");
 links.forEach(link => {
 link.addEventListener("click", e => {
     e.preventDefault();
