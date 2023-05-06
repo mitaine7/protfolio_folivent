@@ -440,6 +440,8 @@ hr {
   flex-basis: 25%; 
 }
 
+
+
 .about-text{
   flex-basis: 75%; 
   padding-left: 16px;
@@ -454,6 +456,18 @@ hr {
 .about-titre.is-inview {
   transition-delay: 0.022s;
   opacity: 1;
+}
+
+#text-containerv {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 2s, transform 1s;
+}
+
+#text-containerv.is-inview {
+  transition-delay: 0.022s;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .mheight {
