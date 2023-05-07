@@ -131,9 +131,9 @@ smooth: true,
   multiplier: 1.4, // Effect Multiplier
   reloadOnContextChange: true,
   touchMultiplier: 2,
-  smoothMobile: 0,
+  smoothMobile: 1,
   smartphone: {
-      smooth: !0,
+      smooth: !1,
       breakpoint: 767
   },
   tablet: {
