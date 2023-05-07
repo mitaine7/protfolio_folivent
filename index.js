@@ -130,7 +130,7 @@ smooth: true,
 smoothMobile: false,
 multiplier: 1.4, // Effect Multiplier
 touchMultiplier: 2,
-lerp: 0.03, // Linear Interpolation, 0 > 1 // Try 0.01
+lerp: .022, // Linear Interpolation, 0 > 1 // Try 0.01
 });
 
 /*const scroll = new LocomotiveScroll({
