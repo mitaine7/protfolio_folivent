@@ -479,7 +479,7 @@ hr {
 .about-titrec{
   opacity: 0;
   transform: translateX(222px);
-  transition: opacity 2s, transform 2s;
+  transition: opacity 1s, transform 2s;
 }
 
 .about-titrec.is-inview {
