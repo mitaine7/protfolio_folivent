@@ -437,7 +437,25 @@ hr {
 }
 
 .about-portrait {
+  
+  opacity: 0;
+  transition: opacity 2s;
+}
+.about-portrait.is-inview {
+  transition-delay: 0.22s;
+  opacity: 1;
+}
+
+.about-portraitc {
   flex-basis: 25%; 
+  opacity: 0;
+  transform: translateX(-111px);
+  transition: opacity 1.3s, transform 1.3s;
+}
+.about-portraitc.is-inview {
+  transition-delay: .666s;
+  opacity: 1;
+  transform: translateX(0);
 }
 
 
@@ -450,24 +468,35 @@ hr {
 
 .about-titre{
   opacity: 0;
-  transition: opacity 1s;
+  transition: opacity 2s;
 }
 
 .about-titre.is-inview {
-  transition-delay: 0.022s;
+  transition-delay: 0.22s;
   opacity: 1;
 }
+
+.about-titrec{
+  opacity: 0;
+  transform: translateX(222px);
+  transition: opacity 2s, transform 2s;
+}
+
+.about-titrec.is-inview {
+  transition-delay: 0.022s;
+  transform: translateX(0);
+  opacity: 1;
+}
+
 
 #text-containerv {
   opacity: 0;
-  transform: translateY(100px);
-  transition: opacity 2s, transform 1s;
+  transition: opacity 2s;
 }
 
 #text-containerv.is-inview {
-  transition-delay: 0.022s;
+  transition-delay: 0.22s;
   opacity: 1;
-  transform: translateY(0);
 }
 
 .mheight {

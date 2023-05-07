@@ -148,19 +148,24 @@
         <div data-scroll class="mjustify about-content">
     
           <!-- Image de profil -->
-          <div data-scroll data-scroll-sticky data-scroll-target=".about-content" class="about-portrait">
+          <div data-scroll class="about-portraitc">
+          <div data-scroll data-scroll-speed="-2" data-scroll-target="#about" data-scroll-repeat="true" class="about-portrait">
             <img class="portrait" src="images/portrait.jpg" alt="Votre photo" style="width:100%">
+          </div>
           </div>
     
           <!-- Texte de présentation -->
           <div class="about-text" style="flex-basis: 66.66%; padding-left: 16px;">
-            <h2 data-scroll data-scroll-speed="1.1" data-scroll-direction="horizontal" data-scroll-target="#about" data-scroll-repeat="true" class="mtext-white about-titre text-fr text-active" data-translation="about-title">À propos de moi</h2>
-            <h2 data-scroll data-scroll-speed="1.1" data-scroll-direction="horizontal" data-scroll-target="#about" class="mtext-white text-en about-titre text-hidden" data-translation="about-title">About me</h2>
-            <hr style="width:200px" class="mopacity hr-left"></hr>
+            <div data-scroll class="about-titrec">
+            <h2 data-scroll data-scroll-speed="1.6" data-scroll-target="#about" data-scroll-repeat="true" class="mtext-white about-titre text-fr text-active" data-translation="about-title">À propos de moi</h2>
+            <h2 data-scroll data-scroll-speed="1.6" data-scroll-target="#about" data-scroll-repeat="true" class="mtext-white text-en about-titre text-hidden" data-translation="about-title">About me</h2>
+            
+            <hr data-scroll data-scroll-speed="1.4" data-scroll-target="#about" data-scroll-repeat="true" class="about-titre" style="width:200px" class="mopacity hr-left"></hr>
+
             <div data-scroll data-scroll-speed="2" data-scroll-target="#about" id="text-container">
     
               <!-- Texte en français -->
-              <div  data-scroll class="text-fr text-active" data-translation="about-text" id="text-containerv">
+              <div  data-scroll class="text-fr text-active" data-scroll-target="#about" data-scroll-repeat="true" data-translation="about-text" id="text-containerv">
                 <p>Je me présente, moi c'est Hélène Girardin, une passionnée de la couture, de la création de costumes et de la confection de corsets. Mais ce n'est pas tout, j'ai également une âme d'artiste et je m'exprime à travers mes dessins, mes peintures et mes créations numériques. J'aime explorer de nouvelles techniques et j'ai une imagination débordante qui me permet de créer des pièces uniques et originales.</p>
     
                 <p>Je suis une artiste autodidacte qui a commencé à créer dès son plus jeune âge. Mon travail reflète mon amour pour les détails minutieux et les matériaux de qualité. Je suis constamment à la recherche de nouvelles inspirations et je m'efforce de créer des pièces qui racontent une histoire et qui sont aussi belles que fonctionnelles. Pour moi, la couture et l'art sont des formes d'expression qui me permettent de laisser libre cours à ma créativité et de partager ma passion avec le monde.</p>
@@ -169,12 +174,13 @@
     
               </div>
               <!-- Cette div est animée en scroll avec une vitesse de 2 -->
-              <div data-scroll class="text-en text-hidden" data-translation="about-text" id="text-containerv">
+              <div data-scroll class="text-en text-hidden" data-scroll-target="#about" data-scroll-repeat="true" data-translation="about-text" id="text-containerv">
                 <p>Allow me to introduce myself, I'm Hélène Girardin, a passionate seamstress, costume designer, and corset maker. But that's not all, I also have an artist's soul and express myself through my drawings, paintings, and digital creations. I love exploring new techniques and have a boundless imagination that allows me to create unique and original pieces.</p>
                 <p>As a self-taught artist, I began creating from a young age. My work reflects my love for intricate details and quality materials. I'm constantly seeking new inspiration and strive to create pieces that tell a story and are as beautiful as they are functional. For me, sewing and art are forms of expression that allow me to unleash my creativity and share my passion with the world.</p>
                 <p>If you're curious to discover my creations, you can take a look at my personal portfolio on this website. However, keep in mind that this is just a small sample of my work. To see more of my pieces and follow my creative adventures, feel free to follow me on my social media channels. I'm excited to share my future projects with you and continue creating memorable pieces that inspire and captivate the audience.</p>
               </div>
             </div>
+          </div>
           </div>
         </div>
       </section>
