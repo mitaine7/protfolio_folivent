@@ -1125,6 +1125,13 @@ hr {
         pointer-events: auto;
       }
       
+      @media (max-width: 767px) {
+        .social-icon-hover {
+          width: 66vw;
+        }
+
+      }
+      
       [data-scroll] {
         will-change: transform;
       }
