@@ -182,7 +182,10 @@ const herot = document.querySelector(".hero-title-container");
 loader.addEventListener('animationend', () => {
 nav.classList.add('appear');
 herot.classList.add('titleappear');
+scroll.update();
 });
+
+
 
 // Gestion de l'ajout et de la suppression de la classe 'pointer-enabled' en fonction de la visibilité de l'élément
 let pointerEnabled = false;
