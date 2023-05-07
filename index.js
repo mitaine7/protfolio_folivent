@@ -129,8 +129,8 @@ el: document.querySelector("[data-scroll-container]"),
 smooth: true,
 smoothMobile: true,
 multiplier: 1.4, // Effect Multiplier
-touchMultiplier: 3,
-lerp: .022, // Linear Interpolation, 0 > 1 // Try 0.01
+touchMultiplier: 2.22,
+lerp: .03, // Linear Interpolation, 0 > 1 // Try 0.01
 });
 
 /*const scroll = new LocomotiveScroll({
