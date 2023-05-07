@@ -1055,7 +1055,7 @@ hr {
       }
       
       .socials.is-inview {
-        transition-delay: 1s;
+        
         animation:  bounce 1s ease-in 1s forwards;
         opacity: 1; /* Ajoutez cette ligne pour rendre les éléments visibles lorsqu'ils sont en vue */
       }
