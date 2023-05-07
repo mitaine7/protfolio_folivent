@@ -129,7 +129,7 @@ el: document.querySelector("[data-scroll-container]"),
 smooth: true,
 smoothMobile: true,
 multiplier: 1.4, // Effect Multiplier
-touchMultiplier: 2,
+touchMultiplier: 3,
 lerp: .022, // Linear Interpolation, 0 > 1 // Try 0.01
 });
 
