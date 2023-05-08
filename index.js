@@ -131,7 +131,7 @@ const scroll = new LocomotiveScroll({
   smartphone: {
     smooth: true,
     breakpoint: 767,
-    lerp: 0.1,
+    lerp: 0.01,
   },
   tablet: {
     smooth: true,
