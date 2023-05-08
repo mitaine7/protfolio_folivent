@@ -489,48 +489,49 @@ hr {
     background-color: #000!important
 }
 
-
-.about-content{
-  display:flex;
-  flex-direction:row;
+.about-content {
+  display: flex;
+  flex-direction: row;
   align-items: flex-start;
-  justify-content:center;
+  justify-content: center;
 }
 
 .about-portrait {
-  
-  opacity: 0;
+  opacity: 0.8;
   transition: opacity 2s;
 }
+
 .about-portrait.is-inview {
   transition-delay: 0.22s;
   opacity: 1;
 }
 
 .about-portraitc {
-  flex-basis: 25%; 
+  flex-basis: 25%;
   opacity: 0;
   transform: translateX(-111px);
   transition: opacity 1.3s, transform 1.3s;
+  min-height: 100vh; /* Ajout d'une hauteur minimale */
 }
+
 .about-portraitc.is-inview {
   transition-delay: .222s;
   opacity: 1;
   transform: translateX(0);
 }
 
-
-
-.about-text{
-  flex-basis: 75%; 
+.about-text {
+  flex-basis: 75%;
   padding-left: 16px;
   align-self: center;
+  position: relative; /* Ajout de position: relative */
 }
 
-.about-titre{
+.about-titre {
   opacity: 0;
   transition: opacity 2s;
 }
+
 
 .about-titre.is-inview {
   transition-delay: 0.22s;
@@ -568,9 +569,6 @@ hr {
   justify-content:center;
 }
 
-.horizontal-section {
-  width: 500vw;
-}
 
 @media screen and (max-width: 888px) {
   .mheight {
