@@ -489,6 +489,25 @@ hr {
     background-color: #000!important
 }
 
+.about-portrait-desktop {
+  display: none;
+  padding-top: 17rem;
+}
+
+.about-portrait-mobile {
+  display: block;
+}
+
+@media screen and (min-width: 768px) { /* À adapter en fonction de la taille d'écran souhaitée */
+  .about-portrait-desktop {
+    display: block;
+  }
+
+  .about-portrait-mobile {
+    display: none;
+  }
+}
+
 .about-content {
   display: flex;
   flex-direction: row;

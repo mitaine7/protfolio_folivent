@@ -147,12 +147,19 @@
       <section class="mcontent mtext-light-grey mheight" id="about">
         <div data-scroll class="mjustify about-content">
     
-          <!-- Image de profil -->
-          <div data-scroll class="about-portraitc">
-            <div data-scroll data-scroll-sticky data-scroll-target="#about" data-scroll-repeat="true" data-scroll-position="bottom" class="about-portrait">
-              <img class="portrait" src="images/portrait.jpg" alt="Votre photo" style="width:100%">
-            </div>
-          </div>
+      <!-- Image de profil pour grands écrans -->
+      <div data-scroll class="about-portraitc about-portrait-desktop">
+        <div data-scroll data-scroll-speed="6" data-scroll-target="#about" data-scroll-repeat="true" class="about-portrait">
+          <img class="portrait" src="images/portrait.jpg" alt="Votre photo" style="width:100%">
+        </div>
+      </div>
+
+      <!-- Image de profil pour téléphones -->
+      <div data-scroll class="about-portraitc about-portrait-mobile">
+        <div data-scroll data-scroll-sticky data-scroll-target="#about" data-scroll-repeat="true" data-scroll-position="bottom" class="about-portrait">
+          <img class="portrait" src="images/portrait.jpg" alt="Votre photo" style="width:100%">
+        </div>
+      </div>
     
           <!-- Texte de présentation -->
           <div class="about-text" style="flex-basis: 66.66%; padding-left: 16px;">
