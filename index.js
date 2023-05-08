@@ -121,9 +121,27 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
     
-  
-    
 // Initialisation de Locomotive Scroll
+const scroll = new LocomotiveScroll({
+  el: document.querySelector("[data-scroll-container]"),
+  smooth: true,
+  smoothMobile: true,
+  multiplier: 0.8, // Effect Multiplier
+  touchMultiplier: 1.5,
+  smartphone: {
+    smooth: true,
+    breakpoint: 767,
+    lerp: 0.1,
+  },
+  tablet: {
+    smooth: true,
+    breakpoint: 1024,
+    lerp: 0.1,
+  },
+});
+
+    
+/*/ Initialisation de Locomotive Scroll
 const scroll = new LocomotiveScroll({
 el: document.querySelector("[data-scroll-container]"),
 smooth: true,
