@@ -255,3 +255,17 @@ function triggerWindowResize() {
 window.addEventListener("load", () => {
   setTimeout(triggerWindowResize, 100);
 });
+
+// Obtenez l'élément sur lequel vous souhaitez déclencher l'action
+const contactLink = document.getElementById('show-contact-form');
+
+// Ajoutez un écouteur d'événements pour capturer le clic
+contactLink.addEventListener('click', e => {
+  e.preventDefault();
+  
+  // Attendez 500 millisecondes avant de faire défiler la page
+  setTimeout(() => {
+    // Faites défiler le viewport jusqu'à la fin de la page en utilisant Locomotive Scroll
+    scroll.scrollTo(document.body.scrollHeight);
+  }, 50);
+});
