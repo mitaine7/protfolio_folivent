@@ -199,12 +199,14 @@ if (sectionImgd.classList.contains('is-inview')) {
         console.log('Classe pointer-enabled ajoutée !');
     }, 1000);
     pointerEnabled = true;
+    scroll.update();
     }
 } else {
     if (sectionImgd.classList.contains('pointer-enabled')) {
     sectionImgd.classList.remove('pointer-enabled');
     console.log('Classe pointer-enabled retirée !');
     pointerEnabled = false;
+    scroll.update();
     }
 }
 
