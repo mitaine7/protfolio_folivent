@@ -131,7 +131,18 @@ smoothMobile: true,
 multiplier: 1.4, // Effect Multiplier
 touchMultiplier: 2.22,
 //lerp: .03, // Linear Interpolation, 0 > 1 // Try 0.01
+smartphone: {
+  smooth: true,
+  breakpoint: 767
+},
+tablet: {
+  smooth: true,
+  breakpoint: 1024
+},
+
+
 });
+
 
 /*const scroll = new LocomotiveScroll({
   el: document.querySelector('[data-scroll-container]'),
@@ -216,4 +227,13 @@ document.getElementById('show-contact-form').addEventListener('click', function(
   event.preventDefault();
   var contactForm = document.getElementById('contact-form');
   contactForm.style.display = 'block';
+});
+
+function triggerWindowResize() {
+  const resizeEvent = new Event("resize");
+  window.dispatchEvent(resizeEvent);
+}
+
+window.addEventListener("load", () => {
+  setTimeout(triggerWindowResize, 100);
 });
