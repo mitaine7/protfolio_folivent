@@ -94,7 +94,7 @@ hr {
     height: auto;
     display: block;
     margin-bottom: 12px;
-    transition: transform 0.43s ease-in-out;
+    transition: all 0.43s ease-in-out;
     object-fit: cover;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -112,6 +112,10 @@ hr {
   }
 
   .section-imgd:hover .couture-img:not(:hover) {
+    transform: scale(0.9);
+  }
+
+  .section-imgdes:hover .couture-img:not(:hover) {
     transform: scale(0.9);
   }
 }
@@ -491,7 +495,7 @@ hr {
 
 .about-portrait-desktop {
   display: none;
-  padding-top: 17rem;
+  padding-top: 13rem;
 }
 
 .about-portrait-mobile {
