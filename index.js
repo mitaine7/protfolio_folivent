@@ -210,3 +210,8 @@ if (sectionImgd.classList.contains('is-inview')) {
 
 });
   
+document.getElementById('show-contact-form').addEventListener('click', function(event) {
+  event.preventDefault();
+  var contactForm = document.getElementById('contact-form');
+  contactForm.style.display = 'block';
+});

@@ -425,17 +425,18 @@
             
             <!-- Icône mail -->
             <div class="social-icon-container">
-              <a target="_blank" class="social-icon">
+              <a target="_blank" class="social-icon" id="contact-btn">
                 <img src="icons/mail_24.svg" alt="contact" />
               </a>
               <div class="social-icon-hover">
-                <a href="mailto:helene.costumes@gmail.com" target="_blank">
+                <a href="#" id="show-contact-form" target="_blank">
                   <h4 class="text-fr text-active" data-translation="mail-text">Contactez-nous par e-mail</h4>
                   <h4 class="text-en text-hidden" data-translation="mail-text">Contact via e-mail</h4>
                   <img src="images/mail.jpeg" alt="Image Email">
                 </a>
               </div>
             </div>
+ 
             <!-- Icône Instagram Couture -->
             <div class="social-icon-container">
               <a target="_blank" class="social-icon">
@@ -526,6 +527,16 @@
               </div>
             </div>
           </div>
+                     <!-- Formulaire de contact -->
+                     <div id="contact-form" class="contact-form" style="display:none;">
+                      <form action="https://formspree.io/f/xjvdlzlw" method="POST">
+                        <input type="text" name="name" placeholder="Nom/Name" required />
+                        <input type="email" name="_replyto" placeholder="e-mail" required />
+                        <textarea name="message" placeholder="Message" required></textarea>
+                        <input type="submit" value="Envoyer" />
+                      </form>
+                      
+                    </div>
           <!-- Signature -->
           <div style="perspective: 666px;" class="mcenter" id="signature">
             <p data-scroll data-scroll-repeat="true" data-scroll-delay="0" data-scroll-target=".socials" class="end-padding">Powered by mITAINE</p>
