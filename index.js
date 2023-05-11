@@ -127,7 +127,7 @@ const scroll = new LocomotiveScroll({
   smooth: true,
   smoothMobile: true,
   multiplier: 0.8, // Effect Multiplier
-  touchMultiplier: 2,
+  touchMultiplier: 3,
   smartphone: {
     smooth: true,
     breakpoint: 767,
