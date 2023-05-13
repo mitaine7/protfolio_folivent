@@ -126,18 +126,8 @@ const scroll = new LocomotiveScroll({
   el: document.querySelector("[data-scroll-container]"),
   smooth: true,
   smoothMobile: true,
-  multiplier: 0.8, // Effect Multiplier
-  touchMultiplier: 3,
-  smartphone: {
-    smooth: true,
-    breakpoint: 767,
-    lerp: 0.222,
-  },
-  tablet: {
-    smooth: true,
-    breakpoint: 1024,
-    lerp: 0.1,
-  },
+  lerp: 0.05,
+  multiplier: 2,
 });
 
     
