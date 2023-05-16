@@ -427,16 +427,15 @@ hr {
   display: none;
 }
 
-.custom-top.visible {
+.custom-top.appear {
   opacity: 0;
   display: block;
   animation-name: slideInDown;
-  animation-duration: 0.5s;
+  animation-duration: 1s;
   animation-timing-function: ease;
   animation-fill-mode: forwards;
   animation-delay: 0s;
 }
-
 @keyframes slideInDown {
   0% {
     transform: translateY(-20%);
