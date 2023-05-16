@@ -189,19 +189,25 @@ link.addEventListener("click", e => {
 // Gestion du preloader
 const loader = document.querySelector(".loader");
 window.addEventListener("load", vanish);
+
 function vanish() {
-loader.classList.add("disappear");
+  loader.classList.add("disappear");
 }
 
 // Sélection des éléments de la barre de navigation et du titre
-const nav = document.querySelector('nav');
+const navs = document.querySelectorAll('nav');
 const herot = document.querySelector(".hero-title-container");
 
 // Ajout des classes "appear" et "titleappear" après la fin de l'animation du preloader
 loader.addEventListener('animationend', () => {
-nav.classList.add('appear');
-herot.classList.add('titleappear');
+  // Parcourir chaque élément <nav> et ajouter la classe 'appear'
+  navs.forEach(nav => {
+    nav.classList.add('appear');
+  });
+
+  herot.classList.add('titleappear');
 });
+
 
 
 
