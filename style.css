@@ -491,17 +491,53 @@ hr {
     color: #fff!important;
     background-color: #000!important
 }
-
-.about-portrait-desktop {
-  display: none;
-  padding-top: 13rem;
+.about-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.about-portrait-mobile {
-  display: block;
+.about-portraitc {
+  flex-basis: 25%;
+  opacity: 0;
+  transform: translateX(-111px);
+  transition: opacity 1.3s, transform 1.3s;
 }
 
-@media screen and (min-width: 768px) { /* À adapter en fonction de la taille d'écran souhaitée */
+.about-portrait {
+  opacity: 0.8;
+  transition: opacity 2s;
+  align-self: flex-start;
+}
+
+.about-portrait img {
+  width: 100%;
+  height: auto; /* Ajout de la propriété height:auto pour préserver les proportions de l'image */
+}
+
+@media screen and (max-width: 767px) {
+  .about-portraitc {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .about-portrait-desktop {
+    display: none;
+  }
+
+  .about-portrait-mobile {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .about-portraitc {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
   .about-portrait-desktop {
     display: block;
   }
@@ -509,43 +545,6 @@ hr {
   .about-portrait-mobile {
     display: none;
   }
-}
-
-.about-content {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
-}
-
-.about-portrait {
-    width:100%;
-    float:left;
-    height:auto;
-    padding:10px;
-  opacity: 0.8;
-  align-items: flex-start;
-  transition: opacity 2s;
-}
-
-.about-portrait.is-inview {
-  transition-delay: 0.22s;
-  opacity: 1;
-}
-
-.about-portraitc {
-  flex-basis: 25%;
-  align-items: flex-start;
-  opacity: 0;
-  transform: translateX(-111px);
-  transition: opacity 1.3s, transform 1.3s;
-  min-height: 100vh; /* Ajout d'une hauteur minimale */
-}
-
-.about-portraitc.is-inview {
-  transition-delay: .222s;
-  opacity: 1;
-  transform: translateX(0);
 }
 
 .about-text {
