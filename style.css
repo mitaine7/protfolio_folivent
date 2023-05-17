@@ -519,6 +519,10 @@ hr {
 }
 
 .about-portrait {
+    width:100%;
+    float:left;
+    height:auto;
+    padding:10px;
   opacity: 0.8;
   align-items: flex-start;
   transition: opacity 2s;
