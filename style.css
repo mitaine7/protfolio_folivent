@@ -498,12 +498,13 @@ hr {
 
 .about-portrait-mobile {
   display: block;
+  align-items: flex-start;
 }
 
 @media screen and (min-width: 768px) {
   .about-portrait-desktop {
-    display: block; 
-    padding-top: 13rem;
+    display: flex; /* Added */
+    align-items: center; /* Added */
   }
 
   .about-portrait-mobile {
@@ -532,7 +533,6 @@ hr {
 
 .about-portraitc {
   flex-basis: 25%;
-  align-items: flex-start;
   opacity: 0;
   transform: translateX(-111px);
   transition: opacity 1.3s, transform 1.3s;
@@ -544,7 +544,6 @@ hr {
   opacity: 1;
   transform: translateX(0);
 }
-
 
 
 .about-text {
