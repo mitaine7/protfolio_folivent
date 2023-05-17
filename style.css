@@ -530,6 +530,7 @@ hr {
 
 .about-portraitc {
   flex-basis: 25%;
+  align-items: flex-start;
   opacity: 0;
   transform: translateX(-111px);
   transition: opacity 1.3s, transform 1.3s;
