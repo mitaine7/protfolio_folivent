@@ -491,9 +491,9 @@ hr {
     color: #fff!important;
     background-color: #000!important
 }
+
 .about-portrait-desktop {
   display: none;
-  padding-top: 13rem;
 }
 
 .about-portrait-mobile {
@@ -502,8 +502,8 @@ hr {
 
 @media screen and (min-width: 768px) {
   .about-portrait-desktop {
-    display: block;
-    padding-top: 0;
+    display: block; 
+    padding-top: 13rem;
   }
 
   .about-portrait-mobile {
