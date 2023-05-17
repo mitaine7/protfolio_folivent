@@ -520,6 +520,7 @@ hr {
 
 .about-portrait {
   opacity: 0.8;
+  align-items: flex-start;
   transition: opacity 2s;
 }
 
