@@ -494,6 +494,7 @@ hr {
 .about-content {
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
   justify-content: center;
 }
 
@@ -502,17 +503,19 @@ hr {
   opacity: 0;
   transform: translateX(-111px);
   transition: opacity 1.3s, transform 1.3s;
+  min-height: 100vh;
 }
 
 .about-portrait {
   opacity: 0.8;
   transition: opacity 2s;
-  align-self: flex-start;
+  display: flex; /* Ajout de display: flex */
+  align-items: flex-start; /* Ajout de align-items: flex-start */
 }
 
 .about-portrait img {
   width: 100%;
-  height: auto; /* Ajout de la propriété height:auto pour préserver les proportions de l'image */
+  height: auto;
 }
 
 @media screen and (max-width: 767px) {
@@ -546,6 +549,7 @@ hr {
     display: none;
   }
 }
+
 
 .about-text {
   flex-basis: 75%;
