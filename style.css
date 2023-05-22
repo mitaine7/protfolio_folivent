@@ -516,6 +516,7 @@ hr {
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
+  padding-top: 50px;
 }
 
 .about-portrait {
