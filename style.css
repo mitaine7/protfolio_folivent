@@ -101,7 +101,7 @@ hr {
 /* Styles pour les écrans supérieurs à 600px */
 @media screen and (min-width: 600px) {
   .couture-img:hover {
-    filter: drop-shadow(0 0 10px #ffffff);
+    filter: drop-shadow(0 0 5px #ffffff);
     border-radius: 10px;
     transform: scale(1.1);
   }
@@ -1007,7 +1007,7 @@ hr {
         align-items: center;
         overflow: auto;
         background-color: #000000;
-        box-shadow: 2px 0px 10px rgba(255, 255, 255, 0.5); /* ajouter une ombre portée */
+        box-shadow: 2px 0px 5px rgba(255, 255, 255, 0.5); /* ajouter une ombre portée */
         z-index: 999;
         transform: translateY(-50%);
         opacity: 0;
